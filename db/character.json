@@ -1,0 +1,74 @@
+{
+    "amy": {
+        "name": "Amy",
+        "speed": 9,
+        "acceleration": 5,
+        "strength": 7,
+        "class": "Common",
+        "items": ["Lightning", "Ice Boost", "Ice Mine"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/5/5d/Amy-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023121"
+    },
+    "charmy": {
+        "name": "Charmy",
+        "speed": 7,
+        "acceleration": 8,
+        "strength": 4,
+        "class": "Common",
+        "items": ["Whirlwind", "Wind Boost", "Tornado"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/b/b6/Charmy-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023132"
+    },
+    "classic_sonic": {
+        "name": "Classic Sonic",
+        "speed": 9,
+        "acceleration": 5,
+        "strength": 5,
+        "class": "Common",
+        "items": ["Moto-Bug", "Invicibility", "Tornado"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/9/9e/ClassicSonic_Speed_Battle.png/revision/latest?cb=20201002023203"
+    },
+    "knuckles": {
+        "name": "Knuckles",
+        "speed": 7,
+        "acceleration": 4,
+        "strength": 9,
+        "class": "Common",
+        "items": ["Fireball", "Invicibility", "Explosive Mine"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/c8/Knuckles-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023213"
+    },
+    "omega": {
+        "name": "Omega",
+        "speed": 8,
+        "acceleration": 6,
+        "strength": 7,
+        "class": "Common",
+        "items": ["Moto-Bug", "Electro Boost", "Explosive Mine"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/0d/Omega-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023224"
+    },
+    "silver": {
+        "name": "Silver",
+        "speed": 6,
+        "acceleration": 6,
+        "strength": 6,
+        "class": "Common",
+        "items": ["Whirlwind", "Confusion Boost", "Tornado"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/23/SFSB_Silver.png/revision/latest?cb=20201002023320"
+    },
+    "sonic": {
+        "name": "Sonic",
+        "speed": 10,
+        "acceleration": 5,
+        "strength": 3,
+        "class": "Common",
+        "items": ["Fireball", "Power Sneakers", "Ice Mine"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/6/6f/Speed_Battle_Sonic.png/revision/latest?cb=20201002023328"
+    },
+    "tails": {
+        "name": "Tails",
+        "speed": 8,
+        "acceleration": 8,
+        "strength": 5,
+        "class": "Common",
+        "items": ["Moto-Bug", "Wind Boost", "Tornado"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/b/bd/Tails-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023337"
+    }
+}

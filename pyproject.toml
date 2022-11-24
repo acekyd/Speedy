@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "articuno"
+version = "4.2.2"
+description = "A fun Discord Bot, written with interactions.py."
+license = "GPL-3.0-only"
+authors = ["Jimmy-Blue <jimmyblue00@duck.com>"]
+readme = "README.md"
+homepage = "https://blue.is-a.dev/Articuno"
+repository = "https://github.com/Jimmy-Blue/Articuno"
+
+[tool.poetry.dependencies]
+python = "^3.10.0"
+python-dotenv = "0.19.2"
+discord-py-interactions = "4.3.4"
+interactions-wait-for = "^1.0.6"
+interactions-molter = "1.0.1"
+
+
+[tool.poetry.dev-dependencies]
+black = "22.10.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

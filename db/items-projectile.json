@@ -1,0 +1,13 @@
+{
+    "Audio Assault": {
+        "description": "Let's make some noise! This attack can pass through anything, and shuts down your rivals' items if it hits!",
+        "through_obstacles": true,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": true,
+        "ring_drop": true,
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/dd/SFSBAudioAssault.png/revision/latest?cb=20210512123019"
+
+
+    }
+}
