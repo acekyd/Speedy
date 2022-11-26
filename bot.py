@@ -6,7 +6,6 @@ Root bot file.
 import logging
 import datetime
 import interactions
-from interactions.ext import molter
 from const import TOKEN, VERSION, EXTS
 
 # logging.basicConfig(level=logging.DEBUG)
@@ -25,8 +24,8 @@ client = interactions.Client(
     # disable_sync=True,
 )
 
-molter.setup(client)
 [client.load(f"exts.{ext}") for ext in EXTS]
+
 
 @client.event
 async def on_ready():
