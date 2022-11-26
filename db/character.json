@@ -78,5 +78,45 @@
         "max_starting_rings": 35,
         "items": ["Moto-Bug", "Wind Boost", "Tornado"],
         "image": "https://static.wikia.nocookie.net/sonic/images/b/bd/Tails-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023337"
+    },
+    "blaze": {
+        "name": "Blaze",
+        "speed": 9,
+        "acceleration": 4,
+        "strength": 8,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": ["Fire Whirl", "Fire Boost", "Lava Bomb"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/b/b2/BlazeSpeedBattle.png/revision/latest?cb=20201002023404"
+    },
+    "cream": {
+        "name": "Cream",
+        "speed": 9,
+        "acceleration": 9,
+        "strength": 4,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": ["Chao Attack", "Bunny Boost", "Chao-nado"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/a9/CreamandCheese_Speed_Battle.png/revision/latest?cb=20201002023413"
+    },
+    "espio": {
+        "name": "Espio",
+        "speed": 9,
+        "acceleration": 8,
+        "strength": 6,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": ["Whirlwind", "Confusion Boost", "Confusion Mine"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/ac/Espio-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023440"
+    },
+    "jet": {
+        "name": "Jet",
+        "speed": 10,
+        "acceleration": 5,
+        "strength": 5,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": ["Bashosen", "Wind Boost", "Tornado"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/07/Jet_Speed_Battle.png/revision/latest?cb=20201002023625"
     }
 }
