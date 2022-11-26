@@ -6,10 +6,9 @@
 import logging
 import datetime
 import interactions
-from interactions.ext import molter
 
 
-class About(molter.MolterExtension):
+class About(interactions.Extension):
     """Extension for /about commands."""
 
     def __init__(self, client: interactions.Client) -> None:
@@ -35,30 +34,7 @@ class About(molter.MolterExtension):
             description="{placeholder_description}",
             color=0xfc920c,
             footer=interactions.EmbedFooter(
-                text=f"Maintained by Blue#2095"
-            ),
-        )
-
-        await ctx.send(embeds=embed, components=button)
-
-    @molter.prefixed_command()
-    async def about(self, ctx: molter.MolterContext):
-        """Information about {placeholder}."""
-
-        button = [
-            interactions.Button(
-                style=interactions.ButtonStyle.LINK,
-                label="GitHub",
-                url="https://github.com/Jimmy-Blue/SFSB-Bot",
-            ),
-        ]
-
-        embed = interactions.Embed(
-            title="About {placeholder_name}",
-            description="{placeholder_description}",
-            color=0xfc920c,
-            footer=interactions.EmbedFooter(
-                text=f"Maintained by Blue#2095"
+                text="Maintained by Blue#2095"
             ),
         )
 
