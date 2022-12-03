@@ -6,6 +6,7 @@ Root bot file.
 import logging
 import datetime
 import interactions
+from interactions.ext import wait_for
 from const import TOKEN, VERSION, EXTS
 
 # logging.basicConfig(level=logging.DEBUG)
@@ -24,6 +25,7 @@ client = interactions.Client(
     # disable_sync=True,
 )
 
+wait_for.setup(client)
 [client.load(f"exts.{ext}") for ext in EXTS]
 
 
