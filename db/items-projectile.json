@@ -34,7 +34,7 @@
         "image": "https://static.wikia.nocookie.net/sonic/images/f/f2/SFSBBalkiryNEW.png/revision/latest?cb=20210220174613"
     },
     "Bashosen": {
-        "description": "Sends a fast projectile that deals damage and steals Rings on contact while leaving a trail that slows opponents down."
+        "description": "Sends a fast projectile that deals damage and steals Rings on contact while leaving a trail that slows opponents down.",
         "through_obstacles": true,
         "jumped_over": true,
         "slid_under": false,
@@ -47,10 +47,10 @@
         "ring_drop": 10,
         "distance": 4,
         "width":1,
-        "image": "https://static.wikia.nocookie.net/sonic/images/7/72/BashonsenSFSB.png/revision/latest?cb=20180712125228",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/72/BashonsenSFSB.png/revision/latest?cb=20180712125228"
     },
     "Blizzard Bomb": {
-        "description": "Sends a bouncing bomb down one lane, exploding after 5 bounces or on contact, freezing opponents in the same or adjacent lanes."
+        "description": "Sends a bouncing bomb down one lane, exploding after 5 bounces or on contact, freezing opponents in the same or adjacent lanes.",
         "through_obstacles": false,
         "jumped_over": true,
         "slid_under": true,
