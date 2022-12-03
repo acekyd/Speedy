@@ -118,5 +118,65 @@
         "max_starting_rings": 45,
         "items": ["Bashosen", "Wind Boost", "Tornado"],
         "image": "https://static.wikia.nocookie.net/sonic/images/0/07/Jet_Speed_Battle.png/revision/latest?cb=20201002023625"
+    },
+    "rouge": {
+        "name": "Rogue",
+        "speed": 9,
+        "acceleration": 8,
+        "strength": 6,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": ["Whirlwind", "Confusion Boost", "Booby Trap"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/b/bc/Rouge-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023639"
+    },
+    "storm": {
+        "name": "Storm",
+        "speed": 9,
+        "acceleration": 6,
+        "strength": 10,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": ["Whirlwind", "Wind Boost", "Zap Trap"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/ec/StormSFSB.png/revision/latest?cb=20201002023651"
+    },
+    "tangle": {
+        "name": "Tangle",
+        "speed": 7,
+        "acceleration": 5,
+        "strength": 10,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": ["Tail Strike", "Tail Spring"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/6/6d/SFSBTangle.png/revision/latest?cb=20221130015044"
+    },
+    "vector": {
+        "name": "Vector",
+        "speed": 9,
+        "acceleration": 8,
+        "strength": 8,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": ["Fireball", "Invicibility", "Bubble Bomb"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/75/Vector-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023701"
+    },
+    "wave": {
+        "name": "Wave",
+        "speed": 9,
+        "acceleration": 6,
+        "strength": 7,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": ["Whirlwind", "Wrench Rush", "Explosive Mine"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/22/Wave_Speed_Battle.png/revision/latest?cb=20201002023715"
+    },
+    "whisper": {
+        "name": "Whisper",
+        "speed": 8,
+        "acceleration": 6,
+        "strength": 7,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": ["Cyan Laser", "Green Hover", "Pink Spikes"],
+        "image": "https://static.wikia.nocookie.net/sonic/images/f/f2/SFSBWhisper.png/revision/latest?cb=20221130014536"
     }
 }
