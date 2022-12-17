@@ -24,6 +24,8 @@ def get_color(char_class: str):
             return 0x8a32fb
         case "Special":
             return 0x12ad01
+        case "Challenger":
+            return 0xc92828
 
 
 def create_bar(stat: str, num: int) -> str:
