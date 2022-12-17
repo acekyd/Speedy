@@ -1,6 +1,7 @@
 import logging
 import datetime
 import json
+import asyncio
 import interactions
 from interactions.ext.wait_for import wait_for_component
 
@@ -16,13 +17,13 @@ def get_color(char_class: str):
     """
     match char_class:
         case "Common":
-            return 0xc0dcfc
+            return 0x96b1ca
         case "Rare":
-            return 0xf6e094
+            return 0xf9ab00
         case "Super Rare":
-            return 0xd9b3ff
+            return 0x8a32fb
         case "Special":
-            return 0x92f190
+            return 0x12ad01
 
 
 def create_bar(stat: str, num: int) -> str:
@@ -119,20 +120,24 @@ class Character(interactions.Extension):
 
         await ctx.send(embeds=embed, components=items_button)
 
-        while True:
-            res = await wait_for_component(
-                self.client,
-                components=items_button,
-                messages=int(ctx.message.id),
-                timeout=45,
-            )
+        try:
+            while True:
+                res = await wait_for_component(
+                    self.client,
+                    components=items_button,
+                    messages=int(ctx.message.id),
+                    timeout=45,
+                )
 
-            projectiles_db = json.loads(open("./db/items-projectile.json", "r", encoding="utf8").read())
+                projectiles_db = json.loads(open("./db/items-projectile.json", "r", encoding="utf8").read())
 
-            if res.custom_id in projectiles_db:
-                await res.send(f"{projectiles_db[res.custom_id]}")
+                if res.custom_id in projectiles_db:
+                    await res.send(f"{projectiles_db[res.custom_id]}")
 
-            await res.send(f"Clicked! ID: {res.custom_id}")
+                await res.send(f"Clicked! ID: {res.custom_id}")
+
+        except asyncio.TimeoutError:
+            pass
 
     @interactions.extension_autocomplete(command="character", name="character_name")
     async def auto_complete(
