@@ -144,6 +144,17 @@ class Character(interactions.Extension):
                     )
                 )
                 cnt += 1
+            elif cnt == 1:
+                boost_db = json.loads(open("./db/items-boost.json", "r", encoding="utf8").read())
+                items_button.append(
+                    interactions.Button(
+                        style=interactions.ButtonStyle.SECONDARY,
+                        label=item,
+                        emoji=interactions.Emoji(id=get_emoji(boost_db[item]["emoji"])[1]),
+                        custom_id=item
+                    )
+                )
+                cnt += 1
             else:
                 items_button.append(
                     interactions.Button(
@@ -187,9 +198,10 @@ class Character(interactions.Extension):
                             title=str(res.custom_id),
                             description="".join(
                                 [
-                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) != "image" else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith("https") is False else ""))}\n""" for k, v in list(projectile_db[str(res.custom_id)].items())
+                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["description", "image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n""" for k, v in list(projectile_db[str(res.custom_id)].items())
                                 ]
                             ),
+                            image=interactions.EmbedImageStruct(url=str(projectile_db[str(res.custom_id)]["image"]))
                         )
                         await res.send(embeds=embed)
                     case 1:
@@ -198,9 +210,10 @@ class Character(interactions.Extension):
                             title=str(res.custom_id),
                             description="".join(
                                 [
-                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) != "image" else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith("https") is False else ""))}\n""" for k, v in list(boost_db[str(res.custom_id)].items())
+                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["description", "image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n""" for k, v in list(boost_db[str(res.custom_id)].items())
                                 ]
                             ),
+                            image=interactions.EmbedImageStruct(url=str(boost_db[str(res.custom_id)]["image"]))
                         )
                         await res.send(embeds=embed)
                     case 2:
@@ -209,7 +222,7 @@ class Character(interactions.Extension):
                             title=str(res.custom_id),
                             description="".join(
                                 [
-                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) != "image" else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith("https") is False else ""))}\n""" for k, v in list(trap_db[str(res.custom_id)].items())
+                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n""" for k, v in list(trap_db[str(res.custom_id)].items())
                                 ]
                             ),
                         )
