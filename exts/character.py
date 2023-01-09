@@ -2,6 +2,7 @@ import logging
 import datetime
 import json
 import asyncio
+import re
 import interactions
 from interactions.ext.wait_for import wait_for_component
 
@@ -68,6 +69,31 @@ def create_bar(stat: str, num: int) -> str:
                 return f"{bar}" + ((10 - num) * f"{bar_empty}")
 
 
+def get_emoji(emoji_str: str) -> tuple:
+    """
+    Returns the id/name of the emoji string in the message content.
+    :param emoji_str: The emoji string.
+    :type emoji_str: str
+    :return: The ID of the emoji.
+    :rtype: int
+    """
+
+    if (
+        emoji_str.isnumeric() is False
+        and emoji_str.startswith("<")
+        and emoji_str.endswith(">")
+    ):
+        emoji_regex = re.compile(r"<?(a)?:(\w*):(\d*)>?")
+
+        parsed = emoji_regex.findall(emoji_str)
+        if parsed:
+            parsed = tuple(filter(None, parsed[0]))
+            if len(parsed) == 3:
+                return (parsed[1], parsed[2], True)
+            else:
+                return (parsed[0], parsed[1], False)
+
+
 class Character(interactions.Extension):
     """Extension for /character command."""
 
@@ -95,14 +121,37 @@ class Character(interactions.Extension):
         max_starting_rings = char_db[name_lower]["max_starting_rings"]
         image = char_db[name_lower]["image"]
 
-        items_button = [
-            interactions.Button(
-                style=interactions.ButtonStyle.SECONDARY,
-                label=item,
-                custom_id=item
-            )
-            for item in char_db[name_lower]['items']
-        ]
+        # items_button = [
+        #     interactions.Button(
+        #         style=interactions.ButtonStyle.SECONDARY,
+        #         label=item,
+        #         emoji=interactions.Emoji(id=get_emoji()),
+        #         custom_id=item
+        #     )
+        #     for item in char_db[name_lower]['items']
+        # ]
+
+        items_button, cnt = [], 0
+        for item in char_db[name_lower]['items']:
+            if cnt == 0:
+                projectile_db = json.loads(open("./db/items-projectile.json", "r", encoding="utf8").read())
+                items_button.append(
+                    interactions.Button(
+                        style=interactions.ButtonStyle.SECONDARY,
+                        label=item,
+                        emoji=interactions.Emoji(id=get_emoji(projectile_db[item]["emoji"])[1]),
+                        custom_id=item
+                    )
+                )
+                cnt += 1
+            else:
+                items_button.append(
+                    interactions.Button(
+                        style=interactions.ButtonStyle.SECONDARY,
+                        label=item,
+                        custom_id=item
+                    )
+                )
 
         embed = interactions.Embed(
             title=name,
@@ -130,13 +179,41 @@ class Character(interactions.Extension):
                     messages=int(ctx.message.id),
                     timeout=45,
                 )
-
-                projectiles_db = json.loads(open("./db/items-projectile.json", "r", encoding="utf8").read())
-
-                if res.custom_id in projectiles_db:
-                    await res.send(f"{projectiles_db[res.custom_id]}")
-
-                await res.send(f"Clicked! ID: {res.custom_id}")
+                index = [btn.custom_id for btn in items_button].index(res.custom_id)
+                match index:
+                    case 0:
+                        projectile_db = json.loads(open("./db/items-projectile.json", "r", encoding="utf8").read())
+                        embed = interactions.Embed(
+                            title=str(res.custom_id),
+                            description="".join(
+                                [
+                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) != "image" else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith("https") is False else ""))}\n""" for k, v in list(projectile_db[str(res.custom_id)].items())
+                                ]
+                            ),
+                        )
+                        await res.send(embeds=embed)
+                    case 1:
+                        boost_db = json.loads(open("./db/items-boost.json", "r", encoding="utf8").read())
+                        embed = interactions.Embed(
+                            title=str(res.custom_id),
+                            description="".join(
+                                [
+                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) != "image" else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith("https") is False else ""))}\n""" for k, v in list(boost_db[str(res.custom_id)].items())
+                                ]
+                            ),
+                        )
+                        await res.send(embeds=embed)
+                    case 2:
+                        trap_db = json.loads(open("./db/items-trap.json", "r", encoding="utf8").read())
+                        embed = interactions.Embed(
+                            title=str(res.custom_id),
+                            description="".join(
+                                [
+                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) != "image" else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith("https") is False else ""))}\n""" for k, v in list(trap_db[str(res.custom_id)].items())
+                                ]
+                            ),
+                        )
+                        await res.send(embeds=embed)
 
         except asyncio.TimeoutError:
             pass
