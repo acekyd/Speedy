@@ -36,7 +36,7 @@
         "max_starting_rings": 35,
         "items": [
             "Moto-Bug",
-            "Invicibility",
+            "Invincibility",
             "Tornado"
         ],
         "image": "https://static.wikia.nocookie.net/sonic/images/9/9e/ClassicSonic_Speed_Battle.png/revision/latest?cb=20201002023203"
@@ -50,7 +50,7 @@
         "max_starting_rings": 35,
         "items": [
             "Fireball",
-            "Invicibility",
+            "Invincibility",
             "Explosive Mine"
         ],
         "image": "https://static.wikia.nocookie.net/sonic/images/c/c8/Knuckles-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023213"
@@ -217,7 +217,7 @@
         "max_starting_rings": 45,
         "items": [
             "Fireball",
-            "Invicibility",
+            "Invincibility",
             "Bubble Bomb"
         ],
         "image": "https://static.wikia.nocookie.net/sonic/images/7/75/Vector-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023701"
@@ -483,7 +483,7 @@
         "max_starting_rings": 55,
         "items": [
             "Knight Smite",
-            "Invicibility",
+            "Invincibility",
             "Whirlwind Wallop"
         ],
         "image": "https://static.wikia.nocookie.net/sonic/images/d/d2/SFSBPaladinAmy.png/revision/latest?cb=20220719120348"
@@ -819,7 +819,7 @@
         "max_starting_rings": 55,
         "items": [
             "Savage Throw",
-            "Invicibility",
+            "Invincibility",
             "Brutal Barrier"
         ],
         "image": "https://static.wikia.nocookie.net/sonic/images/a/ac/SFSBLinebackerOmega.png/revision/latest?cb=20220203150004"
