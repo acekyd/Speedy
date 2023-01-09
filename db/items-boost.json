@@ -2,186 +2,260 @@
     "Bass Boost":
     {
         "description": "Provides the user a very long speed boost that grants additional smaller boosts of speed when they switch lanes, disabling opponents they come in contact with for a brief period of time.",
-        "duration": "6.7 Sec."
+        "duration": "6.7 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/70/SFSBBassBoost.png/revision/latest?cb=20210512123324",
+        "emoji": "<:BassBoost:1062058205284405268>"
     },
     "Beat Boost":
     {
         "description": "Provides the user a very long speed boost that grants additional smaller boosts of speed when they switch lanes, disabling opponents they come in contact with for a brief period of time.",
-        "duration": "6.7 Sec."
+        "duration": "6.7 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/3/39/SFSBBeatBoost.png/revision/latest?cb=20210512123317",
+        "emoji": "<:BeatBoost:1062058210271449106>"
     },
     "Blazing Aura":
     {
         "description": "Provides the user a speed boost that deals fire damage to opponents they come in contact with in the same or adjacent lanes.",
-        "duration": "2.9 Sec."
+        "duration": "2.9 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/e7/SFSBBlazingAura.png/revision/latest?cb=20210705133658",
+        "emoji": "<:BlazingAura:1062058215715655710>"
     },
     "Brutal Blitz":
     {
         "description": "Provides the user a speed boost that deals damage to opponents they come in contact with. Upgrades provide the user multiple pick-ups.",
-        "duration": "2.3 Sec. (6.9 Sec. Total)"
+        "duration": "2.3 Sec. (6.9 Sec. Total)",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/7d/SFSBBrutalBlitz.png/revision/latest?cb=20210113162045",
+        "emoji": "<:BrutalBlitz:1062058220455198781>"
     },
     "Bunny Boost":
     {
         "description": "Provides the user a moderate speed boost that grants additional smaller boosts of speed when they switch lanes.",
-        "duration": "3 Sec."
+        "duration": "3 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/5/55/Bunny_Boost.png/revision/latest?cb=20180712133525",
+        "emoji": "<:BunnyBoost:1062058227237400636>"
     },
     "Chao Chase":
     {
         "description": "Provides the user a moderate speed boost that grants the user an additional boost of speed if they come in contact with an opponent.",
-        "duration": "4.3 Sec."
+        "duration": "4.3 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/b/b2/SFSB_Chao_Chase.png/revision/latest?cb=20210827160320",
+        "emoji": "<:ChaoChase:1062058229644922910>"
     },
     "Chaos Charge":
     {
         "description": "Provides the user a short, but very fast boost of speed that allows them to fly during the duration of the boost when they jump.",
-        "duration": "3 Sec."
+        "duration": "3 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/8/83/ChaosCharge.png/revision/latest?cb=20210308164601",
+        "emoji": "<:ChaosCharge:1062058233574985919>"
     },
     "Confusion Boost":
     {
         "description": "Provides the user a speed boost that confuses opponents and causes them to stumble on contact.",
-        "duration": "2.8 Sec."
+        "duration": "2.8 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/6/6f/SFSBConfusionBoost.png/revision/latest?cb=20211110225854",
+        "emoji": "<:ConfusionBoost:1062058236544553021>"
     },
     "Cyborg Smash":
     {
         "description": "Launches the user in the air making them safe from taking damage. Once they land they'll deal damage to opponents they come in contact with in the same or adjacent lanes. You can land early if your opponents are close.",
-        "duration": "2.8 Sec."
+        "duration": "2.8 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/08/SFSBCyborgSmash.png/revision/latest?cb=20221210211801",
+        "emoji": "<:CyborgSmash:1062058238998216794>"
     },
     "Dark Embrace":
     {
         "description": "Provides the user a speed boost that renders them invincible and clings a clone onto an opponent desroying the next item they try to use.",
-        "duration": "3.1 Sec."
+        "duration": "3.1 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/dc/SFSBDarkEmbrace.png/revision/latest?cb=20221003102732",
+        "emoji": "<:DarkEmbrace:1062058245549740073>"
     },
     "Dual Wield Dash":
     {
         "description": "Provides the user a very short but fast boost of speed damaging anyone they come in contact with.",
-        "duration": "1.3 Sec. (3.9 Sec. Total)"
+        "duration": "1.3 Sec. (3.9 Sec. Total)",
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/ed/SFSBDualWieldDash.png/revision/latest?cb=20220510154207",
+        "emoji": "<:DualWieldDash:1062058251539202048>"
     },
     "Electro Boost":
     {
         "description": "Provides the user a speed boost that attracts Rings and deals damage to opponents they come in contact with.",
-        "duration": "3.1 Sec."
+        "duration": "3.1 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/4/42/SFSBElectroBoost.png/revision/latest?cb=20201215145114",
+        "emoji": "<:ElectroBoost:1062058256756899930>"
     },
     "EMP Boost":
     {
         "description": "Provides the user a speed boost that deals low electric damage to opponents they come in contact with in the same or adjacent lanes.",
-        "duration": "2.4 Sec."
+        "duration": "2.4 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/75/SFSB_EMP_Boost.png/revision/latest?cb=20210827161137",
+        "emoji": "<:EMPBoost:1062058259890065431>"
     },
     "Feral Dash":
     {
         "description": "Similar to EMP Boost, but with a lower duration and a cosmetic purple design.",
-        "duration": "2.1 Sec."
+        "duration": "2.1 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/76/SFSBFeralDash.png/revision/latest?cb=20211013210721",
+        "emoji": "<:FeralDash:1062072627713294346>"
     },
     "Festive Umbrella Boost":
     {
         "description": "Similar to Umbrella Boost, but with a lower duration and a cosmetic festive design.",
-        "duration": "3.1 Sec."
+        "duration": "3.1 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/74/FestiveUmbrellaBoost.png/revision/latest?cb=20210104172648",
+        "emoji": "<:FestiveUmbrellaBoost:1062072630292783245>"
     },
     "Fire Boost":
     {
         "description": "Provides the user a speed boost that deals fire damage to opponents they come in contact with.",
-        "duration": "2.1 Sec."
+        "duration": "2.1 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/b/bd/SFSBFireBoost.png/revision/latest?cb=20210430001419",
+        "emoji": "<:FireBoost:1062072634055069797>"
     },
     "Gold Rush":
     {
         "description": "Provides the user a fast speed boost at the cost of draining 6 Rings.",
-        "duration": "3.4 Sec."
+        "duration": "3.4 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/0c/SFSBGoldRush.png/revision/latest?cb=20201007152215",
+        "emoji": "<:GoldRush:1062072639943872622>"
     },
     "Golden Boost":
     {
         "description": "Provides the user a moderate speed boost that reduces their fall speed, attracting nearby Rings and allowing the user to hover in mid-air for a brief moment when they jump.",
-        "duration": "4.1 Sec."
+        "duration": "4.1 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/8/87/SFSBGoldenBoost.png/revision/latest?cb=20220120133555",
+        "emoji": "<:GoldenBoost:1062072637205004450>"
     },
     "Green Hover":
     {
         "description": "Provides the user a moderate speed boost that reduces their fall speed, allowing them to hover in mid-air for a brief moment when they jump.",
-        "duration": "4.6 Sec."
+        "duration": "4.6 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/1/19/SFSB_Green_Hover.png/revision/latest?cb=20210827155907",
+        "emoji": "<:GreenHover:1062072643542593636>"
     },
     "Home Run":
     {
         "description": "Spawns four baseball bases in random lanes. For each base the user comes in contact with, they gain a boost of speed. (Tip: The fourth base provides the highest boost, so always try to hit it.)",
-        "duration": "3.2 Sec."
+        "duration": "3.2 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/1/17/HomeRun.png/revision/latest?cb=20201024150225",
+        "emoji": "<:HomeRun:1062072646872866856>"
     },
     "Ice Boost":
     {
         "description": "Provides the user a speed boost that freezes opponents they come in contact with.",
-        "duration": "2.8 Sec."
+        "duration": "2.8 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/9/9b/SFSBIceBoost.png/revision/latest?cb=20201104104627",
+        "emoji": "<:IceBoost:1062072648705773649>"
     },
     "Invincibility":
     {
         "description": "Provides the user a moderate speed boost that renders them invincible.",
-        "duration": "3.1 Sec."
+        "duration": "3.1 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/9/9e/SFSBInvincibility.png/revision/latest?cb=20180712140404",
+        "emoji": "<:Invincibility:1062072652145107014>"
     },
     "Jingle Boost":
     {
         "description": "Provides the user a moderate speed boost that freezes opponents they come in contact with. If the user is hit while the boost is active, it will act as a shield and they will not take damage.",
-        "duration": "3.2 Sec."
+        "duration": "3.2 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/70/SFSBJingleBoost.png/revision/latest?cb=20211214150707",
+        "emoji": "<:JingleBoost:1062072655525712033>"
     },
     "Magical Boost":
     {
         "description": "Provides the user a short, but very fast boost of speed that leaves behind rainbows that take up three lanes, blinding opponents if they walk into the left or right or jump into the middle of the rainbows.",
-        "duration": "2.5 Sec."
+        "duration": "2.5 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/4/41/SFSBMagicalBoost.png/revision/latest?cb=20210812124914",
+        "emoji": "<:MagicalBoost:1062072657492852786>"
     },
     "Metal March":
     {
         "description": "Provides the user a speed boost that deals damage to opponents they come in contact with. The user will have extra speed at the start of the boost.",
-        "duration": "2.8 Sec."
+        "duration": "2.8 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/03/SFSBMetalMarch.png/revision/latest?cb=20221210212418",
+        "emoji": "<:MetalMarch:1062072660890226688>"
     },
     "Meteor Charge":
     {
         "description": "Provides the user a speed boost that deals damage to opponents they come in contact with.",
-        "duration": "2.3 Sec."
+        "duration": "2.3 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/f/f4/MeteorChargeSFSB.png/revision/latest?cb=20200904213218",
+        "emoji": "<:MeteorCharge:1062072665629802578>"
     },
     "Phantom Dash":
     {
         "description": "Provides the user a very fast boost of speed, allowing them to hover in mid-air during the duration of the boost when they jump while dealing damage and causing opponents to see illusions on contact at the cost of draining up to 93 Rings.",
-        "duration": "Depends on Rings owned."
+        "duration": "Depends on Rings owned.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/e5/SFSBPhantomDash.png/revision/latest?cb=20211126150755",
+        "emoji": "<:PhantomDash:1062072669299810354>"
     },
     "Power Sneakers":
     {
         "description": "Provides the user a short, but very fast boost of speed. Shadow has an extra power sneakers upgrade making his slightly longer than Sonic's",
-        "duration": "1.9/2.1 Sec."
+        "duration": "1.9/2.1 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/9/95/SFSBSpeedShoes.png/revision/latest?cb=20201024153425",
+        "emoji": "<:PowerSneakers:1062072673020153866>"
     },
     "Ring Portal":
     {
         "description": "Provides the user a short, but very fast boost of speed that renders them invincible and invisible in the process.",
-        "duration": "2 Sec."
+        "duration": "2 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/5/55/SFSB_Ring_Portal.png/revision/latest?cb=20210827161232",
+        "emoji": "<:RingPortal:1062082246527434853>"
     },
     "Rocket Boost":
     {
         "description": "Provides the user a very fast boost of speed.",
-        "duration": "2.7 Sec."
+        "duration": "2.7 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/cc/SFSBRocketBoost.png/revision/latest?cb=20210220174740",
+        "emoji": "<:RocketBoost:1062082250260361286>"
     },
     "Speed Break":
     {
         "description": "Provides the user a very fast boost of speed that deals damage to opponents they come in contact with. The user slows down a bit before the boost activates.",
-        "duration": "4.9 Sec."
+        "duration": "4.9 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/cc/SFSBRocketBoost.png/revision/latest?cb=20210220174740",
+        "emoji": "<:SpeedBreak:1062082252575621200>"
     },
     "Super Form":
     {
         "description": "Once the user has 80 or more Rings, provides a very fast boost of speed and invincibility, allowing the user to hover in mid-air during the duration of the boost when they jump at the cost of draining 122 Rings.",
-        "duration": "Depends on Rings owned."
+        "duration": "Depends on Rings owned.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/6/67/SFSBChaosEmeraldsIcon.png/revision/latest?cb=20210622110045",
+        "emoji": "<:SuperForm:1062082256031731792>"
     },
     "Tail Spring":
     {
         "description": "Launches the user into the air, providing them a very short, but very fast boost of speed that renders them invincible.",
-        "duration": "1.3 Sec."
+        "duration": "1.3 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/ce/SFSB_Tail_Spring.png/revision/latest?cb=20210827155253",
+        "emoji": "<:TailSpring:1062082259605258293>"
     },
     "Twin-Tail Boost":
     {
         "description": "Provides the user a speed boost that renders them invincible and allows them to fly during the duration of the boost when they jump.",
-        "duration": "3.7 Sec."
+        "duration": "3.7 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/eb/SFSBTwinTailBoost.png/revision/latest?cb=20220331152336",
+        "emoji": "<:TwinTailBoost:1062082262428028949>"
     },
     "Umbrella Boost":
     {
         "description": "Provides the user a long-lasting boost that deals damage to opponents they come in contact with.",
-        "duration": "4.2 Sec."
+        "duration": "4.2 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/07/Umbrella_Boost.png/revision/latest?cb=20180712141644",
+        "emoji": "<:UmbrellaBoost:1062082266165166111>"
     },
     "Wind Boost":
     {
         "description": "Provides the user a speed boost that deals damage and steals Rings from opponents they come in contact with.",
-        "duration": "2.2 Sec."
+        "duration": "2.2 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/df/SFSBWindBoost.png/revision/latest?cb=20201027181501",
+        "emoji": "<:WindBoost:1062082270384640100>"
     },
     "Wrench Rush":
     {
         "description": "Provides the user a speed boost that deals high damage to opponents they come in contact with in the same or adjacent lanes.",
-        "duration": "2.7 Sec."
+        "duration": "2.7 Sec.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/e5/WrenchRushIcon.png/revision/latest?cb=20210827155446",
+        "emoji": "<:WrenchRush:1062082272704073799>"
     }
 }
