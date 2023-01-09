@@ -1,0 +1,187 @@
+{
+    "Bass Boost":
+    {
+        "description": "Provides the user a very long speed boost that grants additional smaller boosts of speed when they switch lanes, disabling opponents they come in contact with for a brief period of time.",
+        "duration": "6.7 Sec."
+    },
+    "Beat Boost":
+    {
+        "description": "Provides the user a very long speed boost that grants additional smaller boosts of speed when they switch lanes, disabling opponents they come in contact with for a brief period of time.",
+        "duration": "6.7 Sec."
+    },
+    "Blazing Aura":
+    {
+        "description": "Provides the user a speed boost that deals fire damage to opponents they come in contact with in the same or adjacent lanes.",
+        "duration": "2.9 Sec."
+    },
+    "Brutal Blitz":
+    {
+        "description": "Provides the user a speed boost that deals damage to opponents they come in contact with. Upgrades provide the user multiple pick-ups.",
+        "duration": "2.3 Sec. (6.9 Sec. Total)"
+    },
+    "Bunny Boost":
+    {
+        "description": "Provides the user a moderate speed boost that grants additional smaller boosts of speed when they switch lanes.",
+        "duration": "3 Sec."
+    },
+    "Chao Chase":
+    {
+        "description": "Provides the user a moderate speed boost that grants the user an additional boost of speed if they come in contact with an opponent.",
+        "duration": "4.3 Sec."
+    },
+    "Chaos Charge":
+    {
+        "description": "Provides the user a short, but very fast boost of speed that allows them to fly during the duration of the boost when they jump.",
+        "duration": "3 Sec."
+    },
+    "Confusion Boost":
+    {
+        "description": "Provides the user a speed boost that confuses opponents and causes them to stumble on contact.",
+        "duration": "2.8 Sec."
+    },
+    "Cyborg Smash":
+    {
+        "description": "Launches the user in the air making them safe from taking damage. Once they land they'll deal damage to opponents they come in contact with in the same or adjacent lanes. You can land early if your opponents are close.",
+        "duration": "2.8 Sec."
+    },
+    "Dark Embrace":
+    {
+        "description": "Provides the user a speed boost that renders them invincible and clings a clone onto an opponent desroying the next item they try to use.",
+        "duration": "3.1 Sec."
+    },
+    "Dual Wield Dash":
+    {
+        "description": "Provides the user a very short but fast boost of speed damaging anyone they come in contact with.",
+        "duration": "1.3 Sec. (3.9 Sec. Total)"
+    },
+    "Electro Boost":
+    {
+        "description": "Provides the user a speed boost that attracts Rings and deals damage to opponents they come in contact with.",
+        "duration": "3.1 Sec."
+    },
+    "EMP Boost":
+    {
+        "description": "Provides the user a speed boost that deals low electric damage to opponents they come in contact with in the same or adjacent lanes.",
+        "duration": "2.4 Sec."
+    },
+    "Feral Dash":
+    {
+        "description": "Similar to EMP Boost, but with a lower duration and a cosmetic purple design.",
+        "duration": "2.1 Sec."
+    },
+    "Festive Umbrella Boost":
+    {
+        "description": "Similar to Umbrella Boost, but with a lower duration and a cosmetic festive design.",
+        "duration": "3.1 Sec."
+    },
+    "Fire Boost":
+    {
+        "description": "Provides the user a speed boost that deals fire damage to opponents they come in contact with.",
+        "duration": "2.1 Sec."
+    },
+    "Gold Rush":
+    {
+        "description": "Provides the user a fast speed boost at the cost of draining 6 Rings.",
+        "duration": "3.4 Sec."
+    },
+    "Golden Boost":
+    {
+        "description": "Provides the user a moderate speed boost that reduces their fall speed, attracting nearby Rings and allowing the user to hover in mid-air for a brief moment when they jump.",
+        "duration": "4.1 Sec."
+    },
+    "Green Hover":
+    {
+        "description": "Provides the user a moderate speed boost that reduces their fall speed, allowing them to hover in mid-air for a brief moment when they jump.",
+        "duration": "4.6 Sec."
+    },
+    "Home Run":
+    {
+        "description": "Spawns four baseball bases in random lanes. For each base the user comes in contact with, they gain a boost of speed. (Tip: The fourth base provides the highest boost, so always try to hit it.)",
+        "duration": "3.2 Sec."
+    },
+    "Ice Boost":
+    {
+        "description": "Provides the user a speed boost that freezes opponents they come in contact with.",
+        "duration": "2.8 Sec."
+    },
+    "Invincibility":
+    {
+        "description": "Provides the user a moderate speed boost that renders them invincible.",
+        "duration": "3.1 Sec."
+    },
+    "Jingle Boost":
+    {
+        "description": "Provides the user a moderate speed boost that freezes opponents they come in contact with. If the user is hit while the boost is active, it will act as a shield and they will not take damage.",
+        "duration": "3.2 Sec."
+    },
+    "Magical Boost":
+    {
+        "description": "Provides the user a short, but very fast boost of speed that leaves behind rainbows that take up three lanes, blinding opponents if they walk into the left or right or jump into the middle of the rainbows.",
+        "duration": "2.5 Sec."
+    },
+    "Metal March":
+    {
+        "description": "Provides the user a speed boost that deals damage to opponents they come in contact with. The user will have extra speed at the start of the boost.",
+        "duration": "2.8 Sec."
+    },
+    "Meteor Charge":
+    {
+        "description": "Provides the user a speed boost that deals damage to opponents they come in contact with.",
+        "duration": "2.3 Sec."
+    },
+    "Phantom Dash":
+    {
+        "description": "Provides the user a very fast boost of speed, allowing them to hover in mid-air during the duration of the boost when they jump while dealing damage and causing opponents to see illusions on contact at the cost of draining up to 93 Rings.",
+        "duration": "Depends on Rings owned."
+    },
+    "Power Sneakers":
+    {
+        "description": "Provides the user a short, but very fast boost of speed. Shadow has an extra power sneakers upgrade making his slightly longer than Sonic's",
+        "duration": "1.9/2.1 Sec."
+    },
+    "Ring Portal":
+    {
+        "description": "Provides the user a short, but very fast boost of speed that renders them invincible and invisible in the process.",
+        "duration": "2 Sec."
+    },
+    "Rocket Boost":
+    {
+        "description": "Provides the user a very fast boost of speed.",
+        "duration": "2.7 Sec."
+    },
+    "Speed Break":
+    {
+        "description": "Provides the user a very fast boost of speed that deals damage to opponents they come in contact with. The user slows down a bit before the boost activates.",
+        "duration": "4.9 Sec."
+    },
+    "Super Form":
+    {
+        "description": "Once the user has 80 or more Rings, provides a very fast boost of speed and invincibility, allowing the user to hover in mid-air during the duration of the boost when they jump at the cost of draining 122 Rings.",
+        "duration": "Depends on Rings owned."
+    },
+    "Tail Spring":
+    {
+        "description": "Launches the user into the air, providing them a very short, but very fast boost of speed that renders them invincible.",
+        "duration": "1.3 Sec."
+    },
+    "Twin-Tail Boost":
+    {
+        "description": "Provides the user a speed boost that renders them invincible and allows them to fly during the duration of the boost when they jump.",
+        "duration": "3.7 Sec."
+    },
+    "Umbrella Boost":
+    {
+        "description": "Provides the user a long-lasting boost that deals damage to opponents they come in contact with.",
+        "duration": "4.2 Sec."
+    },
+    "Wind Boost":
+    {
+        "description": "Provides the user a speed boost that deals damage and steals Rings from opponents they come in contact with.",
+        "duration": "2.2 Sec."
+    },
+    "Wrench Rush":
+    {
+        "description": "Provides the user a speed boost that deals high damage to opponents they come in contact with in the same or adjacent lanes.",
+        "duration": "2.7 Sec."
+    }
+}
