@@ -1,0 +1,182 @@
+{
+    "Bat Bomb":
+    {
+        "description": "Spawns a Bat Bomb in front of an opponent, dealing fire damage on contact if they do not slide under it or switch lanes. (Tip: Be careful, you can't jump over this!)",
+        "type": "Target"
+    },
+    "Booby Trap":
+    {
+        "description": "Spawns fake item boxes that place locks on opponents' item slots on contact. The opponent must pay some Rings to unlock them.",
+        "type": "Normal"
+    },
+    "Brutal Barrier":
+    {
+        "description": "Surrounds the user with spiked shields that will deal damage to opponents they come in contact with in the same or adjacent lanes. If the user is hit while the trap is active it will act as a shield and they will not take damage.",
+        "type": "Shield"
+    },
+    "Bubble Bomb":
+    {
+        "description": "Spawns bubblegum puddles that deal damage on contact and cover the bottom of opponents' screens with bubbles if they pass through them. (Tip: Bubbles can be popped by tapping on them.)",
+        "type": "Normal"
+    },
+    "Captive Light":
+    {
+        "description": "Spawns a light in front of an opponent that blinds them on contact.",
+        "type": "Target"
+    },
+    "Chao-nado":
+    {
+        "description": "Spawns a Chao-nado in front of an opponent, stealing their speed on contact. When hit, the opponent slows down and the user gains a speed boost.",
+        "type": "Target"
+    },
+    "Confusion Mine":
+    {
+        "description": "Spawns small clouds that confuse opponents that pass through them, causing them to stumble on contact.",
+        "type": "Normal"
+    },
+    "Crossed Wires":
+    {
+        "description": "Spawns an electric insulator that'll deal electric damage on contact.",
+        "type": "Normal"
+    },
+    "Cyclone Charge":
+    {
+        "description": "Spawns a whirlwind in front of an opponent, dealing damage and stealing Rings on contact. If the user comes in contact with the whirlwind, they will gain a speed boost.",
+        "type": "Target"
+    },
+    "Dead End":
+    {
+        "description": "Spawns a tombstone in front of an opponent, freezing them on contact.",
+        "type": "Target"
+    },
+    "Deadly Replica":
+    {
+        "description": "Spawns a replica of Infinite that slowly moves forward in front of an opponent, dealing damage on contact and causing them to see illusions. (Tip: Be careful, you can't jump over this!)",
+        "type": "Target"
+    },
+    "EMP Shield":
+    {
+        "description": "Surrounds the user with an electric shield that will deal damage to opponents they come in contact with in the same lanes and give them the disabled effect. If the user is hit while the trap is active it will act as a shield and they will not take damage.",
+        "type": "Shield"
+    },
+    "Explosive Mine":
+    {
+        "description": "Spawns powerful Mines that deal high damage on contact.",
+        "type": "Normal"
+    },
+    "Flue Shot":
+    {
+        "description": "Spawns a wall of chimneys, some of which shoot out \"Gifts\" that deal high damage. The lanes with active chimneys change every few seconds, but coliding with any chimney deals damage on contact.",
+        "type": "Wall"
+    },
+    "Gift Trapped":
+    {
+        "description": "Slowly leaves a trail of \"Gifts\" behind you wherever you run, dealing high damage on contact.",
+        "type": "Trail"
+    },
+    "Hedge Maze":
+    {
+        "description": "Spawns a wall of plants that deal damage on contact. If hit, the opponent will be affected by a flower aura, slowing down each time they switch lanes for a short period.",
+        "type": "Wall"
+    },
+    "Honor Guard":
+    {
+        "description": "Spawns Moto-Bugs at slightly different distances that slowly move forward and deal low electric damage on contact.",
+        "type": "Normal"
+    },
+    "Ice Mine":
+    {
+        "description": "Spawns Ice Mines that deal damage and freeze opponents on contact.",
+        "type": "Normal"
+    },
+    "Illusion Mine":
+    {
+        "description": "Spawns Illusions that reverse opponents' controls if they pass through them. (Replaced with Confusion Mine on November 10th, 2021.)",
+        "type": "Normal"
+    },
+    "King's Judgement":
+    {
+        "description": "Spawns Excalibur above the lead opponent, dealing moderate damage if they don't switch lanes.",
+        "type": "Attack"
+    },
+    "Laser Blaster":
+    {
+        "description": "Fires lasers that home in on opponents in front and/or behind you, dealing moderate damage on contact.",
+        "type": "Target"
+    },
+    "Lava Bomb":
+    {
+        "description": "Spawns a powerful Lava Bomb in front of an opponent, dealing high fire damage on contact.",
+        "type": "Target"
+    },
+    "Lilytrap":
+    {
+        "description": "Spawns a wall of lilypads, some of which shoot out water that deals moderate damage. The lanes with active Lilytraps change every few seconds, while non-active Lilytraps have no effect.",
+        "type": "Wall"
+    },
+    "Pink Spikes":
+    {
+        "description": "Quickly fires a Pink Spike down one lane before stopping after a while. It may deal high damage on contact, but if not, it stays in place, dealing high damage if an opponent runs into it.",
+        "type": "Attack"
+    },
+    "Pyro-Mine":
+    {
+        "description": "Spawns a powerful Pyro-Mine in front of an opponent, dealing high fire damage in the same or adjacent lanes on contact.",
+        "type": "Target"
+    },
+    "Rocky Road":
+    {
+        "description": "Spawns a wall of rocks that deal high damage on contact.",
+        "type": "Wall"
+    },
+    "Slow Burn":
+    {
+        "description": "Sends a wave of fire down to one to three lanes, dealing massive damage to opponents. The user will slowdown a bit for a few seconds after using the item.",
+        "type": "Attack"
+    },
+    "Spear Trap":
+    {
+        "description": "Spawns a wall of spears that deal high damage on contact. Eventually the spears will move either up or down.",
+        "type": "Wall"
+    },
+    "Stalking Shade":
+    {
+        "description": "Spawns a clone that'll apear above the opponent, if they don't move to another lane in time the clone will cling onto them and destroy the next item they try to use.",
+        "type": "Target"
+    },
+    "Star Trail":
+    {
+        "description": "Quickly leaves a trail of Stars behind you wherever you run, dealing moderate damage on contact.",
+        "type": "Trail"
+    },
+    "Storm Cloud":
+    {
+        "description": "Spawns Storm Clouds that deal electric damage on contact. (Tip: Can be dodged by sliding under.)",
+        "type": "Normal"
+    },
+    "Tail Strike":
+    {
+        "description": "Deals damage to the opponent in front of you if close enough and gives a slight, quick speed boost.",
+        "type": "Attack"
+    },
+    "Tornado":
+    {
+        "description": "Spawns fans that deal damage and steal Rings on contact.",
+        "type": "Normal"
+    },
+    "Trap Shot":
+    {
+        "description": "Quickly fires a hockey puck down one lane before stopping after a while. It may freeze the opponent on contact, but if not, it stays in place, freezing an opponent if they run into it.",
+        "type": "Attack"
+    },
+    "Whirlwind Wallop":
+    {
+        "description": "Spin your hammer around dealing damage and stealing rings from any opponent nearby. If no one is in range then launch a small whirlwind that'll grow as it goes eventually stoping to become a trap.",
+        "type": "Attack"
+    },
+    "Zap Trap":
+    {
+        "description": "Spawns a Storm Cloud in front of an opponent, dealing low electric damage on contact. (Tip: Can be dodged by sliding under.)",
+        "type": "Target"
+    }
+}
