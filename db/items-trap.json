@@ -164,11 +164,6 @@
         "description": "Spawns fans that deal damage and steal Rings on contact.",
         "type": "Normal"
     },
-    "Trap Shot":
-    {
-        "description": "Quickly fires a hockey puck down one lane before stopping after a while. It may freeze the opponent on contact, but if not, it stays in place, freezing an opponent if they run into it.",
-        "type": "Attack"
-    },
     "Whirlwind Wallop":
     {
         "description": "Spin your hammer around dealing damage and stealing rings from any opponent nearby. If no one is in range then launch a small whirlwind that'll grow as it goes eventually stoping to become a trap.",
