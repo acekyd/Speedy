@@ -2,7 +2,7 @@
 name = "SFSB-Bot"
 version = "4.13.0"
 description = "A Discord bot written in interactions.py focusing on the mobile game Sonic Forces: Speed Battle"
-license = "GPL-3.0-only"
+license = "MIT"
 authors = ["Jimmy-Blue <jimmyblue00@duck.com>"]
 readme = "README.md"
 repository = "https://github.com/Jimmy-Blue/SFSB-Bot"
@@ -13,6 +13,7 @@ python-dotenv = "0.19.2"
 discord-py-interactions = "4.3.4"
 interactions-wait-for = "^1.0.6"
 interactions-molter = "1.0.1"
+interactions-files = "1.1.5"
 
 
 [tool.poetry.dev-dependencies]
