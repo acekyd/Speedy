@@ -2,176 +2,239 @@
     "Bat Bomb":
     {
         "description": "Spawns a Bat Bomb in front of an opponent, dealing fire damage on contact if they do not slide under it or switch lanes. (Tip: Be careful, you can't jump over this!)",
-        "type": "Target"
+        "type": "Target",
+        "image": "https://static.wikia.nocookie.net/sonic/images/f/fc/SFSBBatBomb.png/revision/latest?cb=20201007152404",
+        "emoji": "<:BatBomb:1062411184608919552>"
     },
     "Booby Trap":
     {
         "description": "Spawns fake item boxes that place locks on opponents' item slots on contact. The opponent must pay some Rings to unlock them.",
-        "type": "Normal"
+        "type": "Normal",
+        "image": "https://static.wikia.nocookie.net/sonic/images/9/9c/SFSBBoobyTrap.png/revision/latest?cb=20201027181445",
+        "emoji": "<:BoobyTrap:1062411188950024212>"
     },
     "Brutal Barrier":
     {
         "description": "Surrounds the user with spiked shields that will deal damage to opponents they come in contact with in the same or adjacent lanes. If the user is hit while the trap is active it will act as a shield and they will not take damage.",
-        "type": "Shield"
+        "type": "Shield",
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/2d/SFSBBrutalBarrier.png/revision/latest?cb=20220203150016",
+        "emoji": "<:BrutalBarrier:1062411190749376533>"
     },
     "Bubble Bomb":
     {
         "description": "Spawns bubblegum puddles that deal damage on contact and cover the bottom of opponents' screens with bubbles if they pass through them. (Tip: Bubbles can be popped by tapping on them.)",
-        "type": "Normal"
+        "type": "Normal",
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/01/SFSBBubbleBomb.png/revision/latest?cb=20180712133355",
+        "emoji": "<:BubbleBomb:1062411195010793582>"
     },
     "Captive Light":
     {
         "description": "Spawns a light in front of an opponent that blinds them on contact.",
-        "type": "Target"
+        "type": "Target",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/7c/SFSB_Captive_Light.png/revision/latest?cb=20210827160405",
+        "emoji": "<:CaptiveLight:1062411198743728188>"
     },
     "Chao-nado":
     {
         "description": "Spawns a Chao-nado in front of an opponent, stealing their speed on contact. When hit, the opponent slows down and the user gains a speed boost.",
-        "type": "Target"
+        "type": "Target",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/74/Chao_Nado.png/revision/latest?cb=20180712133901",
+        "emoji": "<:ChaoNado:1062411200559845487>"
     },
     "Confusion Mine":
     {
         "description": "Spawns small clouds that confuse opponents that pass through them, causing them to stumble on contact.",
-        "type": "Normal"
+        "type": "Normal",
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/ea/SFSBConfusionMine.png/revision/latest?cb=20211110232856",
+        "emoji": "<:ConfusionMine:1062411204485714030>"
     },
     "Crossed Wires":
     {
         "description": "Spawns an electric insulator that'll deal electric damage on contact.",
-        "type": "Normal"
+        "type": "Normal",
+        "image": "https://static.wikia.nocookie.net/sonic/images/6/62/SFSBCrossedWires.png/revision/latest?cb=20221210211812",
+        "emoji": "<:CrossedWires:1062411208520650862>"
     },
     "Cyclone Charge":
     {
         "description": "Spawns a whirlwind in front of an opponent, dealing damage and stealing Rings on contact. If the user comes in contact with the whirlwind, they will gain a speed boost.",
-        "type": "Target"
+        "type": "Target",
+        "image": "https://static.wikia.nocookie.net/sonic/images/4/43/Cyclone_Charge.png/revision/latest?cb=20210827161105",
+        "emoji": "<:CycloneCharge:1062411213654470756>"
     },
     "Dead End":
     {
         "description": "Spawns a tombstone in front of an opponent, freezing them on contact.",
-        "type": "Target"
+        "type": "Target",
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/22/DeadEnd.png/revision/latest?cb=20201104104748",
+        "emoji": "<:DeadEnd:1062411217899110401>"
     },
     "Deadly Replica":
     {
         "description": "Spawns a replica of Infinite that slowly moves forward in front of an opponent, dealing damage on contact and causing them to see illusions. (Tip: Be careful, you can't jump over this!)",
-        "type": "Target"
+        "type": "Target",
+        "image": "https://static.wikia.nocookie.net/sonic/images/8/82/SFSBDeadlyReplica.png/revision/latest?cb=20211126150820",
+        "emoji": "<:DeadlyReplica:1062411221577502851>"
     },
     "EMP Shield":
     {
         "description": "Surrounds the user with an electric shield that will deal damage to opponents they come in contact with in the same lanes and give them the disabled effect. If the user is hit while the trap is active it will act as a shield and they will not take damage.",
-        "type": "Shield"
+        "type": "Shield",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/78/SFSBEMPShield.png/revision/latest?cb=20220331152345",
+        "emoji": "<:EMPShield:1062411224106672278>"
     },
     "Explosive Mine":
     {
         "description": "Spawns powerful Mines that deal high damage on contact.",
-        "type": "Normal"
+        "type": "Normal",
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/cf/SFSBExplosiveMine.png/revision/latest?cb=20201024153127",
+        "emoji": "<:ExplosiveMine:1062411227604721664>"
     },
     "Flue Shot":
     {
         "description": "Spawns a wall of chimneys, some of which shoot out \"Gifts\" that deal high damage. The lanes with active chimneys change every few seconds, but coliding with any chimney deals damage on contact.",
-        "type": "Wall"
+        "type": "Wall",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/7c/FlueShot.png/revision/latest?cb=20210104172212",
+        "emoji": "<:FlueShot:1062411231253762078>"
     },
     "Gift Trapped":
     {
         "description": "Slowly leaves a trail of \"Gifts\" behind you wherever you run, dealing high damage on contact.",
-        "type": "Trail"
+        "type": "Trail",
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/2b/GiftTrap.png/revision/latest?cb=20201215144838",
+        "emoji": "<:GiftTrapped:1062411233564819466>"
     },
     "Hedge Maze":
     {
         "description": "Spawns a wall of plants that deal damage on contact. If hit, the opponent will be affected by a flower aura, slowing down each time they switch lanes for a short period.",
-        "type": "Wall"
+        "type": "Wall",
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/ee/HedgeMazeIcon.png/revision/latest?cb=20210827161500",
+        "emoji": "<:HedgeMaze:1062411236769280101>"
     },
     "Honor Guard":
     {
         "description": "Spawns Moto-Bugs at slightly different distances that slowly move forward and deal low electric damage on contact.",
-        "type": "Normal"
+        "type": "Normal",
+        "image": "https://static.wikia.nocookie.net/sonic/images/8/8e/SFSBHonorGuard.png/revision/latest?cb=20210220174633",
+        "emoji": "<:HonorGuard:1062435696842919957>"
     },
     "Ice Mine":
     {
         "description": "Spawns Ice Mines that deal damage and freeze opponents on contact.",
-        "type": "Normal"
-    },
-    "Illusion Mine":
-    {
-        "description": "Spawns Illusions that reverse opponents' controls if they pass through them. (Replaced with Confusion Mine on November 10th, 2021.)",
-        "type": "Normal"
+        "type": "Normal",
+        "image": "https://static.wikia.nocookie.net/sonic/images/6/6a/SFSBIceMine.png/revision/latest?cb=20201024150304",
+        "emoji": "<:IceMine:1062435701028814939>"
     },
     "King's Judgement":
     {
         "description": "Spawns Excalibur above the lead opponent, dealing moderate damage if they don't switch lanes.",
-        "type": "Attack"
+        "type": "Attack",
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/0b/KingsJudgementSFSB.png/revision/latest?cb=20200904213206",
+        "emoji": "<:KingsJudgement:1062435703511842866>"
     },
     "Laser Blaster":
     {
         "description": "Fires lasers that home in on opponents in front and/or behind you, dealing moderate damage on contact.",
-        "type": "Target"
+        "type": "Target",
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/2d/SFSB_Laser_Blaster.png/revision/latest?cb=20220707065916",
+        "emoji": "<:LaserBlaster:1062435707437731871>"
     },
     "Lava Bomb":
     {
         "description": "Spawns a powerful Lava Bomb in front of an opponent, dealing high fire damage on contact.",
-        "type": "Target"
+        "type": "Target",
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/24/SFSBLavaBomb.png/revision/latest?cb=20180712140557",
+        "emoji": "<:LavaBomb:1062435709652324352>"
     },
     "Lilytrap":
     {
         "description": "Spawns a wall of lilypads, some of which shoot out water that deals moderate damage. The lanes with active Lilytraps change every few seconds, while non-active Lilytraps have no effect.",
-        "type": "Wall"
+        "type": "Wall",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/76/Lilytrap.png/revision/latest?cb=20180712140929",
+        "emoji": "<:Lilytrap:1062435713452359802>"
     },
     "Pink Spikes":
     {
         "description": "Quickly fires a Pink Spike down one lane before stopping after a while. It may deal high damage on contact, but if not, it stays in place, dealing high damage if an opponent runs into it.",
-        "type": "Attack"
+        "type": "Attack",
+        "image": "https://static.wikia.nocookie.net/sonic/images/1/19/SFSB_Pink_Spikes.png/revision/latest?cb=20210827155949",
+        "emoji": "<:PinkSpikes:1062435716933615637>"
     },
     "Pyro-Mine":
     {
         "description": "Spawns a powerful Pyro-Mine in front of an opponent, dealing high fire damage in the same or adjacent lanes on contact.",
-        "type": "Target"
+        "type": "Target",
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/c1/Pyro-BombIcon.png/revision/latest?cb=20210214184433",
+        "emoji": "<:PyroMine:1062435721396371556>"
     },
     "Rocky Road":
     {
         "description": "Spawns a wall of rocks that deal high damage on contact.",
-        "type": "Wall"
+        "type": "Wall",
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/e9/SFSBRockyRoad.png/revision/latest?cb=20201007152300",
+        "emoji": "<:RockyRoad:1062435723589980260>"
     },
     "Slow Burn":
     {
         "description": "Sends a wave of fire down to one to three lanes, dealing massive damage to opponents. The user will slowdown a bit for a few seconds after using the item.",
-        "type": "Attack"
+        "type": "Attack",
+        "image": "https://static.wikia.nocookie.net/sonic/images/1/19/SFSBSlowBurn.png/revision/latest?cb=20220912184140",
+        "emoji": "<:SlowBurn:1062435727121592380>"
     },
     "Spear Trap":
     {
         "description": "Spawns a wall of spears that deal high damage on contact. Eventually the spears will move either up or down.",
-        "type": "Wall"
+        "type": "Wall",
+        "image": "https://static.wikia.nocookie.net/sonic/images/1/1b/SFSBSpearTrap.png/revision/latest?cb=20220331152942",
+        "emoji": "<:SpearTrap:1062435730959380510>"
     },
     "Stalking Shade":
     {
         "description": "Spawns a clone that'll apear above the opponent, if they don't move to another lane in time the clone will cling onto them and destroy the next item they try to use.",
-        "type": "Target"
+        "type": "Target",
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/26/SFSBStalkingShade.png/revision/latest?cb=20221003102755",
+        "emoji": "<:StalkingShade:1062435733408850020>"
     },
     "Star Trail":
     {
         "description": "Quickly leaves a trail of Stars behind you wherever you run, dealing moderate damage on contact.",
-        "type": "Trail"
+        "type": "Trail",
+        "image": "https://static.wikia.nocookie.net/sonic/images/3/33/StarTrail.png/revision/latest?cb=20180731220222",
+        "emoji": "<:StarTrail:1062435737238253568>"
     },
     "Storm Cloud":
     {
         "description": "Spawns Storm Clouds that deal electric damage on contact. (Tip: Can be dodged by sliding under.)",
-        "type": "Normal"
+        "type": "Normal",
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/db/SFSBStormCloud.png/revision/latest?cb=20201215145106",
+        "emoji": "<:StormCloud:1062435739549302805>"
     },
     "Tail Strike":
     {
         "description": "Deals damage to the opponent in front of you if close enough and gives a slight, quick speed boost.",
-        "type": "Attack"
+        "type": "Attack",
+        "image": "https://static.wikia.nocookie.net/sonic/images/8/85/SFSB_Tail_Strike.png/revision/latest?cb=20210827155210",
+        "emoji": "<:TailStrike:1061969861640716338>"
     },
     "Tornado":
     {
         "description": "Spawns fans that deal damage and steal Rings on contact.",
-        "type": "Normal"
+        "type": "Normal",
+        "image": "https://static.wikia.nocookie.net/sonic/images/9/90/SFSBTornado.png/revision/latest?cb=20180712141503",
+        "emoji": "<:Tornado:1062435749326229574>"
     },
     "Whirlwind Wallop":
     {
         "description": "Spin your hammer around dealing damage and stealing rings from any opponent nearby. If no one is in range then launch a small whirlwind that'll grow as it goes eventually stoping to become a trap.",
-        "type": "Attack"
+        "type": "Attack",
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/e4/SFSBWhirlwindWallop.png/revision/latest?cb=20220719121005",
+        "emoji": "<:WhirlwindWallop:1062435753197580308>"
     },
     "Zap Trap":
     {
         "description": "Spawns a Storm Cloud in front of an opponent, dealing low electric damage on contact. (Tip: Can be dodged by sliding under.)",
-        "type": "Target"
+        "type": "Target",
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/21/ZapTrapIcon.png/revision/latest?cb=20210827154554",
+        "emoji": "<:ZapTrap:1062435755286347858>"
     }
 }
