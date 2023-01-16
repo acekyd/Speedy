@@ -296,4 +296,4 @@ def setup(client) -> None:
         "%d/%m/%Y %H:%M:%S"
     )
     Character(client)
-    logging.debug("""[%s] Loaded Banner extension.""", log_time)
+    logging.debug("""[%s] Loaded Character extension.""", log_time)
