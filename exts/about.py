@@ -16,10 +16,10 @@ class About(interactions.Extension):
 
     @interactions.extension_command(
         name="about",
-        description="Information about {placeholder_name}.",
+        description="Information about Speedy.",
     )
     async def _about(self, ctx: interactions.CommandContext):
-        """Information about {placeholder}."""
+        """Information about Speedy."""
 
         button = [
             interactions.Button(
@@ -27,11 +27,22 @@ class About(interactions.Extension):
                 label="GitHub",
                 url="https://github.com/Jimmy-Blue/SFSB-Bot",
             ),
+            interactions.Button(
+                style=interactions.ButtonStyle.LINK,
+                label="Invite me",
+                url="""https://discord.com/api/oauth2/authorize?client_id=947339220823994388&permissions=8&scope=bot%20applications.commands"""
+            )
         ]
 
         embed = interactions.Embed(
-            title="About {placeholder_name}",
-            description="{placeholder_description}",
+            title="About Speedy",
+            description="".join(
+                [
+                    "The All-in-one Sonic Forces: Speed Battle Discord bot. Check your",
+                    " current character level, how many rings are need, look up for ",
+                    "character sprites, images, Speedy has you covered."
+                ]
+            ),
             color=0xfc920c,
             footer=interactions.EmbedFooter(
                 text="Maintained by Blue#2095"
