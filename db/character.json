@@ -1,0 +1,981 @@
+{
+    "amy": {
+        "name": "Amy",
+        "speed": 9,
+        "acceleration": 5,
+        "strength": 7,
+        "rarity": "Common",
+        "max_starting_rings": 35,
+        "items": [
+            "Lightning",
+            "Ice Boost",
+            "Ice Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/5/5d/Amy-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023121"
+    },
+    "charmy": {
+        "name": "Charmy",
+        "speed": 7,
+        "acceleration": 8,
+        "strength": 4,
+        "rarity": "Common",
+        "max_starting_rings": 35,
+        "items": [
+            "Whirlwind",
+            "Wind Boost",
+            "Tornado"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/b/b6/Charmy-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023132"
+    },
+    "classic_sonic": {
+        "name": "Classic Sonic",
+        "speed": 9,
+        "acceleration": 5,
+        "strength": 5,
+        "rarity": "Common",
+        "max_starting_rings": 35,
+        "items": [
+            "Moto-Bug",
+            "Invincibility",
+            "Tornado"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/9/9e/ClassicSonic_Speed_Battle.png/revision/latest?cb=20201002023203"
+    },
+    "knuckles": {
+        "name": "Knuckles",
+        "speed": 7,
+        "acceleration": 4,
+        "strength": 9,
+        "rarity": "Common",
+        "max_starting_rings": 35,
+        "items": [
+            "Fireball",
+            "Invincibility",
+            "Explosive Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/c8/Knuckles-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023213"
+    },
+    "omega": {
+        "name": "Omega",
+        "speed": 8,
+        "acceleration": 6,
+        "strength": 7,
+        "rarity": "Common",
+        "max_starting_rings": 35,
+        "items": [
+            "Moto-Bug",
+            "Electro Boost",
+            "Explosive Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/0d/Omega-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023224"
+    },
+    "silver": {
+        "name": "Silver",
+        "speed": 6,
+        "acceleration": 6,
+        "strength": 6,
+        "rarity": "Common",
+        "max_starting_rings": 35,
+        "items": [
+            "Whirlwind",
+            "Confusion Boost",
+            "Tornado"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/23/SFSB_Silver.png/revision/latest?cb=20201002023320"
+    },
+    "sonic": {
+        "name": "Sonic",
+        "speed": 10,
+        "acceleration": 5,
+        "strength": 3,
+        "rarity": "Common",
+        "max_starting_rings": 35,
+        "items": [
+            "Fireball",
+            "Power Sneakers",
+            "Ice Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/6/6f/Speed_Battle_Sonic.png/revision/latest?cb=20201002023328"
+    },
+    "tails": {
+        "name": "Tails",
+        "speed": 8,
+        "acceleration": 8,
+        "strength": 5,
+        "rarity": "Common",
+        "max_starting_rings": 35,
+        "items": [
+            "Moto-Bug",
+            "Wind Boost",
+            "Tornado"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/b/bd/Tails-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023337"
+    },
+    "blaze": {
+        "name": "Blaze",
+        "speed": 9,
+        "acceleration": 4,
+        "strength": 8,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": [
+            "Fire Whirl",
+            "Fire Boost",
+            "Lava Bomb"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/b/b2/BlazeSpeedBattle.png/revision/latest?cb=20201002023404"
+    },
+    "cream": {
+        "name": "Cream",
+        "speed": 9,
+        "acceleration": 9,
+        "strength": 4,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": [
+            "Chao Attack",
+            "Bunny Boost",
+            "Chao-nado"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/a9/CreamandCheese_Speed_Battle.png/revision/latest?cb=20201002023413"
+    },
+    "espio": {
+        "name": "Espio",
+        "speed": 9,
+        "acceleration": 8,
+        "strength": 6,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": [
+            "Whirlwind",
+            "Confusion Boost",
+            "Confusion Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/ac/Espio-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023440"
+    },
+    "jet": {
+        "name": "Jet",
+        "speed": 10,
+        "acceleration": 5,
+        "strength": 5,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": [
+            "Bashosen",
+            "Wind Boost",
+            "Tornado"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/07/Jet_Speed_Battle.png/revision/latest?cb=20201002023625"
+    },
+    "rouge": {
+        "name": "Rogue",
+        "speed": 9,
+        "acceleration": 8,
+        "strength": 6,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": [
+            "Whirlwind",
+            "Confusion Boost",
+            "Booby Trap"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/b/bc/Rouge-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023639"
+    },
+    "storm": {
+        "name": "Storm",
+        "speed": 9,
+        "acceleration": 6,
+        "strength": 10,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": [
+            "Whirlwind",
+            "Wind Boost",
+            "Zap Trap"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/ec/StormSFSB.png/revision/latest?cb=20201002023651"
+    },
+    "tangle": {
+        "name": "Tangle",
+        "speed": 7,
+        "acceleration": 5,
+        "strength": 10,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": [
+            "Tail Strike",
+            "Tail Spring"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/6/6d/SFSBTangle.png/revision/latest?cb=20221130015044"
+    },
+    "vector": {
+        "name": "Vector",
+        "speed": 9,
+        "acceleration": 8,
+        "strength": 8,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": [
+            "Fireball",
+            "Invincibility",
+            "Bubble Bomb"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/75/Vector-Sonic-Forces-Speed-Battle-Artwork.png/revision/latest?cb=20201002023701"
+    },
+    "wave": {
+        "name": "Wave",
+        "speed": 9,
+        "acceleration": 6,
+        "strength": 7,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": [
+            "Whirlwind",
+            "Wrench Rush",
+            "Explosive Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/22/Wave_Speed_Battle.png/revision/latest?cb=20201002023715"
+    },
+    "whisper": {
+        "name": "Whisper",
+        "speed": 8,
+        "acceleration": 6,
+        "strength": 7,
+        "rarity": "Rare",
+        "max_starting_rings": 45,
+        "items": [
+            "Cyan Laser",
+            "Green Hover",
+            "Pink Spikes"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/f/f2/SFSBWhisper.png/revision/latest?cb=20221130014536"
+    },
+    "big": {
+        "name": "Big",
+        "speed": 7,
+        "acceleration": 7,
+        "strength": 10,
+        "rarity": "Super Rare",
+        "max_starting_rings": 55,
+        "items": [
+            "Chopper Chomp",
+            "Umbrella Boost",
+            "Lilytrap"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/d6/Big_Speed_Battle.png/revision/latest?cb=20201003213513"
+    },
+    "chaos": {
+        "name": "Chaos",
+        "speed": 10,
+        "acceleration": 5,
+        "strength": 9,
+        "rarity": "Super Rare",
+        "max_starting_rings": 55,
+        "items": [
+            "Ice Wave",
+            "Ice Boost",
+            "Ice Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/5/55/Chaos_Speed_Battle.png/revision/latest?cb=20201003213625"
+    },
+    "eggman": {
+        "name": "Eggman",
+        "speed": 9,
+        "acceleration": 7,
+        "strength": 6,
+        "rarity": "Super Rare",
+        "max_starting_rings": 55,
+        "items": [
+            "Balkiry",
+            "Rocket Boost",
+            "Honor Guard"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/a6/DrEggmanSFSB.png/revision/latest?cb=20210210155109"
+    },
+    "gamma": {
+        "name": "Gamma",
+        "speed": 8,
+        "acceleration": 8,
+        "strength": 6,
+        "rarity": "Super Rare",
+        "max_starting_rings": 55,
+        "items": [
+            "Missle Launch",
+            "Electro Boost",
+            "Laser Blaster"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/29/SFSB_Gamma.png/revision/latest?cb=20220706130849"
+    },
+    "metal_sonic": {
+        "name": "Metal Sonic",
+        "speed": 9,
+        "acceleration": 6,
+        "strength": 7,
+        "rarity": "Super Rare",
+        "max_starting_rings": 55,
+        "items": [
+            "Steal",
+            "Electro Boost",
+            "Explosive Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/1/11/MetalSonic_Speed_Battle.png/revision/latest?cb=20201003213604"
+    },
+    "shadow": {
+        "name": "Shadow",
+        "speed": 10,
+        "acceleration": 9,
+        "strength": 3,
+        "rarity": "Super Rare",
+        "max_starting_rings": 55,
+        "items": [
+            "Lightning",
+            "Power Sneakers",
+            "Storm Cloud"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/3/39/Shadow_Speed_Battle.png/revision/latest?cb=20201003213548"
+    },
+    "tikal": {
+        "name": "Tikal",
+        "speed": 10,
+        "acceleration": 6,
+        "strength": 5,
+        "rarity": "Super Rare",
+        "max_starting_rings": 55,
+        "items": [
+            "Chao Guardians",
+            "Chao Chase",
+            "Captive Light"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/aa/TikalSFSB.png/revision/latest?cb=20201003213539"
+    },
+    "zavok": {
+        "name": "Zavok",
+        "speed": 7,
+        "acceleration": 9,
+        "strength": 10,
+        "rarity": "Super Rare",
+        "max_starting_rings": 55,
+        "items": [
+            "Fireball",
+            "Fire Boost",
+            "Explosive Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/78/Zavok_Speed_Battle.png/revision/latest?cb=20201003213930"
+    },
+    "zazz": {
+        "name": "Zazz",
+        "speed": 7,
+        "acceleration": 10,
+        "strength": 5,
+        "rarity": "Super Rare",
+        "max_starting_rings": 55,
+        "items": [
+            "Moto-Bug",
+            "Electro Boost",
+            "Star Trail"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/d1/Zazz_Speed_Battle.png/revision/latest?cb=20201003213915"
+    },
+    "zeena": {
+        "name": "Zeena",
+        "speed": 8,
+        "acceleration": 9,
+        "strength": 7,
+        "rarity": "Super Rare",
+        "max_starting_rings": 55,
+        "items": [
+            "Blizzard Bomb",
+            "Electro Boost",
+            "Explosive Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/5/5b/ZeenaSFSB.png/revision/latest?cb=20201003213951"
+    },
+    "sir_percival": {
+        "name": "Sir Percival",
+        "speed": 8,
+        "acceleration": 10,
+        "strength": 8,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Laevatein Lunge",
+            "Blazing Aura",
+            "Lava Bomb"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/5/50/SFSBSirPercival.png/revision/latest?cb=20210705132802"
+    },
+    "punk_zazz": {
+        "name": "Punk Zazz",
+        "speed": 9,
+        "acceleration": 6,
+        "strength": 10,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Audio Assault",
+            "Bass Boost",
+            "Tornado"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/8/89/SFSBPunkZazz.png/revision/latest?cb=20210512121701"
+    },
+    "quarterback_zavok": {
+        "name": "Quarterback Zavok",
+        "speed": 8,
+        "acceleration": 7,
+        "strength": 10,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Savage Throw",
+            "Brutal Blitz",
+            "Lava Bomb"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/9/9e/SFSB_Quarterback_Zavok.png/revision/latest?cb=20201126070148"
+    },
+    "santa_big": {
+        "name": "Santa Big",
+        "speed": 9,
+        "acceleration": 9,
+        "strength": 7,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Frozen Chopper Chomp",
+            "Festive Umbrella Boost",
+            "Flue Shot"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/cc/SantaBigSFSB.png/revision/latest?cb=20201003214209"
+    },
+    "dj_vector": {
+        "name": "DJ Vector",
+        "speed": 9,
+        "acceleration": 7,
+        "strength": 8,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Audio Assault",
+            "Beat Boost",
+            "Storm Cloud"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/f/f3/SFSBDJVector.png/revision/latest?cb=20210512121538"
+    },
+    "longclaw": {
+        "name": "Longclaw",
+        "speed": 8,
+        "acceleration": 10,
+        "strength": 6,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Lightning",
+            "Wind Boost",
+            "Cyclone Charge"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/1/1d/Longclaw_sonicspeedbattle.png/revision/latest?cb=20201003214641"
+    },
+    "paladin_amy": {
+        "name": "Paladin Amy",
+        "speed": 8,
+        "acceleration": 7,
+        "strength": 9,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Knight Smite",
+            "Invincibility",
+            "Whirlwind Wallop"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/d2/SFSBPaladinAmy.png/revision/latest?cb=20220719120348"
+    },
+    "sir_gawain": {
+        "name": "Sir Gawain",
+        "speed": 9,
+        "acceleration": 5,
+        "strength": 10,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Gail Meteor",
+            "Dual Wield Dash",
+            "Explosive Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/4/45/SFSBSirGawain.png/revision/latest?cb=20220510153843"
+    },
+    "tropical_storm": {
+        "name": "Tropical Storm",
+        "speed": 9,
+        "acceleration": 7,
+        "strength": 8,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Wipeout",
+            "Wind Boost",
+            "Storm Cloud"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/4/43/Tropical_Storm.png/revision/latest?cb=20201003214908"
+    },
+    "witch_rouge": {
+        "name": "Witch Rouge",
+        "speed": 10,
+        "acceleration": 7,
+        "strength": 7,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Drac-O'-Lantern",
+            "Wind Boost",
+            "Booby Trap"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/5/5e/Witch_Rouge.png/revision/latest?cb=20201102212731"
+    },
+    "elf_classic_sonic": {
+        "name": "Elf Classic Sonic",
+        "speed": 10,
+        "acceleration": 7,
+        "strength": 6,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Moto-Bug",
+            "Ice Boost",
+            "Flue Shot"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/7e/ElfClassicSonic.png/revision/latest?cb=20201212203707"
+    },
+    "lantern_silver": {
+        "name": "Lantern Silver",
+        "speed": 7,
+        "acceleration": 10,
+        "strength": 6,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Firework Flurry",
+            "Confusion Boost",
+            "Pyro-Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/a9/SFSB_LanternSilver.png/revision/latest?cb=20201002022952"
+    },
+    "lucky_whisper": {
+        "name": "Lucky Whisper",
+        "speed": 8,
+        "acceleration": 9,
+        "strength": 6,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Cyan Laser",
+            "Golden Boost",
+            "Pink Spikes"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/5/5c/SFSBLuckyWhisper.png/revision/latest?cb=20220120133331"
+    },
+    "lunar_blaze": {
+        "name": "Lunar Blaze",
+        "speed": 9,
+        "acceleration": 7,
+        "strength": 7,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Dragon Dance",
+            "Fire Boost",
+            "Pyro-Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/e9/Lunar_Blaze.png/revision/latest?cb=20201003214650"
+    },
+    "nutcracker_silver": {
+        "name": "Nutcracker Silver",
+        "speed": 10,
+        "acceleration": 5,
+        "strength": 8,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Psychic Surprise",
+            "Jingle Boost",
+            "Ice Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/4/43/SonicDashNutcrackerSilver.png/revision/latest?cb=20211209155023"
+    },
+    "reaper_metal_sonic": {
+        "name": "Reaper Metal Sonic",
+        "speed": 9,
+        "acceleration": 5,
+        "strength": 9,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Harvest Time",
+            "Ice Boost",
+            "Dead End"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/9/90/Reaper_Metal.png/revision/latest?cb=20201003214704"
+    },
+    "spring_cream": {
+        "name": "Spring Cream",
+        "speed": 9,
+        "acceleration": 10,
+        "strength": 4,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Chao Attack",
+            "Bunny Boost",
+            "Hedge Maze"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/a7/SFSB_SpringCream.png/revision/latest?cb=20201003214841"
+    },
+    "tidal_wave": {
+        "name": "Tidal Wave",
+        "speed": 9,
+        "acceleration": 9,
+        "strength": 5,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Wipeout",
+            "Wrench Rush",
+            "Ice Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/2e/Tidal_Wave.png/revision/latest?cb=20201003214852"
+    },
+    "treasure_hunter_knuckles": {
+        "name": "Treasure Hunter Knuckles",
+        "speed": 10,
+        "acceleration": 4,
+        "strength": 9,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Lightning",
+            "Gold Rush",
+            "Rocky Road"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/08/Treasure_Hunter_Knuckles.png/revision/latest?cb=20200812064408"
+    },
+    "unicorn_cream": {
+        "name": "Unicorn Cream",
+        "speed": 9,
+        "acceleration": 10,
+        "strength": 4,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Rainbow Blast",
+            "Magical Boost",
+            "Chao-nado"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/db/SFSBUnicornCream.png/revision/latest?cb=20210812124205"
+    },
+    "all-star_amy": {
+        "name": "All-Star Amy",
+        "speed": 10,
+        "acceleration": 4,
+        "strength": 8,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Strike Out",
+            "Home Run",
+            "Tornado"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/4/4d/SFSB_All-StarAmy.png/revision/latest?cb=20201102211746"
+    },
+    "excalibur_sonic": {
+        "name": "Excalibur Sonic",
+        "speed": 10,
+        "acceleration": 5,
+        "strength": 7,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Soul Surge",
+            "Meteor Charge",
+            "King's Judgement"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/2d/SFSB_Excalibur_Sonic.png/revision/latest?cb=20201105172612"
+    },
+    "ice_slicer_jet": {
+        "name": "Ice Slicer Jet",
+        "speed": 10,
+        "acceleration": 7,
+        "strength": 5,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Trap Shot",
+            "Ice Boost",
+            "Ice Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/ed/Ice_Slicer_Jet.png/revision/latest?cb=20201003214630"
+    },
+    "jingle_belle_amy": {
+        "name": "Jingle Belle Amy",
+        "speed": 9,
+        "acceleration": 5,
+        "strength": 8,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Ice Wave",
+            "Ice Boost",
+            "Gift Trap"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/a3/SFSB_Christmas_Amy.png/revision/latest?cb=20201201175912"
+    },
+    "movie_tails": {
+        "name": "Movie Tails",
+        "speed": 6,
+        "acceleration": 10,
+        "strength": 6,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Whirlwind",
+            "Twin-Tail Boost",
+            "EMP Shield"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/25/SFSBMovieTails.png/revision/latest?cb=20220331152047"
+    },
+    "sir_lancelot": {
+        "name": "Sir Lancelot",
+        "speed": 10,
+        "acceleration": 6,
+        "strength": 6,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Chaos Slash",
+            "Chaos Charge",
+            "Storm Cloud"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/d7/LancelotSFSB.png/revision/latest?cb=20210210155056"
+    },
+    "super_shadow": {
+        "name": "Super Shadow",
+        "speed": 10,
+        "acceleration": 9,
+        "strength": 3,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Lightning",
+            "Super Form",
+            "Storm Cloud"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/1/14/SFSB_Super_Shadow.png/revision/latest?cb=20221201070649"
+    },
+    "vampire_shadow": {
+        "name": "Vampire Shadow",
+        "speed": 10,
+        "acceleration": 8,
+        "strength": 4,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Drac-O'-Lantern",
+            "Electro Boost",
+            "Storm Cloud"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/af/Shadow-VampireHD.png/revision/latest?cb=20201102213255"
+    },
+    "darkspine_sonic": {
+        "name": "Darkspine Sonic",
+        "speed": 9,
+        "acceleration": 6,
+        "strength": 6,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Gathered Flame",
+            "Speed Break",
+            "Slow Burn"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/73/SFSB_Darkspine_Sonic.png/revision/latest?cb=20220904191907"
+    },
+    "elite_agent_rouge": {
+        "name": "Elite Agent Rouge",
+        "speed": 10,
+        "acceleration": 6,
+        "strength": 5,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Moto-Bug",
+            "Gold Rush",
+            "Bat Bomb"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/73/Elite_Agent_Rouge.png/revision/latest?cb=20200812064408"
+    },
+    "linebacker_omega": {
+        "name": "Linebacker Omega",
+        "speed": 9,
+        "acceleration": 4,
+        "strength": 8,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Savage Throw",
+            "Invincibility",
+            "Brutal Barrier"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/ac/SFSBLinebackerOmega.png/revision/latest?cb=20220203150004"
+    },
+    "movie_sonic": {
+        "name": "Movie Sonic",
+        "speed": 10,
+        "acceleration": 6,
+        "strength": 5,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Whirlwind",
+            "Ring Portal",
+            "Zap Trap"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/6/65/SFSB_MovieSonicTeen.png/revision/latest?cb=20200224145331"
+    },
+    "movie_super_sonic": {
+        "name": "Movie Super Sonic",
+        "speed": 10,
+        "acceleration": 6,
+        "strength": 5,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Whirlwind",
+            "Super Form",
+            "Zap Trap"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/4/4a/SFSBMovieSuperSonic.png/revision/latest?cb=20220606162820"
+    },
+    "slugger_sonic": {
+        "name": "Slugger Sonic",
+        "speed": 10,
+        "acceleration": 5,
+        "strength": 6,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Strike Out",
+            "Home Run",
+            "Ice Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/d9/SFSB_SluggerSonic.png/revision/latest?cb=20201102211725"
+    },
+    "werehog": {
+        "name": "Werehog",
+        "speed": 6,
+        "acceleration": 5,
+        "strength": 9,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Dark Blast",
+            "Ferel Dash",
+            "Storm Cloud"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/8/80/SFSBWerehog.png/revision/latest/scale-to-width-down/1000?cb=20210528064306"
+    },
+    "baby_sonic": {
+        "name": "Baby Sonic",
+        "speed": 9,
+        "acceleration": 8,
+        "strength": 2,
+        "rarity": "Special",
+        "max_starting_rings": 70,
+        "items": [
+            "Whirlwind",
+            "EMP Boost",
+            "Storm Cloud"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/4/45/SpeedBattleBabySonic.png/revision/latest?cb=20200306112031"
+    },
+    "super_sonic": {
+        "name": "Super Sonic",
+        "speed": 10,
+        "acceleration": 5,
+        "strength": 3,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Fireball",
+            "Super Form",
+            "Ice Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/22/SFSBSuperSonic.png/revision/latest/scale-to-width-down/1000?cb=20210528064852"
+    },
+    "tails_nine": {
+        "name": "Tails Nine",
+        "speed": 9,
+        "acceleration": 9,
+        "strength": 9,
+        "rarity": "Special",
+        "max_starting_rings": 35,
+        "items": [
+            "Energy Cannon",
+            "Metal March",
+            "Explosive Mine"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/e5/SFSBTailsNine.png/revision/latest?cb=20221210212351"
+    },
+    "infinite": {
+        "name": "Infinite",
+        "speed": 10,
+        "acceleration": 10,
+        "strength": 6,
+        "rarity": "Challenger",
+        "max_starting_rings": 55,
+        "items": [
+            "Reality Wrap",
+            "Phantom Dash",
+            "Deadly Replica"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/c7/SFSB_Infinite_Render.png/revision/latest?cb=20211126070823"
+    },
+    "mephiles": {
+        "name": "Mephiles",
+        "speed": 8,
+        "acceleration": 7,
+        "strength": 10,
+        "rarity": "Challenger",
+        "max_starting_rings": 55,
+        "items": [
+            "Swarming Darkness",
+            "Dark Embrace",
+            "Stalking Shade"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/c3/Mephiles_SFSB_Render.png/revision/latest?cb=20220927185219"
+    },
+    "movie_knuckles": {
+        "name": "Movie Knuckles",
+        "speed": 9,
+        "acceleration": 3,
+        "strength": 9,
+        "rarity": "Challenger",
+        "max_starting_rings": 55,
+        "items": [
+            "Fearless Strike",
+            "Ring Portal",
+            "Spear Trap"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/9/91/SFSBMovieKnuckles.png/revision/latest?cb=20220331152856"
+    },
+    "rusty_rose": {
+        "name": "Rusty Rose",
+        "speed": 9,
+        "acceleration": 5,
+        "strength": 10,
+        "rarity": "Challenger",
+        "max_starting_rings": 55,
+        "items": [
+            "Bullet Punch",
+            "Cybord Smash",
+            "Crossed Wires"
+        ],
+        "image": "https://static.wikia.nocookie.net/sonic/images/b/ba/SFSBRustyRose.png/revision/latest?cb=20221210211657"
+    }
+}

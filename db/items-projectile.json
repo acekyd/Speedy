@@ -1,0 +1,412 @@
+{
+    "Audio Assault": {
+        "description": "Fires a fast projectile that deals damage and disables opponents it comes in contact with for a brief period of time.",
+        "through_obstacles": true,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": true,
+        "item_drop": false,
+        "effect": "Block Items",
+        "selfeffect": "None",
+        "damage":4,
+        "amount": 3,
+        "ring_drop": 10,
+        "speed": 3,
+        "distance": 6,
+        "width": 1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/dd/SFSBAudioAssault.png/revision/latest?cb=20210512123019",
+        "emoji": "<:AudioAssault:1061666736069423215>"
+    },
+    "Balkiry": {
+        "description": "Fires Balkiries that home in on opponents in front and/or behind you, dealing moderate damage on contact.",
+        "through_obstacles": false,
+        "jumped_over": false,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": false,
+        "effect": "None",
+        "selfeffect": "None",
+        "damage": 3,
+        "amount": 1,
+        "ring_drop": 10,
+        "speed": 0,
+        "distance": 7,
+        "width": 3,
+        "image": "https://static.wikia.nocookie.net/sonic/images/f/f2/SFSBBalkiryNEW.png/revision/latest?cb=20210220174613",
+        "emoji": "<:Balkiry:1061666754591473705>"
+    },
+    "Bashosen": {
+        "description": "Sends a fast projectile that deals damage and steals Rings on contact while leaving a trail that slows opponents down.",
+        "through_obstacles": true,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": false,
+        "effect": "Slow, Steal Rings",
+        "selfeffect": "None",
+        "damage": 3,
+        "amount": 3,
+        "ring_drop": 10,
+        "distance": 4,
+        "width":1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/72/BashonsenSFSB.png/revision/latest?cb=20180712125228",
+        "emoji": "<:Bashosen:1061666772136243200>"
+    },
+    "Blizzard Bomb": {
+        "description": "Sends a bouncing bomb down one lane, exploding after 5 bounces or on contact, freezing opponents in the same or adjacent lanes.",
+        "through_obstacles": false,
+        "jumped_over": true,
+        "slid_under": true,
+        "item_disabled": false,
+        "item_drop": false,
+        "effect": "Freeze",
+        "selfeffect": "None",
+        "damage": 2,
+        "amount": 1,
+        "ring_drop": 10,
+        "speed": 2,
+        "distance": 3,
+        "width": 1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/a4/Blizzard_Bomb.png/revision/latest?cb=20210827160557",
+        "emoji": "<:BlizzardBomb:1061666789647470613>"
+    },
+    "Bullet Punch": {
+        "description": "Fires a fast moving projectile that does great damage. This projectile needs to charge before firing but if you use it early it'll be a short range punch.",
+        "through_obstacles": false,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": false,
+        "effect": "None",
+        "selfeffect": "None",
+        "damage": 4,
+        "amount": 3,
+        "ring_drop": 10,
+        "speed": 3,
+        "distance": 6,
+        "width": 1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/3/37/SFSBBulletPunch.png/revision/latest?cb=20221210211743",
+        "emoji": "<:BulletPunch:1061666805476773939>"
+    },
+    "Chao Attack": {
+        "description": "Quickly sends Cheese far down one lane and back, damaging oppenents on the way or back.",
+        "through_obstacles": true,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": false,
+        "effect": "None",
+        "selfeffect": "None",
+        "damage": 3,
+        "amount": 1,
+        "ring_drop": 10,
+        "speed": 2,
+        "distance": 4,
+        "width": 1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/3/3d/Chao_Attack_Speed_Battle.png/revision/latest?cb=20180712133720",
+        "emoji": "<:ChaoAttack:1061670603477766144>"
+    },
+    "Chao Guardians": {
+        "description": "Quickly sends a Chao down one lane a short distance and back, damaging opponents on the way or back.",
+        "through_obstacles": true,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": false,
+        "effect": "None",
+        "selfeffect": "None",
+        "damage": 3,
+        "amount": 3,
+        "ring_drop": 10,
+        "speed": 2,
+        "distance": 3,
+        "width": 1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/d2/SFSB_Chao_Guardians.png/revision/latest?cb=20210827160233",
+        "emoji": "<:ChaoGuardians:1061670607495901235>"
+    },
+    "Chaos Slash": {
+        "description": "Releases a low-range slash dealing medium damage to opponents in the same or adjacent lanes if close enough and fires a projectile down one lane.",
+        "through_obstacles": false,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": false,
+        "effect": "None",
+        "selfeffect": "None",
+        "damage": 3,
+        "amount": 3,
+        "ring_drop": 10,
+        "speed": 4,
+        "distance": 3,
+        "width": 3,
+        "image": "https://static.wikia.nocookie.net/sonic/images/1/16/SFSBChaosSlash.png/revision/latest?cb=20210308165311",
+        "emoji": "<:ChaosSlash:1061670609588850798>"
+    },
+    "Chopper Chomp": {
+        "description": "Sends a slow, but powerful projectile that deals very high damage on contact, stopping opponents in their place for a few seconds.",
+        "through_obstacles": true,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": false,
+        "effect": "None",
+        "selfeffect": "None",
+        "damage": 5,
+        "amount": 3,
+        "ring_drop": 10,
+        "speed": 1,
+        "distance": 6,
+        "width": 1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/00/Chopper_Chomp.png/revision/latest?cb=20210104172539",
+        "emoji": "<:ChopperChomp:1061670613095293018>"
+    },
+    "Cyan Laser": {
+        "description": "Fires a very fast laser in front of you while also firing a slower laser behind you, dealing damage on contact.",
+        "through_obstacles": true,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": true,
+        "effect": "Drop Item",
+        "selfeffect": "None",
+        "damage": 2,
+        "amount": 1,
+        "ring_drop": 5,
+        "speed": 3,
+        "distance": 4,
+        "width": 1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/e7/SFSB_Cyan_Laser.png/revision/latest?cb=20210827155621",
+        "emoji": "<:CyanLaser:1061670615209214094>"
+    },
+    "Dark Blast":
+    {
+        "description": "Fires a fast projectile that deals small damage on contact while leaving a trail that speeds the user up if they are behind it.",
+        "through_obstacles": true,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": true,
+        "effect": "Drop Item",
+        "selfeffect": "Speed Up In Trail",
+        "damage": 2,
+        "amount": 3,
+        "ring_drop": 5,
+        "speed": 1,
+        "distance": 4,
+        "width": 1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/a4/SFSBDarkBlast.png/revision/latest?cb=20211013210704",
+        "emoji": "<:DarkBlast:1061670618933755914>"
+    },
+    "Drac-O-Lantern":
+    {
+        "description": "Sends a fast projectile that deals fire damage.",
+        "through_obstacles": true,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": false,
+        "effect": "None",
+        "selfeffect": "None",
+        "damage": 5,
+        "amount": 1,
+        "ring_drop": 10,
+        "speed": 1,
+        "distance": 4,
+        "width": 1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/8/8f/Drac-O%27-Lantern.png/revision/latest?cb=20201027181452",
+        "emoji": "<:DracOLantern:1061670622775738548>"
+
+    },
+    "Dragon Dance":
+    {
+        "description": "Sends a powerful Dragon that moves up and down one lane and back, dealing high damage on contact, even while airbourne. (Tip: Possible to dodge by sliding under.)",
+        "through_obstacles": true,
+        "jumped_over": false,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": false,
+        "effect": "None",
+        "selfeffect": "None",
+        "damage": 5,
+        "amount": 1,
+        "ring_drop": 10,
+        "speed": 1,
+        "distance": 5,
+        "width": 1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/c3/DragonDanceIcon.png/revision/latest?cb=20210430001437",
+        "emoji": "<:DragonDance:1061670626609344652>"
+    },
+    "Energy Cannon": {
+        "description": "Fires a steady stream of lasers down the track that'll cause weak electric damage. It'll end early if you get hit while firing.",
+        "through_obstacles": false,
+        "jumped_over": true,
+        "slid_under": false,
+        "item_disabled": false,
+        "item_drop": true,
+        "effect": "Drop Item",
+        "selfeffect": "Gain A Little Speed",
+        "damage": 4,
+        "amount": 3,
+        "ring_drop": 10,
+        "speed": 3,
+        "distance": 6,
+        "width": 1,
+        "image": "https://static.wikia.nocookie.net/sonic/images/f/fb/SFSBEnergyCannon.png/revision/latest?cb=20221210212405",
+        "emoji": "<:EnergyCannon:1061670630715568138>"
+    },
+    "Fearless Strike":
+    {
+        "description": "Sends a fast and powerful projectile that deals damage and leaves a trail that slows opponents down.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/0b/SFSBFearlessStrike.png/revision/latest?cb=20220331152932",
+        "emoji": "<:FearlessStrike:1061675217845493941>"
+    },
+    "Fire Whirl":
+    {
+        "description": "Sends a fast whirlwind that deals fire damage.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/4/45/SFSBFireWhirl.png/revision/latest?cb=20180712124644",
+        "emoji": "<:FireWhirl:1061675223663001631>"
+    },
+    "Fireball":
+    {
+        "description": "Fires a very fast fireball that deals fire damage.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/1/16/SFSBFireball.png/revision/latest?cb=20201024153438",
+        "emoji": "<:Fireball:1061675221381283880>"
+    },
+    "Firework Flurry":
+    {
+        "description": "Fires a very fast firework that either deals fire, ice, or electric damage on contact.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/04/SFSB_Firework_Flurry.png/revision/latest?cb=20210214184457",
+        "emoji": "<:FireworkFlurry:1061675227098140702>"
+    },
+    "Frozen Chopper Chomp":
+    {
+        "description": "Sends a slow projectile that deals damage and freezes the opponent on contact.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/a1/FrozenChomperChomp.png/revision/latest?cb=20210827160741",
+        "emoji": "<:FrozenChopperChomp:1061675230919139419>"
+    },
+    "Gail Meteor":
+    {
+        "description": "Sends a fast moving spinning blade that deals damage and it'll move back after a certain distance.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/0/0d/SFSBGailMeteor.png/revision/latest?cb=20220510154156",
+        "emoji": "<:GailMeteor:1061675233276334100>"
+    },
+    "Gathered Flame":
+    {
+        "description": "Sends a fast moving pillar of fire that can't be jumped over and causes great damage. The user will slowdown a bit for a few seconds after using the item.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/dd/SFSBGatheredFlame.png/revision/latest?cb=20220912183620",
+        "emoji": "<:GatheredFlame:1061675237030240336>"
+    },
+    "Harvest Time":
+    {
+        "description": "Releases a low-range slash dealing very strong damage to opponents in the same or adjacent lanes if close enough.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/c1/HarvestTime.png/revision/latest?cb=20201104104840",
+        "emoji": "<:HarvestTime:1061675239077072906>"
+    },
+    "Ice Wave":
+    {
+        "description": "Sends a very fast wave of ice down one to three lanes, dealing damage and freezing the opponent on contact.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/6/62/SFSBIceWave.png/revision/latest?cb=20201215144409",
+        "emoji": "<:IceWave:1061675242784837722>"
+    },
+    "Knight Smite":
+    {
+        "description": "Release a hammer that smashes to the ground dealing massive damage to anyone that's in the hammer's range. If not then an electric projectile will be launched shocking any opponent it comes in contact with.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/73/SFSBKnightSmite.png/revision/latest?cb=20220719120946",
+        "emoji": "<:KnightSmite:1061675246660374568>"
+    },
+    "Laevatein Lunge":
+    {
+        "description": "Propels the user forward slightly and deals damage to the opponent in front of you if close enough.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/a6/SFSBLaevateinLunge.png/revision/latest?cb=20210705133620",
+        "emoji": "<:LaevateinLunge:1061969818175152128>"
+    },
+    "Lightning":
+    {
+        "description": "Spawns a Lightning bolt above the lead opponent, dealing low electric damage if they don't switch lanes.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/2/2a/SFSBLightning.png/revision/latest?cb=20201024153207",
+        "emoji": "<:Lightning:1061969822352670790>"
+    },
+    "Missile Launch":
+    {
+        "description": "Fires a steady stream of missiles down the track that'll cause damage. It'll end early if you get hit while firing.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/f/f9/SFSB_Missile_Launch.png/revision/latest?cb=20220707065920",
+        "emoji": "<:MissileLaunch:1061969826635055104>"
+    },
+    "Moto-Bug":
+    {
+        "description": "Sends a fast Moto-Bug that deals low electric damage on contact.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/9/93/SFSBMotobug.png/revision/latest?cb=20201024145957",
+        "emoji": "<:Motobug:1061969830552551434>"
+    },
+    "Psychic Surprise":
+    {
+        "description": "Releases a \"Gift\" a moderate distance in front of the user that follows the current lane they're in. After a short time, it will shoot down one lane, dealing high damage on contact.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/c/ca/SFSBPsychicSurprise.png/revision/latest?cb=20211214150644",
+        "emoji": "<:PsychicSurprise:1061969833010405458>"
+    },
+    "Rainbow Blast":
+    {
+        "description": "Quickly fires rainbows that move up and down in one to three lanes, dealing damage and blinding the opponent on contact, even while airbourne. (Tip: Possible to dodge by sliding under.)",
+        "image": "https://static.wikia.nocookie.net/sonic/images/3/38/SFSBRainbowBlast.png/revision/latest?cb=20210812124857",
+        "emoji": "<:RainbowBlast:1061969837070487582>"
+    },
+    "Reality Warp":
+    {
+        "description": "Sends a illusion wave down three lanes, dealing damage on contact and causing opponents to see illusions. Some lanes have illusions that cannot be jumped over.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/a/ae/SFSBRealityWarp.png/revision/latest?cb=20211126150737",
+        "emoji": "<:RealityWarp:1061969841919111228>"
+    },
+    "Savage Throw":
+    {
+        "description": "Throws a very fast football that deals high damage to the opponent on contact, hitting them while airbourne, as well.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/e/e5/SFSBSavageThrow.png/revision/latest?cb=20210113162314",
+        "emoji": "<:SavageThrow:1061969845429735516>"
+    },
+    "Soul Surge":
+    {
+        "description": "Releases a medium-range slash dealing medium damage to opponents in the same or adjacent lanes if close enough.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/6/6f/SoulSurgeSFSB.png/revision/latest?cb=20200904213109",
+        "emoji": "<:SoulSurge:1061969848172818472>"
+    },
+    "Steal":
+    {
+        "description": "Steals an Attack or Trap from a random opponent.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/5/53/SFSBSteal.png/revision/latest?cb=20180712141217",
+        "emoji": "<:Steal:1061969851515686972>"
+    },
+    "Strike Out":
+    {
+        "description": "Throws a fast baseball that damages the opponent on contact, hitting them while airbourne, as well. (Tip: Can be dodged by sliding under.)",
+        "image": "https://static.wikia.nocookie.net/sonic/images/d/dc/StrikeOut.png/revision/latest?cb=20201024150158",
+        "emoji": "<:StrikeOut:1061969855508664330>"
+    },
+    "Swarming Darkness":
+    {
+        "description": "Sends a fast wave of clones down to one to three lanes clinging onto any opponents they run into and destroying the next item the opponent tries to use.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/f/ff/SFSBSwarmingDarkness.png/revision/latest?cb=20221003102632",
+        "emoji": "<:SwarmingDarkness:1061969857618399295>"
+    },
+    "Tail Strike":
+    {
+        "description": "Deals damage to the opponent in front of you if close enough and gives a slight, quick speed boost.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/8/85/SFSB_Tail_Strike.png/revision/latest?cb=20210827155210",
+        "emoji": "<:TailStrike:1061969861640716338>"
+    },
+    "Trap Shot": {
+        "description": "Quickly fires a hockey puck down one lane before stopping after a while. It may freeze the opponent on contact, but if not, it stays in place, freezing an opponent if they run into it.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/f/ff/SFSB_Sprite_TrapShot.png/revision/latest?cb=20210827161009",
+        "emoji": "<:TrapShot:1061981434115534918>"
+    },
+    "Whirlwind":
+    {
+        "description": "Sends a whirlwind that deals damage and steals Rings on contact.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/8/8f/SFSBWhirlwind.png/revision/latest?cb=20180712141818",
+        "emoji": "<:Whirlwind:1061969865906331720>"
+    },
+    "Wipeout":
+    {
+        "description": "Sends a slow, but powerful wave of water down one to three lanes, dealing very high damage on contact, stopping opponents in their place for a few seconds.",
+        "image": "https://static.wikia.nocookie.net/sonic/images/7/77/WipeoutIcon.png/revision/latest?cb=20210827161553",
+        "emoji": "<:Wipeout:1061969869534412821>"
+    }
+}
