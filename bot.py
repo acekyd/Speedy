@@ -50,7 +50,9 @@ async def on_start():
 async def on_command_error(ctx: interactions.CommandContext, error: Exception):
     """For every Exception callback."""
 
-    error_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).timestamp()
+    error_time = (
+        datetime.datetime.utcnow() + datetime.timedelta(hours=7)
+    ).timestamp()
 
     traceb2 = traceback.format_exception(
         type(error),
@@ -68,6 +70,31 @@ async def on_command_error(ctx: interactions.CommandContext, error: Exception):
     for i in traceb:
         er = er + f"{i}"
 
+    await ctx.get_guild()
+
+    embed = interactions.Embed(
+        title="**Uh oh...**",
+        description="".join(
+            [
+                "An error occurred. The developer team is dealing with the problem now.\n",
+                "Have any question? Join the [**support server**](https://discord.gg/ndy95mBfJs) for more help.",
+            ]
+        ),
+        color=0xED4245,
+        fields=[
+            interactions.EmbedField(
+                name="Error",
+                value=f"```py\n{type(error).__name__}: {error}\n```",
+            ),
+        ],
+    )
+
+    await ctx.send(embeds=embed, ephemeral=True)
+
+    log_channel = interactions.Channel(
+        **await client._http.get_channel(1065211632730513448),
+        _client=client._http,
+    )
     command_name = ctx.data._json["name"]
     subcommand_name = ctx.data._json.get("options", None)
     if subcommand_name:
@@ -97,7 +124,7 @@ async def on_command_error(ctx: interactions.CommandContext, error: Exception):
             )
         ],
     )
-    await ctx.send(embeds=log_error)
+    await log_channel.send(embeds=log_error)
 
 
 client.start()
