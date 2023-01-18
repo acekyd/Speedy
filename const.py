@@ -16,7 +16,5 @@ global EXTS
 TOKEN = os.getenv("TOKEN")
 VERSION = "4.13.0"
 EXTS = [
-    file.replace(".py", "")
-    for file in os.listdir("exts")
-    if not file.startswith("_")
+    file.replace(".py", "") for file in os.listdir("exts") if not file.startswith("_")
 ]

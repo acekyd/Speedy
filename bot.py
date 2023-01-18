@@ -41,18 +41,16 @@ async def on_start():
     logging.debug(
         """[%s] Logged in as %s. Latency: %sms.""", log_time, client.me.name, websocket
     )
-    print(f"""[{log_time}] Logged in as {client.me.name}. Latency: {websocket}ms.\nIn {len(client.guilds)} guilds.""")
+    print(
+        f"""[{log_time}] Logged in as {client.me.name}. Latency: {websocket}ms.\nIn {len(client.guilds)} guilds."""
+    )
 
 
 @client.event
-async def on_command_error(
-    ctx: interactions.CommandContext, error: Exception
-):
+async def on_command_error(ctx: interactions.CommandContext, error: Exception):
     """For every Exception callback."""
 
-    error_time = (
-        datetime.datetime.utcnow() + datetime.timedelta(hours=7)
-    ).timestamp()
+    error_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).timestamp()
 
     traceb2 = traceback.format_exception(
         type(error),

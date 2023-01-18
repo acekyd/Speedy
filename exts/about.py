@@ -30,8 +30,8 @@ class About(interactions.Extension):
             interactions.Button(
                 style=interactions.ButtonStyle.LINK,
                 label="Invite me",
-                url="""https://discord.com/api/oauth2/authorize?client_id=947339220823994388&permissions=8&scope=bot%20applications.commands"""
-            )
+                url="""https://discord.com/api/oauth2/authorize?client_id=947339220823994388&permissions=8&scope=bot%20applications.commands""",
+            ),
         ]
 
         embed = interactions.Embed(
@@ -40,13 +40,11 @@ class About(interactions.Extension):
                 [
                     "The All-in-one Sonic Forces: Speed Battle Discord bot. Check your",
                     " current character level, how many rings are need, look up for ",
-                    "character sprites, images, Speedy has you covered."
+                    "character sprites, images, Speedy has you covered.",
                 ]
             ),
-            color=0xfc920c,
-            footer=interactions.EmbedFooter(
-                text="Maintained by Blue#2095"
-            ),
+            color=0xFC920C,
+            footer=interactions.EmbedFooter(text="Maintained by Blue#2095"),
         )
 
         await ctx.send(embeds=embed, components=button)
