@@ -117,6 +117,7 @@ def get_reached(rarity: str, current_level: int, card: int, aimed_level: int) ->
                 450,
                 500,
                 600,
+                0
             ]
             rings = [
                 0,
@@ -135,6 +136,7 @@ def get_reached(rarity: str, current_level: int, card: int, aimed_level: int) ->
                 600000,
                 800000,
                 1000000,
+                0
             ]
             exps = [
                 0,
@@ -153,6 +155,7 @@ def get_reached(rarity: str, current_level: int, card: int, aimed_level: int) ->
                 960,
                 1120,
                 1280,
+                0
             ]
 
     level = current_level
@@ -178,10 +181,16 @@ def get_reached(rarity: str, current_level: int, card: int, aimed_level: int) ->
     total_exps = 0
     total_rings = 0
 
-    for i in range(i, aimed_level_index):
-        total_cards += cards[i]
-        total_rings += rings[i]
-        total_exps += exps[i]
+    if level != 1:
+        for i in range(i+1, aimed_level_index):
+            total_cards += cards[i]
+            total_rings += rings[i]
+            total_exps += exps[i]
+    else:
+        for i in range(i, aimed_level_index):
+            total_cards += cards[i]
+            total_rings += rings[i]
+            total_exps += exps[i]
 
     total_cards -= card
 
