@@ -6,6 +6,7 @@ Root bot file.
 import logging
 import datetime
 import traceback
+import io
 import interactions
 from interactions.ext import wait_for, files
 from const import TOKEN, VERSION, EXTS
@@ -50,9 +51,7 @@ async def on_start():
 async def on_command_error(ctx: interactions.CommandContext, error: Exception):
     """For every Exception callback."""
 
-    error_time = (
-        datetime.datetime.utcnow() + datetime.timedelta(hours=7)
-    ).timestamp()
+    error_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).timestamp()
 
     traceb2 = traceback.format_exception(
         type(error),
@@ -124,7 +123,11 @@ async def on_command_error(ctx: interactions.CommandContext, error: Exception):
             )
         ],
     )
-    await log_channel.send(embeds=log_error)
+
+    log_data = io.StringIO(ctx.data._json)
+    log_file = interactions.File(filename="log.txt", fp=log_data)
+
+    await log_channel.send(embeds=log_error, files=log_file)
 
 
 client.start()

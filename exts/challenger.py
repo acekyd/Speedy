@@ -11,62 +11,61 @@ import interactions
 
 def get_max(rarity: str, current_level: int, card: int) -> int:
     levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    match rarity:
-        case "Challenger":
-            cards = [
-                500,
-                20,
-                50,
-                100,
-                170,
-                250,
-                350,
-                500,
-                700,
-                1000,
-                1400,
-                1900,
-                2500,
-                3200,
-                4000,
-                5000,
-            ]
-            rings = [
-                0,
-                500,
-                2500,
-                8000,
-                16000,
-                32000,
-                50000,
-                80000,
-                120000,
-                150000,
-                180000,
-                240000,
-                300000,
-                400000,
-                550000,
-                750000,
-            ]
-            exps = [
-                0,
-                50,
-                100,
-                150,
-                200,
-                250,
-                350,
-                450,
-                550,
-                650,
-                750,
-                900,
-                1050,
-                1200,
-                1350,
-                1600,
-            ]
+    if rarity == "Challenger":
+        cards = [
+            500,
+            20,
+            50,
+            100,
+            170,
+            250,
+            350,
+            500,
+            700,
+            1000,
+            1400,
+            1900,
+            2500,
+            3200,
+            4000,
+            5000,
+        ]
+        rings = [
+            0,
+            500,
+            2500,
+            8000,
+            16000,
+            32000,
+            50000,
+            80000,
+            120000,
+            150000,
+            180000,
+            240000,
+            300000,
+            400000,
+            550000,
+            750000,
+        ]
+        exps = [
+            0,
+            50,
+            100,
+            150,
+            200,
+            250,
+            350,
+            450,
+            550,
+            650,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1600,
+        ]
 
     i = levels.index(current_level)
 
@@ -98,91 +97,74 @@ def get_max(rarity: str, current_level: int, card: int) -> int:
 def get_reached(rarity: str, current_level: int, card: int, aimed_level: int) -> int:
 
     levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    match rarity:
-        case "Challenger":
-            cards = [
-                0,
-                20,
-                50,
-                100,
-                170,
-                250,
-                350,
-                500,
-                700,
-                1000,
-                1400,
-                1900,
-                2500,
-                3200,
-                4000,
-                5000,
-                0
-            ]
-            rings = [
-                0,
-                500,
-                2500,
-                8000,
-                16000,
-                32000,
-                50000,
-                80000,
-                120000,
-                150000,
-                180000,
-                240000,
-                300000,
-                400000,
-                550000,
-                750000,
-                0,
-            ]
-            exps = [
-                0,
-                50,
-                100,
-                150,
-                200,
-                250,
-                350,
-                450,
-                550,
-                650,
-                750,
-                900,
-                1050,
-                1200,
-                1350,
-                1600,
-                0,
-            ]
+    if rarity == "Challenger":
+        cards = [
+            0,
+            20,
+            50,
+            100,
+            170,
+            250,
+            350,
+            500,
+            700,
+            1000,
+            1400,
+            1900,
+            2500,
+            3200,
+            4000,
+            5000,
+            0,
+        ]
+        rings = [
+            0,
+            500,
+            2500,
+            8000,
+            16000,
+            32000,
+            50000,
+            80000,
+            120000,
+            150000,
+            180000,
+            240000,
+            300000,
+            400000,
+            550000,
+            750000,
+            0,
+        ]
+        exps = [
+            0,
+            50,
+            100,
+            150,
+            200,
+            250,
+            350,
+            450,
+            550,
+            650,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1600,
+            0,
+        ]
 
     level = current_level
     i = levels.index(current_level + 1 if current_level == 0 else current_level)
     aimed_level_index = int(levels.index(aimed_level)) + 1
-    total_cards = (
-        0
-        if level != 0
-        else (
-            90
-            if rarity == "Common"
-            else (
-                60
-                if rarity == "Rare"
-                else (
-                    30
-                    if rarity == "Super Rare"
-                    else (300 if rarity == "Special" else 500)
-                )
-            )
-        )
-    )
+    total_cards = 0 if level != 0 else 500
     total_exps = 0
     total_rings = 0
 
     if level != 1:
-        for i in range(i+1, aimed_level_index):
+        for i in range(i + 1, aimed_level_index):
             total_cards += cards[i]
             total_rings += rings[i]
             total_exps += exps[i]
@@ -225,17 +207,8 @@ def get_color(char_class: str) -> int:
     :rtype: int
     """
 
-    match char_class:
-        case "Common":
-            return 0x96B1CA
-        case "Rare":
-            return 0xF9AB00
-        case "Super Rare":
-            return 0x8A32FB
-        case "Special":
-            return 0x12AD01
-        case "Challenger":
-            return 0xC92828
+    if char_class == "Challenger":
+        return 0xC92828
 
 
 class Challenger(interactions.Extension):
@@ -295,7 +268,7 @@ class Challenger(interactions.Extension):
 
         embed = interactions.Embed(
             title="Rarity: Challenger",
-            color=get_color("Challenger"),
+            color=0xC92828,
         )
         embed.add_field(
             name=f"\u200b",

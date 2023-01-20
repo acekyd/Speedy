@@ -17,17 +17,16 @@ def get_color(char_class: str) -> int:
     :rtype: int
     """
 
-    match char_class:
-        case "Common":
-            return 0x96B1CA
-        case "Rare":
-            return 0xF9AB00
-        case "Super Rare":
-            return 0x8A32FB
-        case "Special":
-            return 0x12AD01
-        case "Challenger":
-            return 0xC92828
+    if char_class == "Common":
+        return 0x96B1CA
+    elif char_class == "Rare":
+        return 0xF9AB00
+    elif char_class == "Super Rare":
+        return 0x8A32FB
+    elif char_class == "Special":
+        return 0x12AD01
+    elif char_class == "Challenger":
+        return 0xC92828
 
 
 def create_bar(stat: str, num: int) -> str:
@@ -37,37 +36,36 @@ def create_bar(stat: str, num: int) -> str:
     bar_orange: str = "<:bar_orange:1045317805790212176>"
     bar_empty: str = "<:bar_empty:1045317807820242994>"
 
-    match stat:
-        case "speed":
-            if 1 <= num <= 3:
-                bar = num * red_bar
-                return f"{bar}" + ((10 - num) * f"{bar_empty}")
-            elif 4 <= num <= 7:
-                bar = num * bar_orange
-                return f"{bar}" + ((10 - num) * f"{bar_empty}")
-            elif 8 <= num <= 10:
-                bar = num * f"{green_bar}"
-                return f"{bar}" + ((10 - num) * f"{bar_empty}")
-        case "acceleration":
-            if 1 <= num <= 3:
-                bar = num * red_bar
-                return f"{bar}" + ((10 - num) * f"{bar_empty}")
-            elif 4 <= num <= 8:
-                bar = num * bar_orange
-                return f"{bar}" + ((10 - num) * f"{bar_empty}")
-            elif 9 <= num <= 10:
-                bar = num * f"{green_bar}"
-                return f"{bar}" + ((10 - num) * f"{bar_empty}")
-        case "strength":
-            if 1 <= num <= 3:
-                bar = num * red_bar
-                return f"{bar}" + ((10 - num) * f"{bar_empty}")
-            elif 4 <= num <= 7:
-                bar = num * bar_orange
-                return f"{bar}" + ((10 - num) * f"{bar_empty}")
-            elif 8 <= num <= 10:
-                bar = num * f"{green_bar}"
-                return f"{bar}" + ((10 - num) * f"{bar_empty}")
+    if stat == "speed":
+        if 1 <= num <= 3:
+            bar = num * red_bar
+            return f"{bar}" + ((10 - num) * f"{bar_empty}")
+        elif 4 <= num <= 7:
+            bar = num * bar_orange
+            return f"{bar}" + ((10 - num) * f"{bar_empty}")
+        elif 8 <= num <= 10:
+            bar = num * f"{green_bar}"
+            return f"{bar}" + ((10 - num) * f"{bar_empty}")
+    elif stat == "acceleration":
+        if 1 <= num <= 3:
+            bar = num * red_bar
+            return f"{bar}" + ((10 - num) * f"{bar_empty}")
+        elif 4 <= num <= 8:
+            bar = num * bar_orange
+            return f"{bar}" + ((10 - num) * f"{bar_empty}")
+        elif 9 <= num <= 10:
+            bar = num * f"{green_bar}"
+            return f"{bar}" + ((10 - num) * f"{bar_empty}")
+    elif stat == "strength":
+        if 1 <= num <= 3:
+            bar = num * red_bar
+            return f"{bar}" + ((10 - num) * f"{bar_empty}")
+        elif 4 <= num <= 7:
+            bar = num * bar_orange
+            return f"{bar}" + ((10 - num) * f"{bar_empty}")
+        elif 8 <= num <= 10:
+            bar = num * f"{green_bar}"
+            return f"{bar}" + ((10 - num) * f"{bar_empty}")
 
 
 def get_emoji(emoji_str: str) -> tuple:
@@ -205,52 +203,51 @@ class Character(interactions.Extension):
                     timeout=45,
                 )
                 index = [btn.custom_id for btn in items_button].index(res.custom_id)
-                match index:
-                    case 0:
-                        embed = interactions.Embed(
-                            title=str(res.custom_id),
-                            description="".join(
-                                [
-                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["description", "image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n"""
-                                    for k, v in list(
-                                        self.projectile_db[str(res.custom_id)].items()
-                                    )
-                                ]
-                            ),
-                            image=interactions.EmbedImageStruct(
-                                url=str(self.projectile_db[str(res.custom_id)]["image"])
-                            ),
-                        )
-                    case 1:
-                        embed = interactions.Embed(
-                            title=str(res.custom_id),
-                            description="".join(
-                                [
-                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["description", "image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n"""
-                                    for k, v in list(
-                                        self.boost_db[str(res.custom_id)].items()
-                                    )
-                                ]
-                            ),
-                            image=interactions.EmbedImageStruct(
-                                url=str(self.boost_db[str(res.custom_id)]["image"])
-                            ),
-                        )
-                    case 2:
-                        embed = interactions.Embed(
-                            title=str(res.custom_id),
-                            description="".join(
-                                [
-                                    f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["description", "image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n"""
-                                    for k, v in list(
-                                        self.trap_db[str(res.custom_id)].items()
-                                    )
-                                ]
-                            ),
-                            image=interactions.EmbedImageStruct(
-                                url=str(self.trap_db[str(res.custom_id)]["image"])
-                            ),
-                        )
+                if index == 0:
+                    embed = interactions.Embed(
+                        title=str(res.custom_id),
+                        description="".join(
+                            [
+                                f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["description", "image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n"""
+                                for k, v in list(
+                                    self.projectile_db[str(res.custom_id)].items()
+                                )
+                            ]
+                        ),
+                        image=interactions.EmbedImageStruct(
+                            url=str(self.projectile_db[str(res.custom_id)]["image"])
+                        ),
+                    )
+                elif index == 1:
+                    embed = interactions.Embed(
+                        title=str(res.custom_id),
+                        description="".join(
+                            [
+                                f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["description", "image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n"""
+                                for k, v in list(
+                                    self.boost_db[str(res.custom_id)].items()
+                                )
+                            ]
+                        ),
+                        image=interactions.EmbedImageStruct(
+                            url=str(self.boost_db[str(res.custom_id)]["image"])
+                        ),
+                    )
+                elif index == 2:
+                    embed = interactions.Embed(
+                        title=str(res.custom_id),
+                        description="".join(
+                            [
+                                f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["description", "image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n"""
+                                for k, v in list(
+                                    self.trap_db[str(res.custom_id)].items()
+                                )
+                            ]
+                        ),
+                        image=interactions.EmbedImageStruct(
+                            url=str(self.trap_db[str(res.custom_id)]["image"])
+                        ),
+                    )
                 await res.send(embeds=embed, ephemeral=True)
 
         except asyncio.TimeoutError:
