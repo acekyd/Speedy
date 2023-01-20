@@ -14,6 +14,7 @@ discord-py-interactions = "4.3.4"
 interactions-wait-for = "^1.0.6"
 interactions-molter = "1.0.1"
 interactions-files = "1.1.5"
+pillow = "9.4.0"
 
 
 [tool.poetry.dev-dependencies]
