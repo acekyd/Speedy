@@ -9,6 +9,7 @@ import traceback
 import io
 import interactions
 from interactions.ext import wait_for, files
+import keep_alive
 from const import TOKEN, VERSION, EXTS
 
 # logging.basicConfig(level=logging.DEBUG)
@@ -130,4 +131,5 @@ async def on_command_error(ctx: interactions.CommandContext, error: Exception):
     await log_channel.send(embeds=log_error, files=log_file)
 
 
+keep_alive.keep_alive()
 client.start()

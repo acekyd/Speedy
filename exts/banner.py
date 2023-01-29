@@ -32,7 +32,7 @@ class Banner(interactions.Extension):
     @interactions.extension_command(
         name="banner",
     )
-    async def banner(self, ctx: interactions.CommandContext, **kwargs):
+    async def banner(self, ctx: interactions.CommandContext, **kwargs) -> None:
         """Banner related commands."""
         ...
 
@@ -40,6 +40,10 @@ class Banner(interactions.Extension):
     @interactions.option("The name of the event", autocomplete=True)
     async def event(self, ctx: interactions.CommandContext, event_name: str) -> None:
         """Shows the banner of an event."""
+
+        if event_name not in self.banner_db:
+            return await ctx.send("Banner not found.", ephemeral=True)
+
         await ctx.defer()
 
         def clamp(x):
@@ -55,9 +59,6 @@ class Banner(interactions.Extension):
         color = str("0x" + color[1:])
         color = int(color, 16)
 
-        if event_name not in self.banner_db:
-            return await ctx.send("Banner not found.", ephemeral=True)
-
         file = interactions.File(f"./db/event/{event_name}")
         embed = interactions.Embed(
             title=f"""{event_name.replace("banner_", "").replace(".png", "").replace("_", " ").title()}""",
@@ -72,6 +73,10 @@ class Banner(interactions.Extension):
         self, ctx: interactions.CommandContext, character_name: str
     ) -> None:
         """Shows the banner of a character."""
+
+        if character_name not in self.character_db:
+            return await ctx.send("Character not found.", ephemeral=True)
+
         await ctx.defer()
 
         def clamp(x):
@@ -87,9 +92,6 @@ class Banner(interactions.Extension):
         color = str("0x" + color[1:])
         color = int(color, 16)
 
-        if character_name not in self.character_db:
-            return await ctx.send("Character not found.", ephemeral=True)
-
         file = interactions.File(f"./db/character/{character_name}")
         embed = interactions.Embed(
             title=f"""{character_name.replace("banner_", "").replace(".png", "").replace("_", " ").title()}""",
@@ -101,7 +103,9 @@ class Banner(interactions.Extension):
     @interactions.extension_autocomplete(command="banner", name="event_name")
     async def event_auto_complete(
         self, ctx: interactions.CommandContext, event_name: str = ""
-    ):
+    ) -> None:
+        """Autocomplete for /banner event command."""
+
         if event_name != "":
             letters: list = event_name
         else:
@@ -149,7 +153,9 @@ class Banner(interactions.Extension):
     @interactions.extension_autocomplete(command="banner", name="character_name")
     async def character_auto_complete(
         self, ctx: interactions.CommandContext, character_name: str = ""
-    ):
+    ) -> None:
+        """Autocomplete for /banner character command."""
+
         if character_name != "":
             letters: list = character_name
         else:

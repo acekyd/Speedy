@@ -9,63 +9,63 @@ import json
 import interactions
 
 
-def get_max(rarity: str, current_level: int, card: int) -> int:
+def get_max(current_level: int, card: int) -> int:
+
     levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    if rarity == "Special":
-        cards = [
-            300,
-            30,
-            60,
-            90,
-            120,
-            150,
-            180,
-            210,
-            240,
-            270,
-            300,
-            350,
-            400,
-            450,
-            500,
-            600,
-        ]
-        rings = [
-            0,
-            1000,
-            5000,
-            15000,
-            30000,
-            60000,
-            100000,
-            150000,
-            200000,
-            250000,
-            300000,
-            400000,
-            500000,
-            600000,
-            800000,
-            1000000,
-        ]
-        exps = [
-            0,
-            40,
-            80,
-            120,
-            160,
-            200,
-            280,
-            360,
-            440,
-            520,
-            600,
-            680,
-            800,
-            960,
-            1120,
-            1280,
-        ]
+    cards = [
+        300,
+        30,
+        60,
+        90,
+        120,
+        150,
+        180,
+        210,
+        240,
+        270,
+        300,
+        350,
+        400,
+        450,
+        500,
+        600,
+    ]
+    rings = [
+        0,
+        1000,
+        5000,
+        15000,
+        30000,
+        60000,
+        100000,
+        150000,
+        200000,
+        250000,
+        300000,
+        400000,
+        500000,
+        600000,
+        800000,
+        1000000,
+    ]
+    exps = [
+        0,
+        40,
+        80,
+        120,
+        160,
+        200,
+        280,
+        360,
+        440,
+        520,
+        600,
+        680,
+        800,
+        960,
+        1120,
+        1280,
+    ]
 
     i = levels.index(current_level)
 
@@ -94,88 +94,71 @@ def get_max(rarity: str, current_level: int, card: int) -> int:
     )
 
 
-def get_reached(rarity: str, current_level: int, card: int, aimed_level: int) -> int:
+def get_reached(current_level: int, card: int, aimed_level: int) -> int:
 
     levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    if rarity == "Special":
-        cards = [
-            0,
-            30,
-            60,
-            90,
-            120,
-            150,
-            180,
-            210,
-            240,
-            270,
-            300,
-            350,
-            400,
-            450,
-            500,
-            600,
-            0,
-        ]
-        rings = [
-            0,
-            1000,
-            5000,
-            15000,
-            30000,
-            60000,
-            100000,
-            150000,
-            200000,
-            250000,
-            300000,
-            400000,
-            500000,
-            600000,
-            800000,
-            1000000,
-            0,
-        ]
-        exps = [
-            0,
-            40,
-            80,
-            120,
-            160,
-            200,
-            280,
-            360,
-            440,
-            520,
-            600,
-            680,
-            800,
-            960,
-            1120,
-            1280,
-            0,
-        ]
+    cards = [
+        0,
+        30,
+        60,
+        90,
+        120,
+        150,
+        180,
+        210,
+        240,
+        270,
+        300,
+        350,
+        400,
+        450,
+        500,
+        600,
+        0,
+    ]
+    rings = [
+        0,
+        1000,
+        5000,
+        15000,
+        30000,
+        60000,
+        100000,
+        150000,
+        200000,
+        250000,
+        300000,
+        400000,
+        500000,
+        600000,
+        800000,
+        1000000,
+        0,
+    ]
+    exps = [
+        0,
+        40,
+        80,
+        120,
+        160,
+        200,
+        280,
+        360,
+        440,
+        520,
+        600,
+        680,
+        800,
+        960,
+        1120,
+        1280,
+        0,
+    ]
 
     level = current_level
     i = levels.index(current_level + 1 if current_level == 0 else current_level)
     aimed_level_index = int(levels.index(aimed_level)) + 1
-    total_cards = (
-        0
-        if level != 0
-        else (
-            90
-            if rarity == "Common"
-            else (
-                60
-                if rarity == "Rare"
-                else (
-                    30
-                    if rarity == "Super Rare"
-                    else (300 if rarity == "Special" else 500)
-                )
-            )
-        )
-    )
+    total_cards = 0 if level != 0 else 300
     total_exps = 0
     total_rings = 0
 
@@ -237,7 +220,7 @@ class Special(interactions.Extension):
         card: int,
         aimed_level: int = 16,
         character_name: str = None,
-    ):
+    ) -> None:
         """Calculate the level your Special character can get."""
 
         if current_level > 17 or aimed_level > 17:
@@ -265,8 +248,8 @@ class Special(interactions.Extension):
             if name_lower in special_char:
                 image = self.char_db[name_lower]["image"]
 
-        a = get_max("Special", current_level, card)
-        b = get_reached("Special", current_level, card, aimed_level)
+        a = get_max(current_level, card)
+        b = get_reached(current_level, card, aimed_level)
 
         embed = interactions.Embed(
             title="Rarity: Special",
@@ -311,6 +294,7 @@ class Special(interactions.Extension):
     async def special_char(
         self, ctx: interactions.CommandContext, character_name: str = ""
     ) -> None:
+        """Autocomplete for /special command."""
 
         special_char = {}
         for i in list(self.char_db.items()):
@@ -348,6 +332,7 @@ class Special(interactions.Extension):
 
 def setup(client) -> None:
     """Setup the extension."""
+
     log_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime(
         "%d/%m/%Y %H:%M:%S"
     )

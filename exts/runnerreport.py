@@ -21,29 +21,29 @@ def get_color(img) -> str:
     return dominant_color
 
 
-class Wallpaper(interactions.Extension):
-    """Extension for /wallpaper command."""
+class RunnerReport(interactions.Extension):
+    """Extension for /runnerreport command."""
 
     def __init__(self, client: interactions.Client) -> None:
         self.client: interactions.Client = client
-        self.wallpaper_db = os.listdir("./db/wallpaper")
+        self.report_db = os.listdir("./db/runnerreport")
 
     @interactions.extension_command()
-    @interactions.option("The name of the wallpaper", autocomplete=True)
-    async def wallpaper(
-        self, ctx: interactions.CommandContext, wallpaper_name: str
+    @interactions.option("The name of the character", autocomplete=True)
+    async def runnerreport(
+        self, ctx: interactions.CommandContext, character_name: str
     ) -> None:
-        """Shows the wallpaper of an event/character."""
+        """Shows the image of a character from Runner Report."""
 
-        if wallpaper_name not in self.wallpaper_db:
-            return await ctx.send("Wallpaper not found.", ephemeral=True)
+        if character_name not in self.report_db:
+            return await ctx.send("Image not found.", ephemeral=True)
 
         await ctx.defer()
 
         def clamp(x):
             return max(0, min(x, 255))
 
-        with open(f"./db/wallpaper/{wallpaper_name}", "rb") as f:
+        with open(f"./db/runnerreport/{character_name}", "rb") as f:
             buf = io.BytesIO(f.read())
 
         color = get_color(buf)
@@ -53,48 +53,48 @@ class Wallpaper(interactions.Extension):
         color = str("0x" + color[1:])
         color = int(color, 16)
 
-        file = interactions.File(f"./db/wallpaper/{wallpaper_name}")
+        file = interactions.File(f"./db/runnerreport/{character_name}")
         embed = interactions.Embed(
-            title=f"""{wallpaper_name.replace("banner_", "").replace(".png", "").replace("_", " ").title()}""",
+            title=f"""{character_name.replace("runner_report_", "").replace(".jpg", "").replace("_", " ").title()}""",
             color=color,
             image=interactions.EmbedImageStruct(url=f"attachment://{file._filename}"),
         )
         await ctx.send(embeds=embed, files=file)
 
-    @interactions.extension_autocomplete(command="wallpaper", name="wallpaper_name")
-    async def wallpaper_auto_complete(
-        self, ctx: interactions.CommandContext, wallpaper_name: str = ""
-    ):
-        """Autocomplete for /wallpaper command."""
+    @interactions.extension_autocomplete(command="runnerreport", name="character_name")
+    async def image_auto_complete(
+        self, ctx: interactions.CommandContext, character_name: str = ""
+    ) -> None:
+        """Autocomplete for /runnerreport command."""
 
-        if wallpaper_name != "":
-            letters: list = wallpaper_name
+        if character_name != "":
+            letters: list = character_name
         else:
             letters = []
 
-        if len(wallpaper_name) == 0:
+        if len(character_name) == 0:
             await ctx.populate(
                 [
                     interactions.Choice(
-                        name=str(self.wallpaper_db[i])
-                        .replace("wallpaper_", "")
-                        .replace(".png", "")
+                        name=str(self.report_db[i])
+                        .replace("runner_report_", "")
+                        .replace(".jpg", "")
                         .replace("_", " ")
                         .title(),
-                        value=str(self.wallpaper_db[i]),
+                        value=str(self.report_db[i]),
                     )
-                    for i in range(0, 25)
+                    for i in range(0, 10)
                 ]
             )
         else:
             choices: list = []
-            for i in self.wallpaper_db:
+            for i in self.report_db:
                 focus: str = "".join(letters)
                 if (
                     focus.lower()
                     in str(i)
-                    .replace("wallpaper_", "")
-                    .replace(".png", "")
+                    .replace("runner_report_", "")
+                    .replace(".jpg", "")
                     .replace("_", " ")
                     .lower()
                     and len(choices) < 20
@@ -102,8 +102,8 @@ class Wallpaper(interactions.Extension):
                     choices.append(
                         interactions.Choice(
                             name=str(i)
-                            .replace("wallpaper_", "")
-                            .replace(".png", "")
+                            .replace("runner_report_", "")
+                            .replace(".jpg", "")
                             .replace("_", " ")
                             .title(),
                             value=i,
@@ -118,5 +118,5 @@ def setup(client) -> None:
     log_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime(
         "%d/%m/%Y %H:%M:%S"
     )
-    Wallpaper(client)
-    logging.debug("""[%s] Loaded Wallpaper extension.""", log_time)
+    RunnerReport(client)
+    logging.debug("""[%s] Loaded RunnerReport extension.""", log_time)

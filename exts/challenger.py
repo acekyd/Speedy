@@ -9,63 +9,63 @@ import json
 import interactions
 
 
-def get_max(rarity: str, current_level: int, card: int) -> int:
+def get_max(current_level: int, card: int) -> int:
+
     levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    if rarity == "Challenger":
-        cards = [
-            500,
-            20,
-            50,
-            100,
-            170,
-            250,
-            350,
-            500,
-            700,
-            1000,
-            1400,
-            1900,
-            2500,
-            3200,
-            4000,
-            5000,
-        ]
-        rings = [
-            0,
-            500,
-            2500,
-            8000,
-            16000,
-            32000,
-            50000,
-            80000,
-            120000,
-            150000,
-            180000,
-            240000,
-            300000,
-            400000,
-            550000,
-            750000,
-        ]
-        exps = [
-            0,
-            50,
-            100,
-            150,
-            200,
-            250,
-            350,
-            450,
-            550,
-            650,
-            750,
-            900,
-            1050,
-            1200,
-            1350,
-            1600,
-        ]
+    cards = [
+        500,
+        20,
+        50,
+        100,
+        170,
+        250,
+        350,
+        500,
+        700,
+        1000,
+        1400,
+        1900,
+        2500,
+        3200,
+        4000,
+        5000,
+    ]
+    rings = [
+        0,
+        500,
+        2500,
+        8000,
+        16000,
+        32000,
+        50000,
+        80000,
+        120000,
+        150000,
+        180000,
+        240000,
+        300000,
+        400000,
+        550000,
+        750000,
+    ]
+    exps = [
+        0,
+        50,
+        100,
+        150,
+        200,
+        250,
+        350,
+        450,
+        550,
+        650,
+        750,
+        900,
+        1050,
+        1200,
+        1350,
+        1600,
+    ]
 
     i = levels.index(current_level)
 
@@ -94,67 +94,66 @@ def get_max(rarity: str, current_level: int, card: int) -> int:
     )
 
 
-def get_reached(rarity: str, current_level: int, card: int, aimed_level: int) -> int:
+def get_reached(current_level: int, card: int, aimed_level: int) -> int:
 
     levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    if rarity == "Challenger":
-        cards = [
-            0,
-            20,
-            50,
-            100,
-            170,
-            250,
-            350,
-            500,
-            700,
-            1000,
-            1400,
-            1900,
-            2500,
-            3200,
-            4000,
-            5000,
-            0,
-        ]
-        rings = [
-            0,
-            500,
-            2500,
-            8000,
-            16000,
-            32000,
-            50000,
-            80000,
-            120000,
-            150000,
-            180000,
-            240000,
-            300000,
-            400000,
-            550000,
-            750000,
-            0,
-        ]
-        exps = [
-            0,
-            50,
-            100,
-            150,
-            200,
-            250,
-            350,
-            450,
-            550,
-            650,
-            750,
-            900,
-            1050,
-            1200,
-            1350,
-            1600,
-            0,
-        ]
+    cards = [
+        0,
+        20,
+        50,
+        100,
+        170,
+        250,
+        350,
+        500,
+        700,
+        1000,
+        1400,
+        1900,
+        2500,
+        3200,
+        4000,
+        5000,
+        0,
+    ]
+    rings = [
+        0,
+        500,
+        2500,
+        8000,
+        16000,
+        32000,
+        50000,
+        80000,
+        120000,
+        150000,
+        180000,
+        240000,
+        300000,
+        400000,
+        550000,
+        750000,
+        0,
+    ]
+    exps = [
+        0,
+        50,
+        100,
+        150,
+        200,
+        250,
+        350,
+        450,
+        550,
+        650,
+        750,
+        900,
+        1050,
+        1200,
+        1350,
+        1600,
+        0,
+    ]
 
     level = current_level
     i = levels.index(current_level + 1 if current_level == 0 else current_level)
@@ -197,20 +196,6 @@ def natural_rings(rings: int) -> str:
     return "%.1f%s" % (rings, ["", "K", "M"][magnitude]) if rings != 0 else 0
 
 
-def get_color(char_class: str) -> int:
-    """
-    Get the color hex based on the character class.
-
-    :param class: The class of the player
-    :type class: str
-    :return: The color hex of the appropriate class.
-    :rtype: int
-    """
-
-    if char_class == "Challenger":
-        return 0xC92828
-
-
 class Challenger(interactions.Extension):
     """Extension for /challenger commands."""
 
@@ -235,7 +220,7 @@ class Challenger(interactions.Extension):
         card: int,
         aimed_level: int = 16,
         character_name: str = None,
-    ):
+    ) -> None:
         """Calculate the level your Challenger character can get."""
 
         if current_level > 17 or aimed_level > 17:
@@ -263,8 +248,8 @@ class Challenger(interactions.Extension):
             if name_lower in challenger_char:
                 image = self.char_db[name_lower]["image"]
 
-        a = get_max("Challenger", current_level, card)
-        b = get_reached("Challenger", current_level, card, aimed_level)
+        a = get_max(current_level, card)
+        b = get_reached(current_level, card, aimed_level)
 
         embed = interactions.Embed(
             title="Rarity: Challenger",
@@ -309,6 +294,7 @@ class Challenger(interactions.Extension):
     async def challenger_char(
         self, ctx: interactions.CommandContext, character_name: str = ""
     ) -> None:
+        """Autocomplete for /challenger command."""
 
         challenger_char = {}
         for i in list(self.char_db.items()):
