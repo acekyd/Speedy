@@ -116,7 +116,7 @@ class Character(interactions.Extension):
         description="Shows the information about a character.",
     )
     @interactions.option("The character you wish to search for.", autocomplete=True)
-    async def _character(self, ctx: interactions.CommandContext, character_name: str):
+    async def _character(self, ctx: interactions.CommandContext, character_name: str) -> None:
         """Usage: /character [character_name]"""
 
         name_lower = character_name.lower()
@@ -256,7 +256,9 @@ class Character(interactions.Extension):
     @interactions.extension_autocomplete(command="character", name="character_name")
     async def auto_complete(
         self, ctx: interactions.CommandContext, character_name: str = ""
-    ):
+    ) -> None:
+        """Autocomplte for /character command."""
+
         if character_name != "":
             letters: list = character_name
         else:

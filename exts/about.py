@@ -18,7 +18,7 @@ class About(interactions.Extension):
         name="about",
         description="Information about Speedy.",
     )
-    async def _about(self, ctx: interactions.CommandContext):
+    async def _about(self, ctx: interactions.CommandContext) -> None:
         """Information about Speedy."""
 
         button = [

@@ -9,63 +9,62 @@ import json
 import interactions
 
 
-def get_max(rarity: str, current_level: int, card: int) -> int:
+def get_max(current_level: int, card: int) -> int:
     levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    if rarity == "Common":
-        cards = [
-            90,
-            30,
-            50,
-            90,
-            140,
-            200,
-            300,
-            450,
-            650,
-            900,
-            1300,
-            1700,
-            2250,
-            2950,
-            3700,
-            4600,
-        ]
-        rings = [
-            0,
-            100,
-            400,
-            900,
-            1600,
-            2500,
-            3600,
-            5000,
-            6600,
-            8600,
-            11300,
-            18600,
-            22000,
-            23300,
-            28000,
-            33300,
-        ]
-        exps = [
-            0,
-            10,
-            20,
-            30,
-            40,
-            50,
-            70,
-            90,
-            110,
-            130,
-            150,
-            170,
-            200,
-            240,
-            280,
-            320,
-        ]
+    cards = [
+        90,
+        30,
+        50,
+        90,
+        140,
+        200,
+        300,
+        450,
+        650,
+        900,
+        1300,
+        1700,
+        2250,
+        2950,
+        3700,
+        4600,
+    ]
+    rings = [
+        0,
+        100,
+        400,
+        900,
+        1600,
+        2500,
+        3600,
+        5000,
+        6600,
+        8600,
+        11300,
+        18600,
+        22000,
+        23300,
+        28000,
+        33300,
+    ]
+    exps = [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        70,
+        90,
+        110,
+        130,
+        150,
+        170,
+        200,
+        240,
+        280,
+        320,
+    ]
 
     i = levels.index(current_level)
 
@@ -94,67 +93,66 @@ def get_max(rarity: str, current_level: int, card: int) -> int:
     )
 
 
-def get_reached(rarity: str, current_level: int, card: int, aimed_level: int) -> int:
+def get_reached(current_level: int, card: int, aimed_level: int) -> int:
 
     levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    if rarity == "Common":
-        cards = [
-            0,
-            30,
-            50,
-            90,
-            140,
-            200,
-            300,
-            450,
-            650,
-            900,
-            1300,
-            1700,
-            2250,
-            2950,
-            3700,
-            4600,
-            0,
-        ]
-        rings = [
-            0,
-            100,
-            400,
-            900,
-            1600,
-            2500,
-            3600,
-            5000,
-            6600,
-            8600,
-            11300,
-            18600,
-            22000,
-            23300,
-            28000,
-            33300,
-            0,
-        ]
-        exps = [
-            0,
-            10,
-            20,
-            30,
-            40,
-            50,
-            70,
-            90,
-            110,
-            130,
-            150,
-            170,
-            200,
-            240,
-            280,
-            320,
-            0,
-        ]
+    cards = [
+        0,
+        30,
+        50,
+        90,
+        140,
+        200,
+        300,
+        450,
+        650,
+        900,
+        1300,
+        1700,
+        2250,
+        2950,
+        3700,
+        4600,
+        0,
+    ]
+    rings = [
+        0,
+        100,
+        400,
+        900,
+        1600,
+        2500,
+        3600,
+        5000,
+        6600,
+        8600,
+        11300,
+        18600,
+        22000,
+        23300,
+        28000,
+        33300,
+        0,
+    ]
+    exps = [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        70,
+        90,
+        110,
+        130,
+        150,
+        170,
+        200,
+        240,
+        280,
+        320,
+        0,
+    ]
 
     level = current_level
     i = levels.index(current_level + 1 if current_level == 0 else current_level)
@@ -221,7 +219,7 @@ class Common(interactions.Extension):
         card: int,
         aimed_level: int = 16,
         character_name: str = None,
-    ):
+    ) -> None:
         """Calculate the level your Common character can get."""
 
         if current_level > 17 or aimed_level > 17:
@@ -249,8 +247,8 @@ class Common(interactions.Extension):
             if name_lower in common_char:
                 image = self.char_db[name_lower]["image"]
 
-        a = get_max("Common", current_level, card)
-        b = get_reached("Common", current_level, card, aimed_level)
+        a = get_max(current_level, card)
+        b = get_reached(current_level, card, aimed_level)
 
         embed = interactions.Embed(
             title="Rarity: Common",
@@ -295,6 +293,7 @@ class Common(interactions.Extension):
     async def common_char(
         self, ctx: interactions.CommandContext, character_name: str = ""
     ) -> None:
+        """Autocomplete for /common command."""
 
         common_char = {}
         for i in list(self.char_db.items()):
@@ -332,6 +331,7 @@ class Common(interactions.Extension):
 
 def setup(client) -> None:
     """Setup the extension."""
+
     log_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime(
         "%d/%m/%Y %H:%M:%S"
     )

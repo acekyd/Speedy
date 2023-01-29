@@ -34,6 +34,10 @@ class Wallpaper(interactions.Extension):
         self, ctx: interactions.CommandContext, wallpaper_name: str
     ) -> None:
         """Shows the wallpaper of an event/character."""
+
+        if wallpaper_name not in self.wallpaper_db:
+            return await ctx.send("Wallpaper not found.", ephemeral=True)
+
         await ctx.defer()
 
         def clamp(x):
@@ -49,9 +53,6 @@ class Wallpaper(interactions.Extension):
         color = str("0x" + color[1:])
         color = int(color, 16)
 
-        if wallpaper_name not in self.wallpaper_db:
-            return await ctx.send("Banner not found.", ephemeral=True)
-
         file = interactions.File(f"./db/wallpaper/{wallpaper_name}")
         embed = interactions.Embed(
             title=f"""{wallpaper_name.replace("banner_", "").replace(".png", "").replace("_", " ").title()}""",
@@ -64,6 +65,8 @@ class Wallpaper(interactions.Extension):
     async def wallpaper_auto_complete(
         self, ctx: interactions.CommandContext, wallpaper_name: str = ""
     ):
+        """Autocomplete for /wallpaper command."""
+
         if wallpaper_name != "":
             letters: list = wallpaper_name
         else:
