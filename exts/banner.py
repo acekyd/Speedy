@@ -60,8 +60,9 @@ class Banner(interactions.Extension):
         color = int(color, 16)
 
         file = interactions.File(f"./db/event/{event_name}")
+        title = event_name.replace("banner_", "").replace(".png", "").replace("_", " ").title()
         embed = interactions.Embed(
-            title=f"""{event_name.replace("banner_", "").replace(".png", "").replace("_", " ").title()}""",
+            title=f"""{title[:-1] if title[-1].isdigit() else title}""",
             color=color,
             image=interactions.EmbedImageStruct(url=f"attachment://{file._filename}"),
         )
@@ -93,8 +94,9 @@ class Banner(interactions.Extension):
         color = int(color, 16)
 
         file = interactions.File(f"./db/character/{character_name}")
+        title = character_name.replace("banner_", "").replace(".png", "").replace("_", " ").title()
         embed = interactions.Embed(
-            title=f"""{character_name.replace("banner_", "").replace(".png", "").replace("_", " ").title()}""",
+            title=f"""{title[:-1] if title[-1].isdigit() else title}""",
             color=color,
             image=interactions.EmbedImageStruct(url=f"attachment://{file._filename}"),
         )
