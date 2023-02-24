@@ -760,7 +760,7 @@
         "acceleration": 9,
         "strength": 3,
         "rarity": "Special",
-        "max_starting_rings": 55,
+        "max_starting_rings": 35,
         "items": [
             "Lightning",
             "Super Form",
@@ -844,7 +844,7 @@
         "acceleration": 6,
         "strength": 5,
         "rarity": "Special",
-        "max_starting_rings": 55,
+        "max_starting_rings": 35,
         "items": [
             "Whirlwind",
             "Super Form",
@@ -900,7 +900,7 @@
         "acceleration": 5,
         "strength": 3,
         "rarity": "Special",
-        "max_starting_rings": 55,
+        "max_starting_rings": 35,
         "items": [
             "Fireball",
             "Super Form",
