@@ -362,6 +362,12 @@
         "image": "https://static.wikia.nocookie.net/sonic/images/e/e5/SFSBSavageThrow.png/revision/latest?cb=20210113162314",
         "emoji": "<:SavageThrow:1061969845429735516>"
     },
+    "Sharp Shelter":
+    {
+        "description": "A targeted tree springs up in front of an opponent to deal damage. Run through a tree you've placed to gain a shield!",
+        "image": "https://s17-news.hardlightgames.com/images/items/icon_skill_attack_sharp_shelter.png",
+        "emoji": "<:SharpShelter:1078707566051328111>"
+    },
     "Soul Surge":
     {
         "description": "Releases a medium-range slash dealing medium damage to opponents in the same or adjacent lanes if close enough.",

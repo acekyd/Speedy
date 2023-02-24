@@ -922,6 +922,20 @@
         ],
         "image": "https://static.wikia.nocookie.net/sonic/images/e/e5/SFSBTailsNine.png/revision/latest?cb=20221210212351"
     },
+    "boscage_maze_sonic": {
+        "name": "Boscage Maze Sonic",
+        "speed": 10,
+        "acceleration": 5,
+        "strength": 7,
+        "rarity": "Special",
+        "max_starting_rings": 55,
+        "items": [
+            "Sharp Shelter",
+            "Jungle Run",
+            "Lilytrap"
+        ],
+        "image": "https://s17-news.hardlightgames.com/images/assets/character_sonic_bcm.png"
+    },
     "infinite": {
         "name": "Infinite",
         "speed": 10,

@@ -160,6 +160,13 @@
         "image": "https://static.wikia.nocookie.net/sonic/images/7/70/SFSBJingleBoost.png/revision/latest?cb=20211214150707",
         "emoji": "<:JingleBoost:1062072655525712033>"
     },
+    "Jungle Run":
+    {
+        "description": "A rapid boost which leaves behind brambles to trip up your rivals. Charge this up to drop even more!",
+        "duration": "NaN",
+        "image": "https://s17-news.hardlightgames.com/images/items/icon_skill_boost_jungle_run.png",
+        "emoji": "<:JungleRun:1078707354784239656>"
+    },
     "Magical Boost":
     {
         "description": "Provides the user a short, but very fast boost of speed that leaves behind rainbows that take up three lanes, blinding opponents if they walk into the left or right or jump into the middle of the rainbows.",
