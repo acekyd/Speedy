@@ -1,5 +1,9 @@
-import logging
-import datetime
+"""
+/banner command.
+
+(C) 2022-2023 - Jimmy-Blue
+"""
+
 import os
 import io
 import interactions
@@ -29,16 +33,24 @@ class Banner(interactions.Extension):
         self.banner_db = os.listdir("./db/event")
         self.character_db = os.listdir("./db/character")
 
-    @interactions.extension_command(
+    @interactions.slash_command(
         name="banner",
     )
-    async def banner(self, ctx: interactions.CommandContext, **kwargs) -> None:
+    async def banner(self, ctx: interactions.SlashContext, **kwargs) -> None:
         """Banner related commands."""
         ...
 
     @banner.subcommand()
-    @interactions.option("The name of the event", autocomplete=True)
-    async def event(self, ctx: interactions.CommandContext, event_name: str) -> None:
+    @interactions.slash_option(
+        name="event_name",
+        description="The name of the event",
+        opt_type=interactions.OptionType.STRING,
+        required=True,
+        autocomplete=True,
+    )
+    async def event(
+        self, ctx: interactions.SlashContext, event_name: str
+    ) -> None:
         """Shows the banner of an event."""
 
         if event_name not in self.banner_db:
@@ -59,19 +71,34 @@ class Banner(interactions.Extension):
         color = str("0x" + color[1:])
         color = int(color, 16)
 
-        file = interactions.File(f"./db/event/{event_name}")
-        title = event_name.replace("banner_", "").replace(".png", "").replace("_", " ").title()
+        file = interactions.File(file=f"./db/event/{event_name}")
+        title = (
+            event_name.replace("banner_", "")
+            .replace(".png", "")
+            .replace("_", " ")
+            .title()
+        )
         embed = interactions.Embed(
             title=f"""{title[:-1] if title[-1].isdigit() else title}""",
             color=color,
-            image=interactions.EmbedImageStruct(url=f"attachment://{file._filename}"),
+            images=[
+                interactions.EmbedAttachment(
+                    url=f"attachment://{file.file_name}"
+                )
+            ],
         )
-        await ctx.send(embeds=embed, files=file)
+        await ctx.send(embeds=embed, file=file)
 
     @banner.subcommand()
-    @interactions.option("The name of the character", autocomplete=True)
+    @interactions.slash_option(
+        name="character_name",
+        description="The name of the character",
+        opt_type=interactions.OptionType.STRING,
+        required=True,
+        autocomplete=True,
+    )
     async def character(
-        self, ctx: interactions.CommandContext, character_name: str
+        self, ctx: interactions.SlashContext, character_name: str
     ) -> None:
         """Shows the banner of a character."""
 
@@ -93,37 +120,47 @@ class Banner(interactions.Extension):
         color = str("0x" + color[1:])
         color = int(color, 16)
 
-        file = interactions.File(f"./db/character/{character_name}")
-        title = character_name.replace("banner_", "").replace(".png", "").replace("_", " ").title()
+        file = interactions.File(file=f"./db/character/{character_name}")
+        title = (
+            character_name.replace("banner_", "")
+            .replace(".png", "")
+            .replace("_", " ")
+            .title()
+        )
         embed = interactions.Embed(
             title=f"""{title[:-1] if title[-1].isdigit() else title}""",
             color=color,
-            image=interactions.EmbedImageStruct(url=f"attachment://{file._filename}"),
+            images=[
+                interactions.EmbedAttachment(
+                    url=f"attachment://{file.file_name}"
+                )
+            ],
         )
-        await ctx.send(embeds=embed, files=file)
+        await ctx.send(embeds=embed, file=file)
 
-    @interactions.extension_autocomplete(command="banner", name="event_name")
-    async def event_auto_complete(
-        self, ctx: interactions.CommandContext, event_name: str = ""
+    @interactions.global_autocomplete("event_name")
+    async def event_autocomplete(
+        self, ctx: interactions.AutocompleteContext
     ) -> None:
         """Autocomplete for /banner event command."""
 
+        event_name: str = ctx.input_text
         if event_name != "":
             letters: list = event_name
         else:
             letters = []
 
         if len(event_name) == 0:
-            await ctx.populate(
+            await ctx.send(
                 [
-                    interactions.Choice(
-                        name=str(self.banner_db[i])
+                    {
+                        "name": str(self.banner_db[i])
                         .replace("banner_", "")
                         .replace(".png", "")
                         .replace("_", " ")
                         .title(),
-                        value=str(self.banner_db[i]),
-                    )
+                        "value": str(self.banner_db[i]),
+                    }
                     for i in range(0, 25)
                 ]
             )
@@ -141,39 +178,40 @@ class Banner(interactions.Extension):
                     and len(choices) < 20
                 ):
                     choices.append(
-                        interactions.Choice(
-                            name=str(i)
+                        {
+                            "name": str(i)
                             .replace("banner_", "")
                             .replace(".png", "")
                             .replace("_", " ")
                             .title(),
-                            value=i,
-                        )
+                            "value": i,
+                        }
                     )
-            await ctx.populate(choices)
+            await ctx.send(choices)
 
-    @interactions.extension_autocomplete(command="banner", name="character_name")
-    async def character_auto_complete(
-        self, ctx: interactions.CommandContext, character_name: str = ""
+    @interactions.global_autocomplete("character_name")
+    async def character_autocomplete(
+        self, ctx: interactions.AutocompleteContext
     ) -> None:
         """Autocomplete for /banner character command."""
 
+        character_name: str = ctx.input_text
         if character_name != "":
             letters: list = character_name
         else:
             letters = []
 
         if len(character_name) == 0:
-            await ctx.populate(
+            await ctx.send(
                 [
-                    interactions.Choice(
-                        name=str(self.character_db[i])
+                    {
+                        "name": str(self.character_db[i])
                         .replace("banner_", "")
                         .replace(".png", "")
                         .replace("_", " ")
                         .title(),
-                        value=str(self.character_db[i]),
-                    )
+                        "value": str(self.character_db[i]),
+                    }
                     for i in range(0, 25)
                 ]
             )
@@ -190,23 +228,13 @@ class Banner(interactions.Extension):
                     and len(choices) < 20
                 ):
                     choices.append(
-                        interactions.Choice(
-                            name=str(i)
+                        {
+                            "name": str(i)
                             .replace("banner_", "")
                             .replace(".png", "")
                             .replace("_", " ")
                             .title(),
-                            value=i,
-                        )
+                            "value": i,
+                        }
                     )
-            await ctx.populate(choices)
-
-
-def setup(client) -> None:
-    """Setup the extension."""
-
-    log_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime(
-        "%d/%m/%Y %H:%M:%S"
-    )
-    Banner(client)
-    logging.debug("""[%s] Loaded Banner extension.""", log_time)
+            await ctx.send(choices)
