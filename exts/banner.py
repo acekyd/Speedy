@@ -138,7 +138,7 @@ class Banner(interactions.Extension):
         )
         await ctx.send(embeds=embed, file=file)
 
-    @interactions.global_autocomplete("event_name")
+    @event.autocomplete("event_name")
     async def event_autocomplete(
         self, ctx: interactions.AutocompleteContext
     ) -> None:
@@ -189,7 +189,7 @@ class Banner(interactions.Extension):
                     )
             await ctx.send(choices)
 
-    @interactions.global_autocomplete("character_name")
+    @character.autocomplete("character_name")
     async def character_autocomplete(
         self, ctx: interactions.AutocompleteContext
     ) -> None:
