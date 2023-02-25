@@ -157,7 +157,9 @@ def get_reached(current_level: int, card: int, aimed_level: int) -> int:
     ]
 
     level = current_level
-    i = levels.index(current_level + 1 if current_level == 0 else current_level)
+    i = levels.index(
+        current_level + 1 if current_level == 0 else current_level
+    )
     aimed_level_index = int(levels.index(aimed_level)) + 1
     total_cards = 0 if level != 0 else 90
     total_exps = 0
@@ -246,11 +248,14 @@ class Common(interactions.Extension):
         """Calculate the level your Common character can get."""
 
         if current_level > 17 or aimed_level > 17:
-            return await ctx.send("Invalid Level (maximum is 16).", ephemeral=True)
+            return await ctx.send(
+                "Invalid Level (maximum is 16).", ephemeral=True
+            )
 
         elif current_level == 16:
             return await ctx.send(
-                "Your character has already reached the maximum level.", ephemeral=True
+                "Your character has already reached the maximum level.",
+                ephemeral=True,
             )
 
         elif current_level > aimed_level or current_level == aimed_level:
@@ -314,7 +319,9 @@ class Common(interactions.Extension):
         await ctx.send(embeds=embed)
 
     @common.autocomplete("character_name")
-    async def challenger_autocomplete(self, ctx: interactions.AutocompleteContext) -> None:
+    async def challenger_autocomplete(
+        self, ctx: interactions.AutocompleteContext
+    ) -> None:
         """Autocomplete for /common command."""
 
         common_char: dict = {}
@@ -331,7 +338,10 @@ class Common(interactions.Extension):
         if len(character_name) == 0:
             await ctx.send(
                 [
-                    {"name": str(common_char[name]["name"]), "value": str(name)}
+                    {
+                        "name": str(common_char[name]["name"]),
+                        "value": str(name),
+                    }
                     for name in (
                         list(common_char.keys())[0:9]
                         if len(common_char) > 10
@@ -347,7 +357,7 @@ class Common(interactions.Extension):
                     choices.append(
                         {
                             "name": str(common_char[char_name]["name"]),
-                            "value": str(char_name)
+                            "value": str(char_name),
                         }
                     )
             await ctx.send(choices)
