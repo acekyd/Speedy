@@ -4,8 +4,6 @@
 (C) 2022-2023 - Jimmy-Blue
 """
 
-import logging
-import datetime
 import interactions
 
 
