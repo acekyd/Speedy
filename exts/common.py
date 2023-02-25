@@ -1,15 +1,16 @@
 """
 /common command.
+
 (C) 2022-2023 - Jimmy-Blue
 """
 
-import logging
-import datetime
 import json
 import interactions
 
 
 def get_max(current_level: int, card: int) -> int:
+    """Get the max level, needed rings and gained exps."""
+
     levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     cards = [
         90,
@@ -94,6 +95,7 @@ def get_max(current_level: int, card: int) -> int:
 
 
 def get_reached(current_level: int, card: int, aimed_level: int) -> int:
+    """Check for cards, needed rings to get the aimed level."""
 
     levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     cards = [
@@ -204,17 +206,38 @@ class Common(interactions.Extension):
             open("./db/character.json", "r", encoding="utf8").read()
         )
 
-    @interactions.extension_command(
+    @interactions.slash_command(
         name="common",
         description="Calculate the level your Common character can get.",
     )
-    @interactions.option("The current level of your character.")
-    @interactions.option("The current amount of card for that character.")
-    @interactions.option("The level you are aimed for.")
-    @interactions.option("The name of the character.", autocomplete=True)
+    @interactions.slash_option(
+        name="current_level",
+        description="The current level of your character.",
+        opt_type=interactions.OptionType.INTEGER,
+        required=True,
+    )
+    @interactions.slash_option(
+        name="card",
+        description="The current amount of card for that character.",
+        opt_type=interactions.OptionType.INTEGER,
+        required=True,
+    )
+    @interactions.slash_option(
+        name="aimed_level",
+        description="The level you are aimed for.",
+        opt_type=interactions.OptionType.INTEGER,
+        required=True,
+    )
+    @interactions.slash_option(
+        name="character_name",
+        description="The name of the character.",
+        opt_type=interactions.OptionType.STRING,
+        required=False,
+        autocomplete=True,
+    )
     async def common(
         self,
-        ctx: interactions.CommandContext,
+        ctx: interactions.SlashContext,
         current_level: int,
         card: int,
         aimed_level: int = 16,
@@ -236,7 +259,8 @@ class Common(interactions.Extension):
                 ephemeral=True,
             )
 
-        image = None
+        image: str = None
+        """Image of the character."""
         if character_name:
             name_lower = character_name.lower()
             common_char = []
@@ -247,8 +271,8 @@ class Common(interactions.Extension):
             if name_lower in common_char:
                 image = self.char_db[name_lower]["image"]
 
-        a = get_max(current_level, card)
-        b = get_reached(current_level, card, aimed_level)
+        a: tuple = get_max(current_level, card)
+        b: tuple = get_reached(current_level, card, aimed_level)
 
         embed = interactions.Embed(
             title="Rarity: Common",
@@ -289,26 +313,25 @@ class Common(interactions.Extension):
 
         await ctx.send(embeds=embed)
 
-    @interactions.extension_autocomplete(command="common", name="character_name")
-    async def common_char(
-        self, ctx: interactions.CommandContext, character_name: str = ""
-    ) -> None:
+    @common.autocomplete("character_name")
+    async def challenger_autocomplete(self, ctx: interactions.AutocompleteContext) -> None:
         """Autocomplete for /common command."""
 
-        common_char = {}
+        common_char: dict = {}
         for i in list(self.char_db.items()):
             if i[1]["rarity"] == "Common":
                 common_char[i[0]] = i[1]
 
+        character_name: str = ctx.input_text
         if character_name != "":
             letters: list = character_name
         else:
             letters = []
 
         if len(character_name) == 0:
-            await ctx.populate(
+            await ctx.send(
                 [
-                    interactions.Choice(name=common_char[name]["name"], value=name)
+                    {"name": str(common_char[name]["name"]), "value": str(name)}
                     for name in (
                         list(common_char.keys())[0:9]
                         if len(common_char) > 10
@@ -322,18 +345,9 @@ class Common(interactions.Extension):
                 focus: str = "".join(letters)
                 if focus.lower() in char_name.lower() and len(choices) < 20:
                     choices.append(
-                        interactions.Choice(
-                            name=common_char[char_name]["name"], value=char_name
-                        )
+                        {
+                            "name": str(common_char[char_name]["name"]),
+                            "value": str(char_name)
+                        }
                     )
-            await ctx.populate(choices)
-
-
-def setup(client) -> None:
-    """Setup the extension."""
-
-    log_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime(
-        "%d/%m/%Y %H:%M:%S"
-    )
-    Common(client)
-    logging.debug("""[%s] Loaded Common extension.""", log_time)
+            await ctx.send(choices)
