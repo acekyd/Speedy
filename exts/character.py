@@ -1,10 +1,13 @@
-import logging
-import datetime
+"""
+/character command.
+
+(C) 2022-2023 - Jimmy-Blue
+"""
+
 import json
 import asyncio
 import re
 import interactions
-from interactions.ext.wait_for import wait_for_component
 
 
 def get_color(char_class: str) -> int:
@@ -30,6 +33,7 @@ def get_color(char_class: str) -> int:
 
 
 def create_bar(stat: str, num: int) -> str:
+    """Creates a bar from the given stat."""
 
     green_bar: str = "<:bar_green:1045317811926466650>"
     red_bar: str = "<:bar_red:1045317809997090896>"
@@ -111,13 +115,21 @@ class Character(interactions.Extension):
             open("./db/items-trap.json", "r", encoding="utf8").read()
         )
 
-    @interactions.extension_command(
+    @interactions.slash_command(
         name="character",
         description="Shows the information about a character.",
     )
-    @interactions.option("The character you wish to search for.", autocomplete=True)
-    async def _character(self, ctx: interactions.CommandContext, character_name: str) -> None:
-        """Usage: /character [character_name]"""
+    @interactions.slash_option(
+        name="character_name",
+        description="The character you wish to search for.",
+        opt_type=interactions.OptionType.STRING,
+        required=True,
+        autocomplete=True,
+    )
+    async def character(
+        self, ctx: interactions.SlashContext, character_name: str
+    ) -> None:
+        """Shows the information about a character."""
 
         name_lower = character_name.lower()
 
@@ -140,7 +152,7 @@ class Character(interactions.Extension):
                     interactions.Button(
                         style=interactions.ButtonStyle.SECONDARY,
                         label=item,
-                        emoji=interactions.Emoji(
+                        emoji=interactions.PartialEmoji(
                             id=get_emoji(self.projectile_db[item]["emoji"])[1]
                         ),
                         custom_id=item,
@@ -152,7 +164,7 @@ class Character(interactions.Extension):
                     interactions.Button(
                         style=interactions.ButtonStyle.SECONDARY,
                         label=item,
-                        emoji=interactions.Emoji(
+                        emoji=interactions.PartialEmoji(
                             id=get_emoji(self.boost_db[item]["emoji"])[1]
                         ),
                         custom_id=item,
@@ -164,7 +176,7 @@ class Character(interactions.Extension):
                     interactions.Button(
                         style=interactions.ButtonStyle.SECONDARY,
                         label=item,
-                        emoji=interactions.Emoji(
+                        emoji=interactions.PartialEmoji(
                             id=get_emoji(self.trap_db[item]["emoji"])[1]
                         ),
                         custom_id=item,
@@ -181,93 +193,125 @@ class Character(interactions.Extension):
                 ]
             ),
             color=color,
-            thumbnail=interactions.EmbedImageStruct(url=image),
+            thumbnail=interactions.EmbedAttachment(url=image),
         )
-        embed.add_field(name=f"Speed: {speed}/10", value=create_bar("speed", speed))
+        embed.add_field(
+            name=f"Speed: {speed}/10", value=create_bar("speed", speed)
+        )
         embed.add_field(
             name=f"Acceleration: {acceleration}/10",
             value=create_bar("acceleration", acceleration),
         )
         embed.add_field(
-            name=f"Strength: {strength}/10", value=create_bar("strength", strength)
+            name=f"Strength: {strength}/10",
+            value=create_bar("strength", strength),
         )
 
-        await ctx.send(embeds=embed, components=items_button)
+        msg = await ctx.send(embeds=embed, components=items_button)
 
         try:
             while True:
-                res = await wait_for_component(
-                    self.client,
+                res = await self.client.wait_for_component(
                     components=items_button,
-                    messages=int(ctx.message.id),
+                    messages=int(msg.id),
                     timeout=45,
                 )
-                index = [btn.custom_id for btn in items_button].index(res.custom_id)
+                index = [btn.custom_id for btn in items_button].index(
+                    res.ctx.custom_id
+                )
                 if index == 0:
                     embed = interactions.Embed(
-                        title=str(res.custom_id),
+                        title=str(res.ctx.custom_id),
                         description="".join(
                             [
                                 f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["description", "image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n"""
                                 for k, v in list(
-                                    self.projectile_db[str(res.custom_id)].items()
+                                    self.projectile_db[
+                                        str(res.ctx.custom_id)
+                                    ].items()
                                 )
                             ]
                         ),
-                        image=interactions.EmbedImageStruct(
-                            url=str(self.projectile_db[str(res.custom_id)]["image"])
-                        ),
+                        images=[
+                            interactions.EmbedAttachment(
+                                url=str(
+                                    self.projectile_db[str(res.ctx.custom_id)][
+                                        "image"
+                                    ]
+                                )
+                            )
+                        ],
                     )
                 elif index == 1:
                     embed = interactions.Embed(
-                        title=str(res.custom_id),
+                        title=str(res.ctx.custom_id),
                         description="".join(
                             [
                                 f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["description", "image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n"""
                                 for k, v in list(
-                                    self.boost_db[str(res.custom_id)].items()
+                                    self.boost_db[
+                                        str(res.ctx.custom_id)
+                                    ].items()
                                 )
                             ]
                         ),
-                        image=interactions.EmbedImageStruct(
-                            url=str(self.boost_db[str(res.custom_id)]["image"])
-                        ),
+                        images=[
+                            interactions.EmbedAttachment(
+                                url=str(
+                                    self.boost_db[str(res.ctx.custom_id)][
+                                        "image"
+                                    ]
+                                )
+                            )
+                        ],
                     )
                 elif index == 2:
                     embed = interactions.Embed(
-                        title=str(res.custom_id),
+                        title=str(res.ctx.custom_id),
                         description="".join(
                             [
                                 f"""{k.capitalize().replace("_", " ") + ": " if str(k) not in ["description", "image", "emoji"] else ""}{"✅" if type(v) == bool and bool(v) == True else ("❌" if type(v) == bool and bool(v) == False else (v if str(v).startswith(("https", "<:")) is False else ""))}\n"""
                                 for k, v in list(
-                                    self.trap_db[str(res.custom_id)].items()
+                                    self.trap_db[
+                                        str(res.ctx.custom_id)
+                                    ].items()
                                 )
                             ]
                         ),
-                        image=interactions.EmbedImageStruct(
-                            url=str(self.trap_db[str(res.custom_id)]["image"])
-                        ),
+                        images=[
+                            interactions.EmbedAttachment(
+                                url=str(
+                                    self.trap_db[str(res.ctx.custom_id)][
+                                        "image"
+                                    ]
+                                )
+                            )
+                        ],
                     )
-                await res.send(embeds=embed, ephemeral=True)
+                await res.ctx.send(embeds=embed, ephemeral=True)
 
         except asyncio.TimeoutError:
             pass
 
-    @interactions.extension_autocomplete(command="character", name="character_name")
-    async def auto_complete(
-        self, ctx: interactions.CommandContext, character_name: str = ""
+    @character.autocomplete("character_name")
+    async def character_autocomplete(
+        self, ctx: interactions.AutocompleteContext
     ) -> None:
         """Autocomplte for /character command."""
 
+        character_name: str = ctx.input_text
         if character_name != "":
             letters: list = character_name
         else:
             letters = []
 
         if len(character_name) == 0:
-            await ctx.populate(
+            await ctx.send(
                 [
-                    interactions.Choice(name=self.char_db[name]["name"], value=name)
+                    {
+                        "name": str(self.char_db[name]["name"]),
+                        "value": str(name),
+                    }
                     for name in (
                         list(self.char_db.keys())[0:9]
                         if len(self.char_db) > 10
@@ -281,18 +325,9 @@ class Character(interactions.Extension):
                 focus: str = "".join(letters)
                 if focus.lower() in char_name.lower() and len(choices) < 20:
                     choices.append(
-                        interactions.Choice(
-                            name=self.char_db[char_name]["name"], value=char_name
-                        )
+                        {
+                            "name": str(self.char_db[char_name]["name"]),
+                            "value": str(char_name),
+                        }
                     )
-            await ctx.populate(choices)
-
-
-def setup(client) -> None:
-    """Setup the extension."""
-
-    log_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime(
-        "%d/%m/%Y %H:%M:%S"
-    )
-    Character(client)
-    logging.debug("""[%s] Loaded Character extension.""", log_time)
+            await ctx.send(choices)
