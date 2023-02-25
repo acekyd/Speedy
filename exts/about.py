@@ -34,8 +34,8 @@ class About(interactions.Extension):
             interactions.Button(
                 style=interactions.ButtonStyle.LINK,
                 label="Support Server",
-                url="https://discord.gg/MUfUZ6knBf"
-            )
+                url="https://discord.gg/MUfUZ6knBf",
+            ),
         ]
 
         embed = interactions.Embed(
@@ -47,7 +47,7 @@ class About(interactions.Extension):
                     "images, sprites, Speedy has you covered.",
                 ]
             ),
-            color=0x8ca9f3,
+            color=0x8CA9F3,
             footer=interactions.EmbedFooter(text="Maintained by Blue#2095"),
         )
 
