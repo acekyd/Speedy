@@ -1,6 +1,7 @@
 """
 /about command.
-(C) 2022 - Jimmy-Blue
+
+(C) 2022-2023 - Jimmy-Blue
 """
 
 import logging
@@ -14,11 +15,11 @@ class About(interactions.Extension):
     def __init__(self, client: interactions.Client) -> None:
         self.client: interactions.Client = client
 
-    @interactions.extension_command(
+    @interactions.slash_command(
         name="about",
         description="Information about Speedy.",
     )
-    async def _about(self, ctx: interactions.CommandContext) -> None:
+    async def _about(self, ctx: interactions.InteractionContext) -> None:
         """Information about Speedy."""
 
         button = [
@@ -48,17 +49,8 @@ class About(interactions.Extension):
                     "images, sprites, Speedy has you covered.",
                 ]
             ),
-            color=0x008dff,
+            color=0x8ca9f3,
             footer=interactions.EmbedFooter(text="Maintained by Blue#2095"),
         )
 
         await ctx.send(embeds=embed, components=button)
-
-
-def setup(client) -> None:
-    """Setup the extension."""
-    log_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime(
-        "%d/%m/%Y %H:%M:%S"
-    )
-    About(client)
-    logging.debug("""[%s] Loaded About extension.""", log_time)
