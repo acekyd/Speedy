@@ -1,5 +1,9 @@
-import logging
-import datetime
+"""
+/runnerreport command.
+
+(C) 2023 - Jimmy-Blue
+"""
+
 import os
 import io
 import interactions
@@ -28,10 +32,16 @@ class RunnerReport(interactions.Extension):
         self.client: interactions.Client = client
         self.report_db = os.listdir("./db/runnerreport")
 
-    @interactions.extension_command()
-    @interactions.option("The name of the character", autocomplete=True)
+    @interactions.slash_command()
+    @interactions.slash_option(
+        name="character_name",
+        description="The name of the character",
+        opt_type=interactions.OptionType.STRING,
+        required=True,
+        autocomplete=True,
+    )
     async def runnerreport(
-        self, ctx: interactions.CommandContext, character_name: str
+        self, ctx: interactions.SlashContext, character_name: str
     ) -> None:
         """Shows the image of a character from Runner Report."""
 
@@ -53,36 +63,47 @@ class RunnerReport(interactions.Extension):
         color = str("0x" + color[1:])
         color = int(color, 16)
 
-        file = interactions.File(f"./db/runnerreport/{character_name}")
+        file = interactions.File(file=f"./db/runnerreport/{character_name}")
         embed = interactions.Embed(
-            title=f"""{character_name.replace("runner_report_", "").replace(".jpg", "").replace("_", " ").title()}""",
+            title=f"""{(
+                character_name
+                .replace("runner_report_", "")
+                .replace(".jpg", "")
+                .replace("_", " ")
+                .title()
+            )}""",
             color=color,
-            image=interactions.EmbedImageStruct(url=f"attachment://{file._filename}"),
+            images=[
+                interactions.EmbedAttachment(
+                    url=f"attachment://{file.file_name}"
+                )
+            ],
         )
         await ctx.send(embeds=embed, files=file)
 
-    @interactions.extension_autocomplete(command="runnerreport", name="character_name")
-    async def image_auto_complete(
-        self, ctx: interactions.CommandContext, character_name: str = ""
+    @runnerreport.autocomplete("character_name")
+    async def image_autocomplete(
+        self, ctx: interactions.AutocompleteContext
     ) -> None:
         """Autocomplete for /runnerreport command."""
 
+        character_name: str = ctx.input_text
         if character_name != "":
             letters: list = character_name
         else:
             letters = []
 
         if len(character_name) == 0:
-            await ctx.populate(
+            await ctx.send(
                 [
-                    interactions.Choice(
-                        name=str(self.report_db[i])
+                    {
+                        "name": str(self.report_db[i])
                         .replace("runner_report_", "")
                         .replace(".jpg", "")
                         .replace("_", " ")
                         .title(),
-                        value=str(self.report_db[i]),
-                    )
+                        "value": str(self.report_db[i]),
+                    }
                     for i in range(0, 10)
                 ]
             )
@@ -100,23 +121,13 @@ class RunnerReport(interactions.Extension):
                     and len(choices) < 20
                 ):
                     choices.append(
-                        interactions.Choice(
-                            name=str(i)
+                        {
+                            "name": str(i)
                             .replace("runner_report_", "")
                             .replace(".jpg", "")
                             .replace("_", " ")
                             .title(),
-                            value=i,
-                        )
+                            "value": i,
+                        }
                     )
-            await ctx.populate(choices)
-
-
-def setup(client) -> None:
-    """Setup the extension."""
-
-    log_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime(
-        "%d/%m/%Y %H:%M:%S"
-    )
-    RunnerReport(client)
-    logging.debug("""[%s] Loaded RunnerReport extension.""", log_time)
+            await ctx.send(choices)
