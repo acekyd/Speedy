@@ -29,7 +29,12 @@ class About(interactions.Extension):
             interactions.Button(
                 style=interactions.ButtonStyle.LINK,
                 label="Invite Me",
-                url="""https://discord.com/api/oauth2/authorize?client_id=947339220823994388&permissions=8&scope=bot%20applications.commands""",
+                url="https://discord.com/api/oauth2/authorize?client_id=947339220823994388&permissions=8&scope=bot%20applications.commands",
+            ),
+            interactions.Button(
+                style=interactions.ButtonStyle.LINK,
+                label="Top.gg",
+                url="https://top.gg/bot/947339220823994388",
             ),
             interactions.Button(
                 style=interactions.ButtonStyle.LINK,
