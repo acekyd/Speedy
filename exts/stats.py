@@ -1,35 +1,36 @@
 """
-Stats command.
-(C) 2022-2023 - Jimmy-Blue
+/stats command.
+
+(C) 2023 - Jimmy-Blue
 """
 
-import logging
 import datetime
 import platform
 import interactions
-from interactions.ext import molter
 from const import VERSION
 
 
-class Stats(molter.MolterExtension):
+class Stats(interactions.Extension):
     """Extension for /stats command."""
 
     def __init__(self, client: interactions.Client) -> None:
         self.client: interactions.Client = client
-        self.uptime = f"<t:{round(datetime.datetime.utcnow().timestamp())}:R>"
-        self.python = platform.python_version()
-        self.system = str(platform.platform())
+        self.uptime: str = (
+            f"<t:{round(datetime.datetime.utcnow().timestamp())}:R>"
+        )
+        self.python: str = platform.python_version()
+        self.system: str = str(platform.platform())
 
-    @interactions.extension_command(
+    @interactions.slash_command(
         name="stats",
         description="Shows the stats of Speedy.",
     )
-    async def _stats(self, ctx: interactions.CommandContext):
+    async def stats(self, ctx: interactions.SlashContext) -> None:
         """Shows the stats of Speedy."""
 
-        latency = f"{self.client.latency * 1:.0f}ms"
-        guild_count = len(self.client.guilds)
-        user_count = 0
+        latency = f"{self.client.latency * 1000:.0f}ms"
+        guild_count: str = str(len(self.client.guilds))
+        user_count: int = 0
         for guild in self.client.guilds:
             user_count += guild.member_count
 
@@ -47,14 +48,20 @@ class Stats(molter.MolterExtension):
         ]
 
         fields = [
-            interactions.EmbedField(name="Version", value=VERSION, inline=True),
+            interactions.EmbedField(
+                name="Version", value=VERSION, inline=True
+            ),
             interactions.EmbedField(
                 name="Guilds",
                 value=guild_count,
                 inline=True,
             ),
-            interactions.EmbedField(name="Users", value=user_count, inline=True),
-            interactions.EmbedField(name="Latency", value=latency, inline=True),
+            interactions.EmbedField(
+                name="Users", value=f"{user_count}", inline=True
+            ),
+            interactions.EmbedField(
+                name="Latency", value=latency, inline=True
+            ),
             interactions.EmbedField(
                 name="Python",
                 value=self.python,
@@ -71,10 +78,12 @@ class Stats(molter.MolterExtension):
                 inline=True,
             ),
         ]
-        thumbnail = interactions.EmbedImageStruct(url=self.client.me.icon_url)
+        thumbnail = interactions.EmbedAttachment(
+            url=self.client.user.avatar.url
+        )
         footer = interactions.EmbedFooter(
             text=f"Requested by {ctx.user.username}#{ctx.user.discriminator}",
-            icon_url=f"{ctx.user.avatar_url}",
+            icon_url=f"{ctx.user.avatar.url}",
         )
         embed = interactions.Embed(
             title="Speedy Stats",
@@ -85,12 +94,3 @@ class Stats(molter.MolterExtension):
         )
 
         await ctx.send(embeds=embed, components=button)
-
-
-def setup(client) -> None:
-    """Setup the extension."""
-    log_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime(
-        "%d/%m/%Y %H:%M:%S"
-    )
-    Stats(client)
-    logging.debug("""[%s] Loaded Stats extension.""", log_time)
