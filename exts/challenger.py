@@ -284,7 +284,7 @@ class Challenger(interactions.Extension):
             color=0xC92828,
         )
         embed.add_field(
-            name=f"\u200b",
+            name="\u200b",
             value="".join(
                 [
                     f"<:upgrade:1064630801469276170> : {current_level} -> {a[0]}\n",
@@ -302,7 +302,7 @@ class Challenger(interactions.Extension):
         )
         if int(b[0]) > 0:
             embed.add_field(
-                name=f"\u200b",
+                name="\u200b",
                 value="".join(
                     [
                         f"<:upgrade:1064630801469276170> : {current_level} -> {aimed_level}\n",
