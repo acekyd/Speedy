@@ -209,7 +209,7 @@ class Special(interactions.Extension):
         )
 
     @interactions.slash_command(
-        name="common",
+        name="special",
         description="Calculate the level your Special character can get.",
     )
     @interactions.slash_option(

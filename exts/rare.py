@@ -209,7 +209,7 @@ class Rare(interactions.Extension):
         )
 
     @interactions.slash_command(
-        name="common",
+        name="rare",
         description="Calculate the level your Rare character can get.",
     )
     @interactions.slash_option(
