@@ -6,54 +6,58 @@ Root bot file.
 import logging
 import datetime
 import traceback
-import io
 import interactions
-from interactions.ext import wait_for, files
-import keep_alive
 from const import TOKEN, VERSION, EXTS
 
-# logging.basicConfig(level=logging.DEBUG)
-
 client = interactions.Client(
-    token=TOKEN,
     intents=interactions.Intents.DEFAULT,
-    presence=interactions.ClientPresence(
-        activities=[
-            interactions.PresenceActivity(
-                type=interactions.PresenceActivityType.GAME, name=f"SFSB ver {VERSION}"
-            )
-        ],
-        status=interactions.StatusType.ONLINE,
+    activity=interactions.Activity(
+        name=f"for SFSB v{VERSION}",
+        type=interactions.ActivityType.WATCHING,
     ),
-    # disable_sync=True,
+    send_command_tracebacks=False,
+    show_ratelimit_tracebacks=True,
+    basic_logging=True,
 )
+all_servers: list[int] = []
+counted: bool = False
 
-wait_for.setup(client)
-files.setup(client)
-[client.load(f"exts.{ext}") for ext in EXTS]
+[client.load_extension(f"exts.{ext}") for ext in EXTS]
 
 
-@client.event
-async def on_start():
-    """Fires up READY"""
+@client.listen()
+async def on_startup() -> None:
+    """Fires up STARTUP"""
+
     websocket = f"{client.latency * 1:.0f}"
-    log_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime(
-        "%d/%m/%Y %H:%M:%S"
-    )
+    log_time = (
+        datetime.datetime.utcnow() + datetime.timedelta(hours=7)
+    ).strftime("%d/%m/%Y %H:%M:%S")
     logging.debug(
-        """[%s] Logged in as %s. Latency: %sms.""", log_time, client.me.name, websocket
+        """[%s] Logged in as %s. Latency: %sms.""",
+        log_time,
+        client.user.username,
+        websocket,
     )
     print(
-        f"""[{log_time}] Logged in as {client.me.name}. Latency: {websocket}ms.\nIn {len(client.guilds)} guilds."""
+        f"""[{log_time}] Logged in as {client.user.username}. Latency: {websocket}ms.\nIn {len(client.guilds)} guilds."""
     )
 
 
-@client.event
-async def on_command_error(ctx: interactions.CommandContext, error: Exception):
+@client.listen()
+async def on_command_error(ctx: interactions.events.CommandError) -> None:
     """For every Exception callback."""
 
-    error_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).timestamp()
+    if not isinstance(ctx.ctx, interactions.SlashContext):
+        return
 
+    _ctx: interactions.SlashContext = ctx.ctx
+
+    error_time = (
+        datetime.datetime.utcnow() + datetime.timedelta(hours=7)
+    ).timestamp()
+
+    error: Exception = ctx.error
     traceb2 = traceback.format_exception(
         type(error),
         value=error,
@@ -70,14 +74,14 @@ async def on_command_error(ctx: interactions.CommandContext, error: Exception):
     for i in traceb:
         er = er + f"{i}"
 
-    await ctx.get_guild()
-
     embed = interactions.Embed(
         title="**Uh oh...**",
         description="".join(
             [
-                "An error occurred. The developer team is dealing with the problem now.\n",
-                "Have any question? Join the [**support server**](https://discord.gg/ndy95mBfJs) for more help.",
+                "An error occurred. The developer team is dealing with the ",
+                " problem now.\nHave any question? ",
+                "Join the [**support server**](https://discord.gg/ndy95mBfJs)",
+                " for more help.",
             ]
         ),
         color=0xED4245,
@@ -89,28 +93,24 @@ async def on_command_error(ctx: interactions.CommandContext, error: Exception):
         ],
     )
 
-    await ctx.send(embeds=embed, ephemeral=True)
+    await _ctx.send(embeds=embed, ephemeral=True)
 
-    log_channel = interactions.Channel(
-        **await client._http.get_channel(1065211632730513448),
-        _client=client._http,
+    log_channel = client.get_channel(1065211632730513448)
+    command_name: str = _ctx.command.name
+    subcommand_name: str = None
+    if _ctx.command.is_subcommand:
+        subcommand_name = _ctx.command.to_dict().get("name")
+    full_command = (
+        f"""{command_name}{" " + subcommand_name if subcommand_name else ""}"""
     )
-    command_name = ctx.data._json["name"]
-    subcommand_name = ctx.data._json.get("options", None)
-    if subcommand_name:
-        subcommand_name = subcommand_name[0]
-        if subcommand_name["type"] == 1:
-            subcommand_name = subcommand_name["name"]
-        else:
-            subcommand_name = None
 
     log_error = interactions.Embed(
         title="An error occurred!",
         description="".join(
             [
-                f"""Caused by **/{command_name}{" " + subcommand_name if subcommand_name else ""}**\n""",
-                f"Author: {ctx.user.username}#{ctx.user.discriminator} ``{ctx.user.id}``\n",
-                f"Guild: {ctx.guild.name} ``{ctx.guild_id}``\n",
+                f"""Caused by **/{full_command}**\n""",
+                f"Author: {_ctx.user.username}#{_ctx.user.discriminator} ``{_ctx.user.id}``\n",
+                f"Guild: {_ctx.guild.name} ``{_ctx.guild.id}``\n",
                 f"Occurred on: <t:{round(error_time)}:F>",
             ]
         ),
@@ -118,18 +118,14 @@ async def on_command_error(ctx: interactions.CommandContext, error: Exception):
         fields=[
             interactions.EmbedField(
                 name="Traceback",
-                value=f"```py\n{traceb}\n```"
+                value=f"```\n{traceb}\n```"
                 if len(traceb) < 1024
-                else f"```py\n...{traceb[-1000:]}\n```",
+                else f"```\n...{traceb[-1000:]}\n```",
             )
         ],
     )
 
-    log_data = io.StringIO(ctx.data._json)
-    log_file = interactions.File(filename="log.txt", fp=log_data)
-
-    await log_channel.send(embeds=log_error, files=log_file)
+    await log_channel.send(embeds=log_error)
 
 
-keep_alive.keep_alive()
-client.start()
+client.start(TOKEN)
