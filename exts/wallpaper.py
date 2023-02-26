@@ -1,5 +1,10 @@
-import logging
-import datetime
+"""
+/wallpaper command.
+
+(C) 2023 - Jimmy-Blue
+"""
+
+
 import os
 import io
 import interactions
@@ -28,10 +33,16 @@ class Wallpaper(interactions.Extension):
         self.client: interactions.Client = client
         self.wallpaper_db = os.listdir("./db/wallpaper")
 
-    @interactions.extension_command()
-    @interactions.option("The name of the wallpaper", autocomplete=True)
+    @interactions.slash_command()
+    @interactions.slash_option(
+        name="wallpaper_name",
+        description="The name of the wallpaper",
+        opt_type=interactions.OptionType.STRING,
+        required=True,
+        autocomplete=True,
+    )
     async def wallpaper(
-        self, ctx: interactions.CommandContext, wallpaper_name: str
+        self, ctx: interactions.SlashContext, wallpaper_name: str
     ) -> None:
         """Shows the wallpaper of an event/character."""
 
@@ -46,43 +57,52 @@ class Wallpaper(interactions.Extension):
         with open(f"./db/wallpaper/{wallpaper_name}", "rb") as f:
             buf = io.BytesIO(f.read())
 
-        color = get_color(buf)
+        color: str = get_color(buf)
         color = "#{0:02x}{1:02x}{2:02x}".format(
             clamp(color[0]), clamp(color[1]), clamp(color[2])
         )
         color = str("0x" + color[1:])
         color = int(color, 16)
 
-        file = interactions.File(f"./db/wallpaper/{wallpaper_name}")
+        file = interactions.File(file=f"./db/wallpaper/{wallpaper_name}")
         embed = interactions.Embed(
-            title=f"""{wallpaper_name.replace("banner_", "").replace(".png", "").replace("_", " ").title()}""",
+            title=f"""{
+                wallpaper_name
+                .replace("banner_", "")
+                .replace(".png", "")
+                .replace("_", " ")
+                .title()
+            }""",
             color=color,
-            image=interactions.EmbedImageStruct(url=f"attachment://{file._filename}"),
+            images=[interactions.EmbedAttachment(
+                url=f"attachment://{file.file_name}"
+            )],
         )
         await ctx.send(embeds=embed, files=file)
 
-    @interactions.extension_autocomplete(command="wallpaper", name="wallpaper_name")
-    async def wallpaper_auto_complete(
-        self, ctx: interactions.CommandContext, wallpaper_name: str = ""
-    ):
+    @wallpaper.autocomplete("wallpaper_name")
+    async def wallpaper_autocomplete(
+        self, ctx: interactions.AutocompleteContext
+    ) -> None:
         """Autocomplete for /wallpaper command."""
 
+        wallpaper_name: str = ctx.input_text
         if wallpaper_name != "":
             letters: list = wallpaper_name
         else:
             letters = []
 
         if len(wallpaper_name) == 0:
-            await ctx.populate(
+            await ctx.send(
                 [
-                    interactions.Choice(
-                        name=str(self.wallpaper_db[i])
+                    {
+                        "name": str(self.wallpaper_db[i])
                         .replace("wallpaper_", "")
                         .replace(".png", "")
                         .replace("_", " ")
                         .title(),
-                        value=str(self.wallpaper_db[i]),
-                    )
+                        "value": str(self.wallpaper_db[i]),
+                    }
                     for i in range(0, 25)
                 ]
             )
@@ -100,23 +120,13 @@ class Wallpaper(interactions.Extension):
                     and len(choices) < 20
                 ):
                     choices.append(
-                        interactions.Choice(
-                            name=str(i)
+                        {
+                            "name": str(i)
                             .replace("wallpaper_", "")
                             .replace(".png", "")
                             .replace("_", " ")
                             .title(),
-                            value=i,
-                        )
+                            "value": i,
+                        }
                     )
-            await ctx.populate(choices)
-
-
-def setup(client) -> None:
-    """Setup the extension."""
-
-    log_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime(
-        "%d/%m/%Y %H:%M:%S"
-    )
-    Wallpaper(client)
-    logging.debug("""[%s] Loaded Wallpaper extension.""", log_time)
+            await ctx.send(choices)
