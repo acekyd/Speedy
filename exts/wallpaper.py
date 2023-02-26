@@ -74,9 +74,11 @@ class Wallpaper(interactions.Extension):
                 .title()
             }""",
             color=color,
-            images=[interactions.EmbedAttachment(
-                url=f"attachment://{file.file_name}"
-            )],
+            images=[
+                interactions.EmbedAttachment(
+                    url=f"attachment://{file.file_name}"
+                )
+            ],
         )
         await ctx.send(embeds=embed, files=file)
 
