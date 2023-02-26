@@ -319,15 +319,15 @@ class Common(interactions.Extension):
         await ctx.send(embeds=embed)
 
     @common.autocomplete("character_name")
-    async def challenger_autocomplete(
+    async def common_autocomplete(
         self, ctx: interactions.AutocompleteContext
     ) -> None:
         """Autocomplete for /common command."""
 
-        common_char: dict = {}
+        list_char: dict = {}
         for i in list(self.char_db.items()):
             if i[1]["rarity"] == "Common":
-                common_char[i[0]] = i[1]
+                list_char[i[0]] = i[1]
 
         character_name: str = ctx.input_text
         if character_name != "":
@@ -339,24 +339,24 @@ class Common(interactions.Extension):
             await ctx.send(
                 [
                     {
-                        "name": str(common_char[name]["name"]),
+                        "name": str(list_char[name]["name"]),
                         "value": str(name),
                     }
                     for name in (
-                        list(common_char.keys())[0:9]
-                        if len(common_char) > 10
-                        else list(common_char.keys())
+                        list(list_char.keys())[0:9]
+                        if len(list_char) > 10
+                        else list(list_char.keys())
                     )
                 ]
             )
         else:
             choices: list = []
-            for char_name in common_char:
+            for char_name in list_char:
                 focus: str = "".join(letters)
                 if focus.lower() in char_name.lower() and len(choices) < 20:
                     choices.append(
                         {
-                            "name": str(common_char[char_name]["name"]),
+                            "name": str(list_char[char_name]["name"]),
                             "value": str(char_name),
                         }
                     )
