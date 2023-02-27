@@ -1,11 +1,12 @@
 """
 Root bot file.
-(C) 2022 - Jimmy-Blue
+(C) 2022-2023 - Jimmy-Blue
 """
 
 import logging
 import datetime
 import traceback
+import asyncio
 import interactions
 from const import TOKEN, VERSION, EXTS
 
@@ -19,15 +20,19 @@ client = interactions.Client(
     show_ratelimit_tracebacks=True,
     basic_logging=True,
 )
-all_servers: list[int] = []
 counted: bool = False
+"""For stopping `GUILD_JOIN` spam on `STARTUP`"""
 
 [client.load_extension(f"exts.{ext}") for ext in EXTS]
 
 
-@client.listen()
+@interactions.listen(delay_until_ready=True)
 async def on_startup() -> None:
     """Fires up STARTUP"""
+
+    global counted
+    await asyncio.sleep(10)
+    counted = True
 
     websocket = f"{client.latency * 1:.0f}"
     log_time = (
@@ -44,7 +49,7 @@ async def on_startup() -> None:
     )
 
 
-@client.listen()
+@interactions.listen()
 async def on_command_error(ctx: interactions.events.CommandError) -> None:
     """For every Exception callback."""
 
@@ -126,6 +131,53 @@ async def on_command_error(ctx: interactions.events.CommandError) -> None:
     )
 
     await log_channel.send(embeds=log_error)
+
+
+@interactions.listen()
+async def on_guild_join(guild: interactions.events.GuildJoin) -> None:
+    """Fires when bot joins a new guild."""
+
+    global counted
+    if not counted:
+        return
+
+    _guild = guild.guild
+    _channel = client.get_channel(1065211632730513448)
+
+    embed = interactions.Embed(title=f"Joined {_guild.name}")
+    embed.add_field(name="ID", value=f"{_guild.id}", inline=True)
+    embed.add_field(
+        name="Joined on",
+        value=f"{_guild.joined_at}",
+        inline=True,
+    )
+    embed.add_field(name="Member", value=f"{_guild.member_count}", inline=True)
+    embed.set_thumbnail(url=f"{_guild.icon.url}")
+
+    await _channel.send(embeds=embed)
+
+
+@interactions.listen()
+async def on_guild_left(guild: interactions.events.GuildLeft) -> None:
+    """Fires when bot leaves a guild."""
+
+    _guild = guild.guild
+    _channel = client.get_channel(1065211632730513448)
+    current_time: float = (
+        datetime.datetime.utcnow() + datetime.timedelta(hours=7)
+    ).timestamp()
+
+    embed = interactions.Embed(title=f"Left {_guild.name}")
+    embed.add_field(name="ID", value=f"{_guild.id}", inline=True)
+    embed.add_field(
+        name="Left on",
+        value=f"<t:{round(current_time)}:F>",
+        inline=True,
+    )
+    embed.add_field(name="Member", value=f"{_guild.member_count}", inline=True)
+    embed.set_thumbnail(url=f"{_guild.icon.url}")
+
+    await _channel.send(embeds=embed)
 
 
 client.start(TOKEN)
