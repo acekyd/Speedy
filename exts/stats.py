@@ -15,9 +15,9 @@ class Stats(interactions.Extension):
 
     def __init__(self, client: interactions.Client) -> None:
         self.client: interactions.Client = client
-        self.uptime: str = (
-            f"<t:{round(datetime.datetime.utcnow().timestamp())}:R>"
-        )
+        self.uptime: float = (
+            datetime.datetime.utcnow() + datetime.timedelta(hours=7)
+        ).timestamp()
         self.python: str = platform.python_version()
         self.system: str = str(platform.platform())
 
@@ -69,7 +69,7 @@ class Stats(interactions.Extension):
             ),
             interactions.EmbedField(
                 name="Uptime",
-                value=self.uptime,
+                value=f"<t:{round(self.uptime)}:R>",
                 inline=True,
             ),
             interactions.EmbedField(
