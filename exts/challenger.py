@@ -228,7 +228,7 @@ class Challenger(interactions.Extension):
         name="aimed_level",
         description="The level you are aimed for.",
         opt_type=interactions.OptionType.INTEGER,
-        required=True,
+        required=False,
     )
     @interactions.slash_option(
         name="character_name",
@@ -295,7 +295,7 @@ class Challenger(interactions.Extension):
                         else "Maximum Level Reached\n"
                     ),
                     f"<:ring:1064628961931440198> : {natural_rings(a[3])}\n",
-                    f"<:exp:1064630336610381855>: {a[4]}",
+                    f"<:exp:1064630336610381855> : {a[4]}",
                 ]
             ),
             inline=True,
@@ -308,7 +308,7 @@ class Challenger(interactions.Extension):
                         f"<:upgrade:1064630801469276170> : {current_level} -> {aimed_level}\n",
                         f"<:challenger:1064631495341391903> : {b[0]}\n",
                         f"<:ring:1064628961931440198> : {natural_rings(b[1])}\n",
-                        f"<:exp:1064630336610381855>: {b[2]}",
+                        f"<:exp:1064630336610381855> : {b[2]}",
                     ]
                 ),
                 inline=True,
