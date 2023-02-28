@@ -8,6 +8,7 @@ import datetime
 import traceback
 import asyncio
 import interactions
+from keep_alive import keep_alive
 from const import TOKEN, VERSION, EXTS
 
 client = interactions.Client(
@@ -43,7 +44,7 @@ async def on_startup() -> None:
         log_time,
         client.user.username,
         websocket,
-    )
+)
     print(
         f"""[{log_time}] Logged in as {client.user.username}. Latency: {websocket}ms.\nIn {len(client.guilds)} guilds."""
     )
@@ -58,9 +59,7 @@ async def on_command_error(ctx: interactions.events.CommandError) -> None:
 
     _ctx: interactions.SlashContext = ctx.ctx
 
-    error_time = (
-        datetime.datetime.utcnow() + datetime.timedelta(hours=7)
-    ).timestamp()
+    error_time = datetime.datetime.utcnow().timestamp()
 
     error: Exception = ctx.error
     traceb2 = traceback.format_exception(
@@ -179,5 +178,5 @@ async def on_guild_left(guild: interactions.events.GuildLeft) -> None:
 
     await _channel.send(embeds=embed)
 
-
+keep_alive()
 client.start(TOKEN)

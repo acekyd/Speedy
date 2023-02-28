@@ -15,9 +15,7 @@ class Stats(interactions.Extension):
 
     def __init__(self, client: interactions.Client) -> None:
         self.client: interactions.Client = client
-        self.uptime: float = (
-            datetime.datetime.utcnow() + datetime.timedelta(hours=7)
-        ).timestamp()
+        self.uptime: float = datetime.datetime.utcnow().timestamp()
         self.python: str = platform.python_version()
         self.system: str = str(platform.platform())
 

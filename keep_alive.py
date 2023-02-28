@@ -1,15 +1,24 @@
 import logging
+import datetime
 from threading import Thread
 from flask import Flask
 
 flask: Flask = Flask("replit_keep_alive")
 log: logging.Logger = logging.getLogger("werkzeug")
 
+uptime: float = (
+    datetime.datetime.utcnow() +
+    datetime.timedelta(hours=7)
+)
+
 
 @flask.route("/")
 def index() -> str:
     """For handling the base route of '/'."""
-    return "Keeping the repl alive!"
+    return {
+        "status": "Ready!",
+        "uptime": f"{uptime}"
+    }
 
 
 def keep_alive() -> None:
