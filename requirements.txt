@@ -1,3 +1,4 @@
 python-dotenv==0.19.2
 git+https://github.com/Jimmy-Blue/interactions.py@5.x
 pillow==9.4.0
+Flask
