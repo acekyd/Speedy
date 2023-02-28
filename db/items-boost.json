@@ -139,7 +139,7 @@
   },
   "Jungle Run": {
     "description": "Provides the user a speed boost that'll leave behind brambles that'll damage anyone that runs into them. You'll drop more if you charge up the boost before using it.",
-    "duration": "NaN",
+    "duration": "2.7 Sec.",
     "image": "https://s17-news.hardlightgames.com/images/items/icon_skill_boost_jungle_run.png",
     "emoji": "<:JungleRun:1078707354784239656>"
   },
