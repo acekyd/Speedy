@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "SFSB-Bot"
-version = "4.13.0"
+version = "4.15.0"
 description = "A Discord bot written in interactions.py focusing on the mobile game Sonic Forces: Speed Battle"
 license = "MIT"
 authors = ["Jimmy-Blue <jimmyblue00@duck.com>"]
@@ -8,15 +8,11 @@ readme = "README.md"
 repository = "https://github.com/Jimmy-Blue/Speedy"
 
 [tool.poetry.dependencies]
-python = "3.8.6"
+python = "3.10.10"
 python-dotenv = "0.19.2"
-discord-py-interactions = "4.3.4"
-interactions-wait-for = "^1.0.6"
-interactions-molter = "1.0.1"
-interactions-files = "1.1.5"
+interactions = { git = "https://github.com/Jimmy-Blue/interactions.py.git", branch = "5.x"}
 pillow = "9.4.0"
 Flask = "^2.2.2"
-discord-py-slash-command = "^4.2.1"
 
 
 [tool.poetry.dev-dependencies]
